@@ -1527,6 +1527,19 @@ class Customer_model extends CI_Model {
         return $query->result_array();
     }
 
+
+    function get_salesperson_contract_model($id){
+        $this->db->select('*');
+        $this->db->from('contract a');
+        $this->db->join('salesperson b', 'a.salesperson_id = b.salesperson_id', 'inner');
+        $this->db->join('broker c', 'b.broker_id = c.broker_id', 'inner');
+        $this->db->join('realty d', 'c.realty_id = d.realty_id', 'left');
+        // $this->db->join('person e', 'a.person_id = b.person_id', 'inner');
+        $this->db->where('a.contract_id', $id);
+        $query = $this->db->get(); 
+        return $query->row();
+    }
+    
     function get_onebroker_model($id){
         $this->db->select('*, a.business_phone AS business_phone2');
         $this->db->from('broker a');

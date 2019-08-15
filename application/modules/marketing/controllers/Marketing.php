@@ -554,6 +554,13 @@ class Marketing extends CI_Controller {
 		$contract_id = $this->input->get('id_contract');
 		$contract = $this->customer->get_contract_model($contract_id);
 		$spouse = $this->customer->get_partner_model($contract->client_id);
+		$realty_info = $this->customer->get_salesperson_contract_model($contract_id);
+
+		$spouse_last = isset($spouse->lastname) ? $spouse->lastname : "";
+		$spouse_first = isset($spouse->firstname) ? $spouse->firstname : "";
+		$spouse_middle = isset($spouse->middlename) ? $spouse->middlename : "";
+
+		$realty_name = isset($realty_info->realty_name) ? $realty_info->realty_name : "";
 
 
 		$reserve_fee = $contract->reservation_fee;
@@ -712,7 +719,7 @@ class Marketing extends CI_Controller {
         $pdf->writeHTMLCell(20, 6, '', '', "<strong></strong>", 0, 0, 0, true, 'R', false);
         $pdf->writeHTMLCell(60, 6, '', '', "<strong>SPOUSAL CONSENT:</strong>", 0, 0, 0, true, 'L', false);
         $pdf->writeHTMLCell(60, 6, '', '', "<strong>____________________________</strong>", 0, 0, 0, true, 'R', false);
-        $pdf->writeHTMLCell(60, 6, 95, $y + 19, "<strong>" . $spouse->lastname . ', ' . $spouse->firstname . ' ' . $spouse->middlename . "</strong>", 0, 0, 0, true, 'C', false);
+        $pdf->writeHTMLCell(60, 6, 95, $y + 19, "<strong>" . $spouse_last . ', ' . $spouse_first . ' ' . $spouse_middle . "</strong>", 0, 0, 0, true, 'C', false);
         $pdf->writeHTMLCell(60, 6, 95, $y + 24, '<font size="7">SIGNATURE OVER PRINTED NAME</font>', 0, 0, 0, true, 'C', false);
 
 	    $pdf->Ln(10);
@@ -840,6 +847,38 @@ class Marketing extends CI_Controller {
 		$pdf->writeHTMLCell(10, 6, '', '', "<strong></strong>", 0, 0, 0, true, 'R', false);
 		$pdf->writeHTMLCell(50, 6, '', '', "Place of Execution:", 0, 0, 0, true, 'L', false);
 		$pdf->writeHTMLCell(60, 6, '', '', "Cagayan de Oro City, Philippines", 0, 0, 0, true, 'L', false);
+
+		$pdf->Ln(20);
+        $y += 61;
+        $pdf->writeHTMLCell(10, 6, '', '', "<strong></strong>", 0, 0, 0, true, 'R', false);
+        $pdf->writeHTMLCell(50, 6, '', '', "<strong>THE BUYER:</strong>", 0, 0, 0, true, 'L', false);
+        $pdf->writeHTMLCell(60, 6, '', '', "<strong>___________________________</strong>", 0, 0, 0, true, 'R', false);
+        $pdf->writeHTMLCell(60, 6, '', '', "<strong>______________</strong>", 0, 0, 0, true, 'C', false);
+        
+        $pdf->writeHTMLCell(60, 6, 78, $y, "<strong>" . $contract->lastname . ', ' . $contract->firstname . ' ' . $contract->middlename . "</strong>", 0, 0, 0, true, 'C', false);
+        $pdf->writeHTMLCell(60, 6, 78, $y + 5, '<font size="7">SIGNATURE OVER PRINTED NAME</font>', 0, 0, 0, true, 'C', false);
+        $pdf->writeHTMLCell(60, 6, 135, $y + 5, '<font size="7">DATE SIGNED</font>', 0, 0, 0, true, 'C', false);
+        // $pdf->writeHTMLCell(40, 6, '', '', "<strong>____________________________________</strong>", 0, 0, 0, true, 'R', false);
+	    $pdf->Ln(15);
+
+        $pdf->writeHTMLCell(10, 6, '', '', "<strong></strong>", 0, 0, 0, true, 'R', false);
+        $pdf->writeHTMLCell(50, 6, '', '', "<strong>SPOUSAL CONSENT:</strong>", 0, 0, 0, true, 'L', false);
+        $pdf->writeHTMLCell(60, 6, '', '', "<strong>___________________________</strong>", 0, 0, 0, true, 'R', false);
+        $pdf->writeHTMLCell(60, 6, '', '', "<strong>______________</strong>", 0, 0, 0, true, 'C', false);
+        if (isset($spouse->lastname)) {
+	        $pdf->writeHTMLCell(60, 6, 78, $y + 19, "<strong>" . $spouse_last . ', ' . $spouse_first . ' ' . $spouse_middle . "</strong>", 0, 0, 0, true, 'C', false);
+        }
+        $pdf->writeHTMLCell(60, 6, 78, $y + 24, '<font size="7">SIGNATURE OVER PRINTED NAME</font>', 0, 0, 0, true, 'C', false);
+        $pdf->writeHTMLCell(60, 6, 135, $y + 24, '<font size="7">DATE SIGNED</font>', 0, 0, 0, true, 'C', false);
+
+	    // $pdf->Ln(15);
+     //    $pdf->writeHTMLCell(60, 6, '', '', '<font size="9"><strong>REALTY: </strong></font>', 0, 0, 0, true, 'L', false);
+     //    $pdf->writeHTMLCell(60, 6, '', '', '<font size="9"><strong>'. $realty_info->realty_name . '</strong></font>', 0, 0, 0, true, 'C', false);
+	    
+	    // $pdf->Ln(8);
+     //    $pdf->writeHTMLCell(60, 6, '', '', '<font size="9"><strong>PRC: </strong></font>', 0, 0, 0, true, 'L', false);
+     //    $pdf->writeHTMLCell(60, 6, '', '', '<font size="9"><strong>'. $realty_info->realty_name . '</strong></font>', 0, 0, 0, true, 'C', false);
+
 
 
 
