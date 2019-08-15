@@ -1,0 +1,1 @@
+<script src="<?=base_url()?>public/scripts/warehouse/item_inventory.js" type="text/javascript"></script>

@@ -1,0 +1,1 @@
+<script src="<?=base_url()?>public/scripts/logistics/approve.js" type="text/javascript"></script>

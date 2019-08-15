@@ -1,0 +1,208 @@
+PHP MODEL------------------------------------
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Schedule_model extends CI_Model {
+	public function __construct()
+    {
+        // call parent constructor
+        parent::__construct();
+    }
+
+
+// SELECTS---------------
+    
+
+
+// INSERTS---------------
+
+
+
+// UPDATES---------------
+
+
+} 
+
+
+PHP CONTROLLER-------------------------------
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+require APPPATH . '/libraries/REST_Controller.php';
+use Restserver\Libraries\REST_Controller;
+
+class Schedule extends CI_Controller {
+
+	private $data = array();
+
+	  function __construct(){
+        // Construct the parent class
+        parent::__construct();
+
+        // model init for 'Logs'
+        $this->load->model('logs/Logs_model', 'logs');
+        // model init for 'Users'
+        $this->load->model('users/Users_model','users');
+        // main model below
+
+        $this->load->helper(array('form', 'url'));
+
+        // Configure limits on our controller methods
+        // Ensure you have created the 'limits' table and enabled 'limits' within application/config/rest.php
+        $this->methods['users_get']['limit'] = 500; // 500 requests per hour per user/key
+        $this->methods['users_post']['limit'] = 100; // 100 requests per hour per user/key
+        $this->methods['users_delete']['limit'] = 50; // 50 requests per hour per user/key
+        $this->data['customjs'] = 'engineering/schedjs';
+        // $this->data['navigation'] = 'asset/navigation';
+
+    }
+
+    //functions below
+
+
+ }
+
+MODAL----------------------------------------------
+<div class="modal fade bs-modal-md" id="" data-backdrop="static" data-keyboard="false" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="caption">
+                    <span class="bold">[TITLE]</span>
+                </div> 
+            </div>
+            <div class="modal-body form">
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn gray" id="" data-dismiss="modal">[button label]</button>
+                <button type="button" class="btn green" id="" name="">[button label]</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+PORTLET--------------------------------------
+
+<div class="portlet grey-cascade box">
+	<div class="portlet-title">
+	</div>
+	<div class="portlet-body form">
+		<div class="form-horizontal">
+			<div class="form-body">
+				<div class="row">
+					<div class="col-md-7">
+						<div class="form-group">
+							<label class="col-md-4 control-label"><font color="red"> * </font>[rename]: </label>
+							<div class="col-md-7">
+								<input type="text" name="[rename]" id="[rename]" class="form-control">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+FORM-GROUP----------------------------------
+
+<div class="form-group">
+	<label class="col-md-4 control-label"><font color="red"> * </font>Project name: </label>
+	<div class="col-md-7">
+		<input type="text" name="[rename]" id="[rename]" class="form-control">
+	</div>
+</div>
+
+
+HTML TABLE----------------------------------
+
+<table id="[supply]" class="[supply]">
+	<thead>
+		<tr>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+
+
+AJAX-----------------------------------------
+
+	$.ajax({
+		type: "POST",
+	    url : baseurl + [URL],
+	    dataType : "json",
+	    data: [supply],
+	    success : function(data){
+	    	[success action]
+	    },  
+	    error: function(errorThrown){
+	        console.log(errorThrown);
+	    }
+	});
+
+
+JQUERY-ADD TABLE----------------------------
+
+	[datatable ID].row.add([
+		[insert items],
+		[insert items],
+	]).draw(false);
+
+
+
+PHP INSERT----------------------------------
+
+    function ($data){
+    	$this->db->trans_start();
+    	$this->db->insert('', $data);
+    	$this->db->trans_complete();
+    }
+
+
+PHP SELECT(no WHERE)----------------------------------
+
+    function (){
+      $this->db->select('*');
+      $this->db->from('phase');
+      $query = $this->db->get();
+      return $query->result_array();
+    }
+
+
+PHP SELECT(w/ WHERE)----------------------------------
+
+   	function (){
+     	$this->db->select('*');
+     	$this->db->from('project');
+      	$this->db->where('', your_value);
+     	$query = $this->db->get();
+    	return $query->result_array();
+    }
+
+
+PHP SELECT(/w JOIN, WHERE)----------------------------
+
+    function ($id){
+        $this->db->select('*');
+        $this->db->from('[column] a');
+        $this->db->join('column b', 'b. = a.', 'inner');
+        $this->db->where('a.item_id', $id);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+
+PHP UPDATE-------------------------------------------
+
+    function ($data, $id){
+        $this->db->trans_start();
+        $this->db->where('', $id);
+        $this->db->update('', $data);
+        $this->db->trans_complete();
+    }
+

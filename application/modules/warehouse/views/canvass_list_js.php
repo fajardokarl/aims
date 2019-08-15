@@ -1,0 +1,1 @@
+<script src="<?=base_url()?>public/scripts/logistics/canvass_list_custom.js" type="text/javascript"></script>

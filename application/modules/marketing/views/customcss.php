@@ -1,0 +1,2 @@
+<link href="<?=base_url()?>assets\global\plugins\jqvmap\jqvmap\jqvmap.css" rel="stylesheet" type="text/css" />
+         <link href="<?=base_url()?>public/css/customcss.css" rel="stylesheet" type="text/css" />

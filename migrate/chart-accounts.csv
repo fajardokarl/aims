@@ -1,0 +1,424 @@
+100,Asset for Elimination,,,1,1,1
+10000,Petty Cash Fund,,,1,1,1
+10010,Cash on Hand - Cashier,,,1,1,1
+10020,Revolving Fund,,,1,1,1
+10030,Cash in Bank,,,1,1,1
+10050,Cash in Bank-Time Deposits,,,1,1,1
+10060,Cash in Bank -Special Account,,,1,1,1
+10070,Cash in Bank - Retricted Fund,,,1,1,1
+11000,AR Installment Sales-Current,,,1,1,1
+11010,AR Installment Sales - Non Current,,,1,1,1
+11019,Contract Receivables - Installment,,,1,1,1
+11020,Installment Contract Receivables - Current,,,1,1,1
+11021,Installment Contract Receivables - Non Cur,,,1,1,1
+11022,Contract Receivables - Deferred,,,1,1,1
+11023,Sales Receivable (NMDC),,,1,1,1
+11024,Retention Receivable-NMDC,,,1,1,1
+12000,Accounts Receivable - Trade,,,1,1,1
+12005,Accounts Receivable - Water,,,1,1,1
+12010,Accounts Receivable - O&E,,,1,1,1
+12020,Accounts Receivable - Others,,,1,1,1
+12030,Accounts Receivable - Affiliated Co.,,,1,1,1
+12040,Adv. to Officers & Employees  -S&W,,,1,1,1
+12042,Allow for DA-SR (NMDC),,,1,1,1
+12043,Allow for DA - RR (NMDC),,,1,1,1
+12050,Advances for Liquidation,,,1,1,1
+12060,Adv against Hospital Benefits,,,1,1,1
+12070,Adv against SSS Benefit,,,1,1,1
+12080,Adv. to Kaisa Project,,,1,1,1
+12090,Advances to Contractors,,,1,1,1
+12100,Advances to Suppliers,,,1,1,1
+12101,Advances for Land Purchase,,,1,1,1
+12110,Retention Receivable,,,1,1,1
+12120,Subs. Rec'ble -Stock Opt. Plan,,,1,1,1
+12130,Rent Receivables,,,1,1,1
+12200,Allow for Doubtful Accts - Trade,,,1,1,1
+12210,Allow for Doubtful Accts - O&E,,,1,1,1
+12220,Allow for Doubtful Accts - Others,,,1,1,1
+12230,Allow for Doubtful Accts - Affiliated Co.,,,1,1,1
+12240,Allow for Doubtful Accts - Rent Receivable,,,1,1,1
+12241,Allow for NR Long Term (WBCI),,,1,1,1
+13000,Advances to/from Affiliates,,,1,1,1
+14000,Notes Receivable,,,1,1,1
+14010,Notes Receivable- Long Term,,,1,1,1
+14020,Notes Receivable-O&E,,,1,1,1
+14030,Notes Receivable-O&E Long Term,,,1,1,1
+15000,Investment in Real Estate-REHS,,,1,1,1
+15100,Investment in Real Estate-Property Investment,,,1,1,1
+15200,Investment in Real Estate-LHFD,,,1,1,1
+15300,Investment in Real Estate-PHFL,,,1,1,1
+15500,Investment in Stocks,,,1,1,1
+15501,Investment in an associate,,,1,1,1
+15600,Allw 4 Ref Security Dep WB,,,1,1,1
+15610,Allow. for Incr./decline in MV,,,1,1,1
+15700,CIP-Davao,,,1,1,1
+15710,Allowance for impairment loss,,,1,1,1
+16000,Construction in Progress,,,1,1,1
+16100,Acc. Cost of CIP,,,1,1,1
+17010,Input Tax - Services - CIP,,,1,1,1
+17011,Input Tax - Services - Exp,,,1,1,1
+17012,Input Tax - Services - Exp (Prepayments),,,1,1,1
+17013,Deferred Input Tax,,,1,1,1
+17020,Input Tax - Other than CG - CIP,,,1,1,1
+17021,Input Tax - Other than CG - Exp,,,1,1,1
+17022,Input Tax - Other than CG - (Prepayments),,,1,1,1
+17023,Input tax - Other than CG - Inventory,,,1,1,1
+17030,Input tax - Services,,,1,1,1
+17040,Input Tax - Capital Goods,,,1,1,1
+17060,Input Tax - Other than CG,,,1,1,1
+17070,Deposit with Suppliers,,,1,1,1
+17080,Inventories - Water Meter,,,1,1,1
+17081,Inventories,,,1,1,1
+17082,Inventories-Aggregates,,,1,1,1
+17083,Inventories-(L&I),,,1,,1
+17085,Inventory - Temporary,,,1,1,1
+17090,Prepaid Expenses,,,1,1,1
+17100,Creditable Withholding Tax,,,1,1,1
+17101,Creditable Withholding Output Tax,,,1,1,1
+17110,Prepaid Commission,,,1,1,1
+17111,Prepaid Commission (NV),,,1,1,1
+17120,Prepaid Rent,,,1,1,1
+17121,Prepaid Input Tax,,,1,1,1
+17130,Prepaid Ads & Promo,,,1,1,1
+17140,Prepaid O & E Benefits,,,1,1,1
+17150,Prepaid Taxes and Licenses,,,1,1,1
+17151,Water Meter Inventory,,,1,1,1
+17160,Refundable Deposit (CIB) Trust acct.,,,1,1,1
+17170,Refundable Deposit,,,1,1,1
+17180,Refundable Security Deposit WB,,,1,1,1
+17500,Deferred Charges ,,,1,1,1
+17510,Deferred Charges - Aggregates,,,1,1,1
+17511,Deferred Chages - Drilling,,,1,1,1
+17610,Accrued Income-Penalties,,,1,1,1
+17611,Accrued Interest Receivable,,,1,1,1
+17620,Accrued Income-Leases,,,1,1,1
+17630,Accrued Income-Others,,,1,1,1
+17631,Deposit for Future Subscription-AS,,,1,1,1
+18000,Land,,,1,1,1
+18000.1,Land - Cainta,,,1,1,1
+18000.2,"Land-Tanay(M-110432)161,764sqm",,,1,1,1
+18000.3,"Land-Tanay(M-29487)238,938sqm",,,1,1,1
+18000.4,Land- Antonia Center,,,1,1,1
+18000.5,"Land- sinsayon,Santiago,Isabe",,,1,1,1
+18000.6,Land- Tanay (L & I),,,1,1,1
+18000.7,Land- Tanay- chem,,,1,1,1
+18001,Accum. Cost of Land,,,1,1,1
+18002,Accum. Cost of Sales - CIP,,,1,1,1
+18002.1,Accum. Cost of Sales - House,,,1,1,1
+18003,"L & B-Aurora, Angono(TCT653967",,,1,1,1
+18004,Land and Improvements(Land),,,1,1,1
+18004.1,Land Improvement- Tanay,,,1,1,1
+18004.2,Land Improvement- Chem,,,1,1,1
+18004.3,Land and Improvements-(CIP),,,1,1,1
+18005,Building,,,1,1,1
+18006,Building - Prod./Admin(Chem),,,1,1,1
+18007,Building - Raw Mat. ( Chem ),,,1,1,1
+18008,Building - Finished Goods(chem),,,1,1,1
+18008.1,Building - Angono,,,1,1,1
+18008.2,Building - NMDC,,,1,1,1
+18008.3,Building- Tanay- HO,,,1,1,1
+18009,Building Imp.-Prod/Admin(CHEM),,,1,1,1
+18010,Warehse-Isabela(repair/expans),,,1,1,1
+18010.1,Warehouse 1,,,1,1,1
+18010.2,Warehouse II,,,1,1,1
+18010.3,Warehouse III,,,1,1,1
+18011,Office Condo Unit E-2001B(Tek),,,1,1,1
+18012,Condo Parking Lot 2(2slotsTek),,,1,1,1
+18013,Plant Workshop ( Chem ),,,1,1,1
+18014,Warehouse ,,,1,1,1
+18014.1,Warehouse - Cugman,,,1,1,1
+18014.2,Building - Cugman,,,1,1,1
+18014.3,Adventure Park,,,1,1,1
+18015,EPIC house,,,1,1,1
+18016,Farmhouse,,,1,1,1
+18017,Piggery house,,,1,1,1
+18018,Staffhouse 11,,,1,1,1
+18019,Road Construction,,,1,1,1
+18019.1,"Road Const-Sampaloc,Tanay,Riz",,,1,1,1
+18020,Perimeter Fence,,,1,1,1
+18021,Gate - ( Chem ),,,1,1,1
+18022,Water System,,,1,1,1
+18023,Water well/Motor Pump (Chem),,,1,1,1
+18024,Leasehold Improvements,,,1,1,1
+18025,Drainage System (Chem),,,1,1,1
+18026,Crushing Plant Equipment,,,1,1,1
+18027,Container Van-20 footer ,,,1,1,1
+18028,Drilling Equipment,,,1,1,1
+18029,Machinery & Equipment,,,1,1,1
+18029.1,Machinery and Equipment I,,,1,1,1
+18029.2,Machinery and Equipment II,,,1,1,1
+18030,Plant Equipment (CHEM),,,1,1,1
+18031,Piggery Tools & Equipments,,,1,1,1
+18032,Mining/Crushing Equipts,,,1,1,1
+18032.1,Batching Plant,,,1,1,1
+18033,Construction Equipments ,,,1,1,1
+18034,Building - Motorpool (New),,,1,1,1
+18035,Transportation Equipment,,,1,1,1
+18036,Furniture & Fixtures,,,1,1,1
+18037,Office Equipment,,,1,1,1
+18038,Electrical Equipment,,,1,1,1
+18039,Tools & Equiptment,,,1,1,1
+18039.1,Other Assets,,,1,1,1
+18039.2,Other Depreciable Property,,,1,1,1
+18040,Investment in MabaylanProperty,,,1,1,1
+18040.1,Investment in RE-Talakag,,,1,1,1
+18043,Accu. Depn - Bldg. Imp.-Prod/Admin(CHEM),,,1,1,1
+18044,Accu. Depn - Plant Workshop ( Chem ),,,1,1,1
+18045,Accu. Depn - Warehouse ,,,1,1,1
+18046,Accu. Depn - EPIC house,,,1,1,1
+18047,Accu. Depn - Farmhouse,,,1,1,1
+18048,Accu. Depn - Piggery house,,,1,1,1
+18049,Accu. Depn - Staffhouse 11,,,1,1,1
+18050,Accu. Depn - Road Construction,,,1,1,1
+18051,Accu. Depn - Perimeter Fence,,,1,1,1
+18052,Accu. Depn - Gate - ( Chem ),,,1,1,1
+18053,Accu. Depn - Water System,,,1,1,1
+18054,Accu. Depn - Water well/Motor Pump (Chem),,,1,1,1
+18055,Accu. Depn - Leasehold Improvements,,,1,1,1
+18056,Accu. Depn - Drainage System (Chem),,,1,1,1
+18057,Accu. Depn - Crushing Plant Equipment,,,1,1,1
+18058,Accu. Depn - 20 Footer Container Van,,,1,1,1
+18059,Accu. Depn - Drilling Equipment,,,1,1,1
+18060,Accu. Depn - Machinery & Equipment,,,1,1,1
+18061,Accu. Depn - Plant Equipment (CHEM),,,1,1,1
+18062,Accu. Depn - Piggery Tools & Equipments,,,1,1,1
+18063,Accu. Depn - Mining/Crushing Equipts,,,1,1,1
+18064,Accu. Depn - Construction Equiptments ,,,1,1,1
+18065,Accu. Depn - Building - Motorpool (New),,,1,1,1
+18066,Accu. Depn - Transportation Equipment,,,1,1,1
+18067,Accu. Depn - Furniture & Fixtures,,,1,1,1
+18068,Accu. Depn - Office Equipment,,,1,1,1
+18069,Accu. Depn - Electrical Equipment,,,1,1,1
+18070,Accu. Depn - Tools & Equiptment,,,1,1,1
+18071,Accu. Depn - Other Assets,,,1,1,1
+18072,Accu. Depn - Other Depreciable Property,,,1,1,1
+18073,Accu. Depn - Land Improvement ,,,1,1,1
+18073.1,Accu. Depn - Land Imrpovement-Tanay,,,1,1,1
+18073.2,Accu. Depn - Land Imrpovement-Chem,,,1,1,1
+18074,Accu. Depn - Building - Prod./Admin(Chem),,,1,1,1
+18075,Accu. Depn - Building - Raw Mat. ( Chem ),,,1,1,1
+18076,Accu. Depn - Building-Finished Goods(chem),,,1,1,1
+18076.1,Accu. Depn - Buiding- Angono,,,1,1,1
+18076.2,Accu. Depn - Buiding-NMDC,,,1,1,1
+18076.3,Accu. Depn - Buiding-Tanay,,,1,1,1
+18077,Accu. Depn - Warehse-Isabela(repair/expans),,,1,1,1
+18077.1,Accu. Depn - Warehouse I,,,1,1,1
+18077.2,Accu. Depn - Warehouse II,,,1,1,1
+18077.3,Accu. Depn - Warehouse III,,,1,1,1
+18078,Accu. Depn - Office Condo Unit E-2001B(Tek),,,1,1,1
+18079,Accu. Depn - Condo Parking Lot 2(2slotsTek),,,1,1,1
+18080,Accu. Depn - Warehouse Cugman,,,1,1,1
+18081,Accu. Depn - Building Cugman,,,1,1,1
+18082,Accum. Depletion-Talakag,,,1,1,1
+18083,Accu. Depn - Adventure park,,,1,1,1
+18084,Accu. Depn - Batching Plant,,,1,1,1
+18100,Deferred Tax Asset,,,1,1,1
+18100.1,Deferred Income Tax,,,1,1,1
+18200,Equity Investment,,,1,1,1
+18210,Deposit on Subscription,,,1,1,1
+19000,Due from Manila/(to) Office,,,1,1,1
+19010,Due from Drilling,,,1,1,1
+19020,Due from/(to) Aggregates,,,1,1,1
+20000,Accounts Payable - Trade,,,1,2,1
+20001,Accounts Payable - Trade- COD/PDC,,,1,2,1
+20002,Accounts Payable (for payment),,,1,2,1
+20010,Postdated Check Payable,,,1,2,1
+20020,Accounts Payable - Property,,,1,2,1
+20030,Accounts Payable - OTHERS,,,1,2,1
+20040,Accounts Payable - Off & Emp,,,1,2,1
+20041,Accounts Payable - Transfer Fee,,,1,2,1
+20042,Accounts Payable - XU - Collected,,,1,2,1
+20043,Accounts Payable - XU - Uncollected,,,1,2,1
+20043.1,Accounts Payable - XU,,,1,2,1
+20044,Accounts Payable - DMA,,,1,2,1
+20045,Meter Deposit Payable,,,1,2,1
+20050,Retitling Payable - Lot,,,1,2,1
+20060,Retitling Payable - Shares,,,1,2,1
+20070,Construction Bond Payable,,,1,2,1
+20071,AP-Homeowners Fee (East Cove),,,1,2,1
+20072,AP-Fencing Fee (East Cove),,,1,2,1
+20073,Water Meter Deposit,,,1,2,1
+20080,Accrued Interest Payable,,,1,2,1
+20090,Accrued Expenses,,,1,2,1
+20091,Accrued Commission,,,1,2,1
+20100,Stock Option Payable,,,1,2,1
+20110,Due to/from Stock Subs ,,,1,2,1
+20120,Unearned Income,,,1,2,1
+20121,Unearned Income-Lot Sales,,,1,2,1
+20121.1,Realized Deferred Sales,,,1,2,1
+20121.2,Unrealized Deferred Sales,,,1,2,1
+20122,Unearned Income - Land Lease,,,1,2,1
+20200,Retention Payable,,,1,2,1
+20210,SSS Premium Cont. Payable,,,1,2,1
+20220,PhilHealth Premium Payable,,,1,2,1
+20230,SSS Salary Loan Payable,,,1,2,1
+20240,Pag-ibig Fund Cont. Payable,,,1,2,1
+20250,Pag-ibig Loan Payable,,,1,2,1
+20260,Withholding Tax Payable-Compensation,,,1,2,1
+20280,Withholding Tax Credit,,,1,2,1
+20290,Withholding Tax Payable-Expanded,,,1,2,1
+20291,EWT-(WC140 10%-Brokers/Agents-Corp),,,1,2,1
+20292,EWT-(WI140 10%-Brokers/Agents-Ind),,,1,2,1
+20293,EWT-(WC158 1%- Suppler Goods-Corp),,,1,2,1
+20294,EWT-(WI158 1%- Suppler Goods-Ind),,,1,2,1
+20295,EWT-(WC160 2%- Suppler Services-Corp),,,1,2,1
+20296,EWT-(WI160 2%- Suppler Services-Individual),,,1,2,1
+20296.1,EWT-(WC710 20%-Int. Trust fund),,,1,2,1
+20297,EWT-(WC010 10%- Prof fee-GI<=720K-Corp),,,1,2,1
+20298,EWT-(WC011 15%- Prof fee-GI>720K-Corp),,,1,2,1
+20299,EWT-(WI010 10%- Prof Fee-GI<=720K-Ind),,,1,2,1
+20299.01,EWT-(WI011 15%- Prof Fee-GI>720K-Ind),,,1,2,1
+20299.02,EWT-(WC100 5%-Rental-Corp),,,1,2,1
+20299.03,EWT-(WI100 5%-Rental-Individual),,,1,2,1
+20299.04,EWT-(WC120 2%-Contractors-Corp),,,1,2,1
+20299.05,EWT-(WI120 2%-Contractors-Individual),,,1,2,1
+20299.06,EWT-(WI091 15%- Directors Fee),,,1,2,1
+20300,Output Tax,,,1,2,1
+20310,Output tax- Sales-Principal,,,1,2,1
+20320,Output tax- Interest,,,1,2,1
+20330,Output tax- Rental,,,1,2,1
+20340,Output tax- Others,,,1,2,1
+20350,Output Tax - Water,,,1,2,1
+20360,Output Tax - Int. on lot,,,1,2,1
+20370,Output Tax - Penalty,,,1,2,1
+20380,Output Tax - DFC,,,1,2,1
+20390,Output Tax - Rent,,,1,2,1
+20400,Output Tax - Northmin,,,1,2,1
+20410,Sundry  Credit,,,1,2,1
+20420,Retirement Fund Payable,,,1,2,1
+20500,Deposit from Customers-RE,,,1,2,1
+20501,Deposit from Customers-Water,,,1,2,1
+20510,Deposit from Lessee,,,1,2,1
+20520,Deposit from Stockholders,,,1,2,1
+20530,Deposit from Subs - MGCC,,,1,2,1
+20600,Due to Affiliated Companies,,,1,2,1
+20610,Due to/from CDO,,,1,2,1
+21000,Income tax Payable WBCI,,,1,2,1
+22000,Notes Payable - Current,,,1,2,1
+22100,Notes Payable - Long Term,,,1,2,1
+22101,Loans Payable,,,1,2,1
+22102,Notes Payable - Short Term,,,1,2,1
+23000,Contract Payable,,,1,2,1
+23100,Accrued Project Liability,,,1,2,1
+23101,Deposit for future Subscription-LS,,,1,2,1
+23200,Unrealized Gain/Loss On AFS Inv,,,1,3,1
+24000,Deferred Tax Liability,,,1,2,1
+25000,Dividends Payable,,,1,3,1
+26000,Subscription Payable,,,1,3,1
+29000,Capital Stock Issued,,,1,3,1
+29100,Subscribed Capital Stock,,,1,3,1
+29200,Subscription Receivable,,,1,3,1
+29300,Additional Paid-In Capital,,,1,3,1
+29301,Share in Unrealized Loss,,,1,3,1
+29400,Treasusry Shares,,,1,3,1
+29500,Retained Earnings,,,1,3,1
+29600,Deposit for Future Subscriptions-ES,,,1,3,1
+29601,Stock Dividends Distributable,,,1,3,1
+29602,Actuarial Loss Reserve,,,1,3,1
+29999,Beginning Balance,,,1,3,1
+30000,Sales Collected - VAT,,,2,4,1
+30001,Sales - RE- Vat,,,2,4,1
+30002,Sales - RE- NonVat,,,2,4,1
+30003,Sales Collected (Discount),,,2,4,1
+30010,Sales Collected - NonVAT,,,2,4,1
+30020,Sales Uncollected - VAT,,,2,4,1
+30030,Sales Uncollected - NonVAT,,,2,4,1
+30039,Sales - Aggregates,,,2,5,1
+30040,Sales Discount,,,2,4,1
+30041,Sales - Investment Properties,,,2,5,1
+30050,Interest Income - LOT (VAT Sales),,,2,4,1
+30060,Interest Income - LOT (NonVAT Sales),,,2,4,1
+30070,Int. Income-XSCC Shares,,,2,4,1
+30080,Int. Income-Savings,,,2,4,1
+30081,Int. Income-Advances,,,2,6,1
+30082,Int. Income-Notes Receivable,,,2,6,1
+30090,Rental Income,,,2,6,1
+30100,Miscellaneous Income,,,2,6,1
+30110,Other Income,,,2,6,1
+30111,Management Fee-(Income),,,2,6,1
+30120,Income-Car Loan,,,2,6,1
+30130,Income-Penalties & Surcharge (VAT),,,2,6,1
+30140,Income-Penalties & Surcharge (NonVAT),,,2,6,1
+30150,Income-Service Fee,,,2,6,1
+30160,Income-Forfeitures,,,2,6,1
+30170,Income-Transfer Fee,,,2,6,1
+30171,Income-Water,,,2,5,1
+30172,Income-Tapping Fee,,,2,6,1
+30173,Income-Water Charges,,,2,6,1
+30180,Income-Admin Cost,,,2,6,1
+30190,Gain/Loss On Sale/Disposal of Fixed Asset,,,2,6,1
+30200,Loss on retirement of building,,,2,6,1
+30210,Unrealized Gain/Loss on Dollar Conversion,,,2,6,1
+30220,Gain/Loss on sale of properties,,,2,6,1
+30230,Dividend Income,,,2,6,1
+30240,Gain on sale of shares,,,2,6,1
+30241,Discount on loans payable,,,2,6,1
+40000,Cost of Sales - Collected,,,2,7,1
+40001,Cost of Sales - Uncollected,,,2,7,1
+40002,Cost of Sales - RE,,,2,7,1
+40003,Cost of Sales - Investment Prop,,,2,7,1
+41000,Cost of sales - Others,,,2,7,1
+41001,Cost of Sales - Aggregates,,,2,7,1
+42000,Cost of Sales - Disallowed VAT,,,2,7,1
+42001,Cost of sales - Water,,,2,7,1
+51000,Salaries and Wages,,,2,8,1
+51100,O&E Benefits,,,2,8,1
+51200,Performance Bonus - O&E,,,2,8,1
+51300,Performance Bonus - Directors,,,2,8,1
+52000,Taxes and Licenses,,,2,8,1
+53000,Repairs & Maintenance,,,2,8,1
+54000,Postage,,,2,8,1
+54100,Photocopying,,,2,8,1
+54200,Supplies Expense,,,2,8,1
+54300,Telephone Expense,,,2,8,1
+54400,Utilities Expense,,,2,8,1
+55000,Security Services,,,2,8,1
+55001,Security Services- Agency Fee,,,2,8,1
+56000,Representation & Entertainment,,,2,8,1
+57000,Rent Expense,,,2,8,1
+58000,Professional Fee,,,2,8,1
+58010,Consultancy Fee,,,2,8,1
+58020,Retainers Fee,,,2,8,1
+58030,Litigation Expense,,,2,8,1
+58040,Listing Fee,,,2,8,1
+58050,Management Fee-(Exp),,,2,8,1
+58060,Notarization,,,2,8,1
+59000,Training and Seminar,,,2,8,1
+59010,Travel &Transportation Expense,,,2,8,1
+59020,Fuel & Oil,,,2,8,1
+59030,Insurance Expense,,,2,8,1
+59040,Subscription and Dues,,,2,8,1
+59050,Miscellaneous Expense,,,2,8,1
+59060,Board Meetings and Annual Report,,,2,8,1
+59070,Donation,,,2,8,1
+59080,Realized Forex Loss,,,2,8,1
+60000,Commission Expense-Lot,,,2,8,1
+61000,Commission Expense-Others,,,2,8,1
+62000,Advertising and Promotions,,,2,8,1
+70000,Interest Expense-Banks,,,2,8,1
+71000,Interest Expense-Other Entities,,,2,8,1
+72000,Bank Charges,,,2,8,1
+73000,Provision for Impairment Losses,,,2,8,1
+80000,Amortization Expense,,,2,8,1
+81000,Depreciation Expense,,,2,8,1
+90000,Income Tax Expense,,,2,8,1
+90001,Internal Relations,,,2,8,1
+90002,CSR Expense,,,2,8,1
+90003,Non- Professional Fee,,,2,8,1
+90004,"F&F,OE,Tools&Other Ass Exp",,,2,8,1
+90005,Freight & Handling,,,2,8,1
+90006,Transfer Fee,,,2,8,1
+90007,Property Maintenance,,,2,8,1
+90008,Corporate Affairs,,,2,8,1
+90009,Doubtful accounts Expense,,,2,8,1
+90010,Professional Association Dues,,,2,8,1
+90011,Fines and Penalties,,,2,8,1
+90012,Contractual Services,,,2,8,1
+90013,Meeting Expenses,,,2,8,1
+90014,Directors Fee,,,2,8,1
+90015,Equity in net loss of an associate,,,2,9,1
+90016,Fringe Benefits Tax,,,2,8,1
+90017,Marketing Expenses,,,2,8,1
+90018,Gen. Engineering Services,,,2,8,1
+90019,Bulk Water Expenses,,,2,9,1
+90020,O&E Benefits - (Non Taxable),,,2,8,1

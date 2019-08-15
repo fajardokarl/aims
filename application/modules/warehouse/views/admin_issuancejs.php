@@ -1,0 +1,1 @@
+<script src="<?=base_url()?>public/scripts/warehouse/admin_issuance.js" type="text/javascript"></script>

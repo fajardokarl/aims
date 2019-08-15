@@ -1,0 +1,1 @@
+<script src="<?=base_url()?>public/scripts/warehouse_temp/po.js" type="text/javascript"></script>

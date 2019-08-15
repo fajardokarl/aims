@@ -1,0 +1,1 @@
+<script src="<?=base_url()?>public/scripts/warehouse_temp/receiving.js" type="text/javascript"></script>

@@ -1,0 +1,1 @@
+<script src="<?=base_url()?>public/scripts/warehouse/view_item.js" type="text/javascript"></script>

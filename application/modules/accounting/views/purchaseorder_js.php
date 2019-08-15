@@ -1,0 +1,1 @@
+<script src="<?=base_url()?>public/scripts/accounting/purchaseorder.js" type="text/javascript"></script>

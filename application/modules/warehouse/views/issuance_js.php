@@ -1,0 +1,1 @@
+<script src="<?=base_url()?>public/scripts/warehouse/issuance.js" type="text/javascript"></script>
