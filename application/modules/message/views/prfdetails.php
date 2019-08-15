@@ -18,7 +18,6 @@
         echo 'class="btn btn btn-xs red status_action" disabled>Denied';
         break;                                      
     case 4:
-<<<<<<< HEAD
         echo 'class="btn btn btn-xs blue status_action">Approved';
         break;
 }
@@ -31,13 +30,6 @@
 
  <br><br>
 
-=======
-        echo 'class="btn btn btn-xs blue status_action" disabled>Approved';
-        break;
-}
- ?>
-</button> <br><br>
->>>>>>> 90d04401af680771cfbe33047da30f1942436631
 <div class="row">
     <div class="portlet grey-cascade box">
         <div class="portlet-title">

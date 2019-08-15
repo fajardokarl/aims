@@ -1,7 +1,6 @@
 var TableDatatablesEditable = function() {
   var all_contracts = $("#all_contracts").DataTable();
 
-<<<<<<< HEAD
 
 
   var my_prf_table = $('#my_prf_table').DataTable({"order": [[ 0, "desc" ]],"columnDefs": [
@@ -44,9 +43,6 @@ var TableDatatablesEditable = function() {
         }
                
             });
-=======
-    var sent_prf_table = $('#sent_prf_table').DataTable({searching: false, paging: false});
->>>>>>> 90d04401af680771cfbe33047da30f1942436631
 
          $('#all_contracts').on('dblclick', 'tr', function () {
             var row = $(this).closest('tr')[0];
@@ -74,7 +70,6 @@ var TableDatatablesEditable = function() {
           window.open(baseurl+"message/pdf_prfdetails?id_prf=" + id_prf);
         });     
 
-<<<<<<< HEAD
 
 
   var all_request = $('#all_request').DataTable({"order": [[ 0, "desc" ]],"columnDefs": [
@@ -294,7 +289,6 @@ var TableDatatablesEditable = function() {
       });
     }   
 
-<<<<<<< .mine
 
   // Edit and save price and quantity in PRF using Karl style in marketing
   var sent_prf_table = $('#sent_prf_table').DataTable();
@@ -318,20 +312,19 @@ var TableDatatablesEditable = function() {
                         $("#amount").val(data[0].amount);
                         $("#remarks").val(data[0].remarks);
                         $("#sub_total").val(((parseInt(data[0].qty * data[0].amount))));
-                        $("#total_amount").val(data[0].total_amount);
-                        // $("#txt_house_price").html(data[0].house_price);
+                        $("#total_amount").val(data[0].total_amount);                  
                     
                       },
                       error: function (errorThrown){
                           console.log(errorThrown)
                           toastr.error('Error!.', 'Operation Done');
                       }
-                  });
-
-                  
+                  });                  
                 }
 
             });
+  //end here
+
   //saving edited data starts here
     $('#update_prf').click(function(){
     console.log($("#amount").val());
@@ -366,7 +359,7 @@ var TableDatatablesEditable = function() {
             success: function(data){
               $('#view-lots').modal('toggle');
             location.reload();
-            alert(is_cancel);  
+            // alert(is_cancel);  
             toastr.success('Successfully Saved!', 'Operation Done');
             },
             error: function (errorThrown){
@@ -378,92 +371,9 @@ var TableDatatablesEditable = function() {
   });
   // end here      
 
-||||||| .r953
-=======
-=======
-     $('#all_request').on('dblclick', 'tr', function () {
-        var row = $(this).closest('tr')[0];
-        var prf_id = all_request.cell( row, 0 ).data();
 
-        window.open(baseurl+"message/prf_request?messageid="+prf_id);
-     });
-
-     $(document).on('click', '.status_action', function(){
-      console.log('nisulod');
-      $('#mod_prf_id').val($('#id_prf').val());
-
-      var slicer = ($('button.status_action').html()).lastIndexOf(">");
-      slicer = $('button.status_action').html().slice(slicer+1);
-      
-      /*switch(slicer){
-        case 'Pending':
-          $('#mod_statusid').val('3');
-          // $('#btn_changestatus').text('Deny');
-          // $('#btn_changestatus').removeClass('btn btn-circle green');
-          // $('#btn_changestatus').addClass('btn btn-circle red');
-          break;
-        case 'Denied':
-          $('#mod_statusid').val('1');
-          // $('#btn_changestatus').text('APPROVE');
-          // $('#btn_changestatus').removeClass('btn btn-circle red');
-          // $('#btn_changestatus').addClass('btn btn-circle green');
-          break;
-        case 'Approved':
-          $('#mod_statusid').val('4');
-          break;
-      }*/
-      $('#frm_status').modal('toggle');
-    });
-     $(document).on('click', '#status_approve', function() {
-        $('#mod_statusid').val('4');
-     });
-     $(document).on('click', '#status_deny', function() {
-        $('#mod_statusid').val('3');
-     });
-
-     $(document).on('click', '#confirm_edit', function() {
-      prf_id = $('#id_prf').val();
-      document_remark = $('#document_remark').val();
-      $.ajax({
-          type: "POST",
-          url : $("#form_update_document_remark").attr("action"),
-          dataType : "json",
-          data: { prf_id: prf_id,
-                  document_remark: document_remark },
-          success : function(data){
-              console.log(data);
-          },  
-          error: function(errorThrown){
-              console.log(errorThrown);
-                toastr.success('Updated Document Remark', 'Success');
-          }
-      });
-     });
-
-     $(document).on('click', '#remark_button', function() {
-      prf_id = $(this).data('id');
-      $.ajax({
-          type: "POST",
-          url : "http://localhost/abci/Message/Message/get_prf_doc_remark",
-          dataType : "json",
-          data: { prf_id: prf_id },
-          success : function(data){
-            if(data.document_remark != '') {
-              $('span#document_remark').html(data.document_remark);
-            } else {
-              $('span#document_remark').html("No Remarks.");
-            }
-          },  
-          error: function(errorThrown){
-              console.log(errorThrown);
-          }
-      });
-     });
-
->>>>>>> 90d04401af680771cfbe33047da30f1942436631
      $('#id_for_unseen').html('');
 
->>>>>>> .r1002
 }();
 jQuery(document).ready(function() {
     // TableDatatablesEditable.init();

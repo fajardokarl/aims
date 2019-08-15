@@ -1,0 +1,1 @@
+<script src="<?=base_url()?>public/scripts/hris/hris_custom.js" type="text/javascript"></script>

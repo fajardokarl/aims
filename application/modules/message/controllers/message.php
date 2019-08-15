@@ -22,19 +22,8 @@ class Message extends CI_Controller{
         $this->methods['users_get']['limit'] = 500; // 500 requests per hour per user/key
         $this->methods['users_post']['limit'] = 100; // 100 requests per hour per user/key
         $this->methods['users_delete']['limit'] = 50; // 50 requests per hour per user/key
-<<<<<<< HEAD
         $this->data['verifies'] = $this->message->get_verifies();
         $this->data['prf_details'] = $this->message->get_details_messages($this->input->get('messageid'));
-=======
-        // $this->data['navigation'] = 'navigation';
-        //$this->data['customjs'] = 'collection/customjs';
-        //$this->data['customjs'] = 'logistics/logistics_js';
-
-        // $this->data['verifies'] = $this->message->get_verifies($this->session->userdata('department_id'));
-        $this->data['verifies'] = $this->message->get_verifies();
-        // $this->data['prf_details'] = $this->message->get_details_messages($this->input->get('messageid'));
-        // $this->message->update_seen_receipt(); // update seen_receipt
->>>>>>> 90d04401af680771cfbe33047da30f1942436631
         $this->data['details'] = $this->message->get_message($this->input->get('messageid'));
         $this->data['key'] = $this->message->get_details($this->input->get('messageid'));
     }
@@ -43,7 +32,7 @@ class Message extends CI_Controller{
 	$this->data['content'] = 'main3';
     $this->data['page_title'] = 'MESSAGE';   
     $this->load->view('default/index', $this->data);
-         // $this->load->view('logistics_main');
+         // $this->load->view('logistics_main');       
     }
 
     public function get_messages(){
@@ -60,10 +49,9 @@ class Message extends CI_Controller{
       $this->data['prf_details'] = $this->message->get_details_messages($this->data['prf']->prf_id);
       // $this->data['payment'] = $this->message->paid_amortization_model($this->input->get('contractid'));
       // $this->data['cont_stat_val'] = $this->message->contract_status_model();
-      $this->load->view('default/index', $this->data);
+      $this->load->view('default/index', $this->data); 
     }
 
-<<<<<<< HEAD
     public function myPRFDetails(){
       $this->data['content'] = 'myprfdetails';
       $this->data['page_title'] = 'PRF Details';     
@@ -74,9 +62,6 @@ class Message extends CI_Controller{
 
 
     public function request(){
-=======
-   public function request(){
->>>>>>> 90d04401af680771cfbe33047da30f1942436631
       $this->data['content'] = 'request';
       $this->data['page_title'] = 'List of Request';          
       $this->data['retrieve'] = $this->message->getMyPRF($this->session->userdata('department_id'));
@@ -186,7 +171,7 @@ public function get_one_prf(){
         $pdf->SetSubject('TCPDF Tutorial');
         $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
         ob_clean();
-        // set default header data
+        // // set default header data
         $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING, array(0,0,0), array(0,0,0));
         $pdf->setFooterData(array(0,0,0), array(0,0,0));
 
@@ -322,7 +307,7 @@ public function get_one_prf(){
             $pdf->writeHTMLCell(50, '', 130, '', number_format($value['sub_total']), 0, 0, 0, true, 'L', true);
             $pdf->writeHTMLCell(50, '', 150, '', $value['remarks'], 0, 0, 0, true, 'L', true);
            
-            $pdf->writeHTMLCell(200, '', 30, '', $address_val, 0, 0, 0, true, 'L', true);
+          
 
 
             // if ($value['province_name'] !== null && $value['province_name'] !== null) {
@@ -356,29 +341,5 @@ public function get_one_prf(){
         redirect('message', 'refresh');
     }
 
-<<<<<<< HEAD
-=======
-    public function update_remark(){
-        $prf_id = $this->input->post('prf_id');
-        $info = [
-            'document_remark' => $this->input->post('document_remark')
-        ];
-        $this->message->updateRemark($info, $prf_id);
-        redirect('message', 'refresh');
-    }
-
-    public function update_seen_receipt(){
-        $prf_id = $this->input->post('prf_id');
-        $info = [
-            'seen_receipt' => 1
-        ];
-        $this->message->updateSeenReceipt($info, $prf_id);
-    }
-
-    public function get_prf_doc_remark() {
-        echo json_encode($this->message->getPrfDocRemark($this->input->post('prf_id')));
-    }
-
->>>>>>> 90d04401af680771cfbe33047da30f1942436631
 
 }

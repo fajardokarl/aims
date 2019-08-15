@@ -3,16 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 require APPPATH . '/libraries/REST_Controller.php';
 use Restserver\Libraries\REST_Controller;
 
-class Its extends CI_Controller {
+class Hris extends CI_Controller {
     private $data = array();
 
     function __construct()
     {
         // Construct the parent class
         parent::__construct();
-        $this->load->model('its_model','its');
+        $this->load->model('hris_model','hris');
         //$this->load->model('Inbox_model','inbox');
-         $this->data['customjs'] = 'its/itscustomjs';
+         $this->data['customjs'] = 'hris/hriscustomjs';
     }   
     public function index()
     {
@@ -20,9 +20,9 @@ class Its extends CI_Controller {
             redirect('logout', 'refresh');
         }
 
-        $this->data['page_title'] = 'IT Services';
-        $this->data['content'] = 'dashboard';
-        $this->data['navigation'] = 'navigation';
+        $this->data['page_title'] = 'Human Resource Information System';
+        $this->data['content'] = 'hris_dashboard';
+        $this->data['navigation'] = 'hris_navigation';
     
 
 
@@ -40,33 +40,121 @@ class Its extends CI_Controller {
         // $this->load->view('default/index', $this->data);
         }
     }
+
+    public function employee_info(){
+      $this->data['content'] = 'testing';
+      $this->data['page_title'] = 'Employee information';
+       $this->data['navigation'] = 'hris_navigation';    
+      $this->data['all_employees'] = $this->hris->evaluated_by();
+      $this->data['emp'] = $this->hris->get_employee_info($this->input->get('personid'));
+      $this->data['address'] = $this->hris->get_employee_address($this->input->get('personid'));
+      $this->data['contact'] = $this->hris->get_employee_contact($this->input->get('personid'));
+      $this->data['school'] = $this->hris->get_employee_school($this->input->get('personid'));
+      $this->data['exam'] = $this->hris->get_employee_exam($this->input->get('personid'));
+      $this->data['work'] = $this->hris->get_employee_work($this->input->get('personid'));
+      $this->data['family'] = $this->hris->get_employee_family($this->input->get('personid'));
+      $this->data['evaluation'] = $this->hris->get_employee_evaluation($this->input->get('personid'));
+      $this->data['movement'] = $this->hris->get_employee_movement($this->input->get('personid'));
+      $this->load->view('default/index', $this->data); 
+}
+
+
+      public function employees_list()
+    {
+        //admins only page
+
+        $this->data['content'] = 'employee_list';
+        $this->data['page_title'] = 'Employees list';
+        $this->data['navigation'] = 'hris_navigation';
+    
+        // $this->data['all_employees'] = $this->user->retrieve_all_employee();
+        $this->data['emp_list'] = $this->hris->retrieve_all_employee();
+
+
+        if(isset($this->session->userdata['logged_in'])){
+            // get all users
+            // get all routes
+            // get all permissions
+            // get all roles
+
+            // get user permissions
+
+            // $this->data['users'] = $this->hris->get_users();
+            //$this->data['routes'] = $this->route->get_routes();
+            //$this->data['permissions'] = $this->permission->get_permissions();
+            //$this->data['roles'] = $this->role->get_roles();
+        }
+
+        $this->load->view('default/index', $this->data);         
+    }
      public function employees(){
         if(isset($this->session->userdata['logged_in'])){   
     }
        
         $this->data['page_title'] = 'New employee';
         $this->data['content'] = 'employee_form';
-        $this->data['navigation'] = 'navigation';       
+        $this->data['navigation'] = 'hris_navigation';       
 
-        $this->data['all_department'] = $this->its->retrieve_department();
-        $this->data['all_status'] = $this->its->retrieve_status();
-        $this->data['family_type'] = $this->its->retrieve_family();
-        $this->data['addschool'] = $this->its->retrieve_school();
-        $this->data['all_employees'] = $this->its->retrieve_all_employee();
-        $this->data['allcity'] = $this->its->getAllCity();
-        $this->data['addtype'] = $this->its->getAddressType();
-        $this->data['addcountry'] = $this->its->getAllCountry();
-        $this->data['allprovince'] = $this->its->getAllProvince();       
-        $this->data['contact_type'] = $this->its->get_contact_type();
-        $this->data['all_permission'] = $this->its->retrieve_all_permission();
-
+        $this->data['all_department'] = $this->hris->retrieve_department();
+        $this->data['all_status'] = $this->hris->retrieve_status();
+        $this->data['family_type'] = $this->hris->retrieve_family();
+        $this->data['addschool'] = $this->hris->retrieve_school();
+        $this->data['all_employees'] = $this->hris->retrieve_all_employee();
+        $this->data['allcity'] = $this->hris->getAllCity();
+        $this->data['addtype'] = $this->hris->getAddressType();
+        $this->data['addcountry'] = $this->hris->getAllCountry();
+        $this->data['allprovince'] = $this->hris->getAllProvince();       
+        $this->data['contact_type'] = $this->hris->get_contact_type();
+        $this->data['all_permission'] = $this->hris->retrieve_all_permission();
 
         $this->load->view('default/index', $this->data);
     }
+    
+    public function get_one_to(){
+        $person_id = $this->input->post('person_id');
+        $person_id = $this->hris->get_to_detail($person_id);
+        echo json_encode($person_id);
+    }
+
+public function update_evaluation(){
+        $this->load->helper('date'); 
+        $this->load->model('hris_model');
+
+        // Employee information
+    $data = array(        
+             'employee_id'    =>$this->input->post('add_employee_id'),
+             'current_position'   =>$this->input->post('add_job_position'),
+             'evaluated_by'    =>$this->input->post('add_evaluated_by'),            
+             'eval_from'    =>$this->input->post('add_evaldate_from'),     
+             'eval_to'   =>$this->input->post('add_evaldate_to'),
+             'eval_result'   =>$this->input->post('add_eval_result'),       
+             'eval_remark'   =>$this->input->post('add_eval_remarks')       
+        );
+            $this->hris_model->insert_add_evaluation($data);
+    }
+
+public function update_movement(){
+        $this->load->helper('date'); 
+        $this->load->model('hris_model');
+
+        // Employee information
+    $data = array(        
+             'employee_id'    =>$this->input->post('movement_employee_id'),
+             'movement_from'   =>$this->input->post('add_movement_from'),
+             'movement_to'    =>$this->input->post('add_movement_to'),            
+             'effective_date'    =>$this->input->post('add_effective_date'),     
+             'approval_date'   =>$this->input->post('add_approval_date'),
+             'movement_remarks'   =>$this->input->post('add_movement_remarks')      
+       
+        );
+            $this->hris_model->insert_add_movement($data);
+    }
+
+
 
     public function save_employee(){
         $this->load->helper('date'); 
-        $this->load->model('its_model');
+        $this->load->model('hris_model');
 
         // Employee information
     $data = array(        
@@ -80,15 +168,20 @@ class Its extends CI_Controller {
                 'birthplace' =>$this->input->post('birthplace'),
                 'nationality' =>$this->input->post('nationality'),
                 'civil_status_id' =>$this->input->post('civil_status'),
+                'height' =>$this->input->post('height'),
+                'weight' =>$this->input->post('weight'),
+                'phic' =>$this->input->post('philhealth'),
+                'sss' =>$this->input->post('sss'),
+                'hdmf' =>$this->input->post('hdmf'),
                 'tin' =>$this->input->post('tin')
                  );
-        $personid = $this->its_model->insert_person($data);
+        $personid = $this->hris_model->insert_person($data);
 
 
     $dataemp = array(
                 'person_id' => $personid                     
                  );
-    $employeeID = $this->its_model->insert_employee($dataemp);
+    $employeeID = $this->hris_model->insert_employee($dataemp);
 
           // Address information
     foreach ($this->input->post('line_1') as $i => $value)
@@ -98,13 +191,13 @@ class Its extends CI_Controller {
                 'address_type_id' => $this->input->post('addtype')[$i],
                 'line_1' => $this->input->post('line_1')[$i],
                 'line_2' => $this->input->post('line_2')[$i],              
-                'city_id' => $this->input->post('city_id')[$i],
+                'city_id' => $this->input->post('allcity')[$i],
                 'province_id' => $this->input->post('allprovince')[$i],
                 'postal_code' => $this->input->post('postal')[$i],             
                 'country_id' => $this->input->post('addcountry')[$i]
                                                    
         );
-        $address_id = $this->its_model->insert_peron_address($data4);         
+        $address_id = $this->hris_model->insert_address($data4);         
    }
 
        foreach ($this->input->post('contact_value') as $i => $value)
@@ -117,7 +210,7 @@ class Its extends CI_Controller {
                 'contact_value' => $this->input->post('contact_value')[$i]
                                                    
         );
-                $this->its_model->insert_contact($data10);         
+                $this->hris_model->insert_contact($data10);         
    } 
 
 
@@ -126,7 +219,7 @@ class Its extends CI_Controller {
             'person_id'   =>$personid,
             'address_id'   =>$address_id
         );    
-        $this->its_model->insert_address($data5);
+        $this->hris_model->insert_person_address($data5);
 
 
        // Account information  
@@ -139,8 +232,8 @@ class Its extends CI_Controller {
                 'created' =>date('Y-m-d'),
                 'created_by' =>$this->input->post('created_by')         
                  );
-        $userid = $this->its_model->insert_user($data2);
-        $this->its_model->log_user($employeeID);
+        $userid = $this->hris_model->insert_user($data2);
+        $this->hris_model->log_user($employeeID);
 
 
        // Department Employee
@@ -150,7 +243,7 @@ class Its extends CI_Controller {
             "department_id"   => $this->input->post('department_id'),
             "job_position"   => $this->input->post('job_position')
         );    
-        $this->its_model->insert_dept_employee($data3);
+        $this->hris_model->insert_dept_employee($data3);
 
 
     $data6 = array(
@@ -161,7 +254,7 @@ class Its extends CI_Controller {
              "created"   =>date('Y-m-d'),
              "permission_id"   =>$this->input->post('all_permission')
         );
-        $this->its_model->insert_urrp($data6);
+        $this->hris_model->insert_urrp($data6);
 
 
     $data7 = array(
@@ -172,7 +265,7 @@ class Its extends CI_Controller {
              "created"   =>date('Y-m-d'),
              "permission_id"   =>$this->input->post('all_permission')
         );
-        $this->its_model->insert_urp($data7);
+        $this->hris_model->insert_urp($data7);
 
 
     foreach ($this->input->post('level') as $i => $value)
@@ -185,7 +278,7 @@ class Its extends CI_Controller {
              'todate'   =>$this->input->post('todate')[$i],
              'yearGraduate'   =>$this->input->post('yearGraduate')[$i]
         );
-      $this->its_model->insert_school($data8);         
+      $this->hris_model->insert_school($data8);         
    }
 
     foreach ($this->input->post('examtype') as $i => $value)
@@ -194,11 +287,12 @@ class Its extends CI_Controller {
              'employee_id'    =>$employeeID,
              'examtype'   =>$this->input->post('examtype')[$i],
              'examName'    =>$this->input->post('examName')[$i],            
+             'examRating'    =>$this->input->post('examRating')[$i],            
              'examTaken'    =>$this->input->post('examTaken')[$i],     
              'dateExpiration'   =>$this->input->post('dateExpiration')[$i]
        
         );
-      $this->its_model->insert_exam($dat9);         
+      $this->hris_model->insert_exam($dat9);         
    }
     foreach ($this->input->post('fam_desc') as $i => $value)
         {
@@ -210,7 +304,7 @@ class Its extends CI_Controller {
              'fam_address'   =>$this->input->post('fam_address')[$i],
              'fam_contact'   =>$this->input->post('fam_contact')[$i]       
         );
-      $this->its_model->insert_family($data12);         
+      $this->hris_model->insert_family($data12);         
    }
     foreach ($this->input->post('previous_position') as $i => $value)
         {
@@ -222,7 +316,7 @@ class Its extends CI_Controller {
              'exclusive_to'   =>$this->input->post('exclusive_to')[$i],
              'compensation'   =>$this->input->post('compensation')[$i]       
         );
-      $this->its_model->insert_work_experience($data11);         
+      $this->hris_model->insert_work_experience($data11);         
    }
     foreach ($this->input->post('current_position') as $i => $value)
         {
@@ -232,10 +326,10 @@ class Its extends CI_Controller {
              'evaluated_by'    =>$this->input->post('evaluated_by')[$i],            
              'eval_from'    =>$this->input->post('eval_from')[$i],     
              'eval_to'   =>$this->input->post('eval_to')[$i],
-             'eval_remark'   =>$this->input->post('eval_result')[$i],       
+             'eval_result'   =>$this->input->post('eval_result')[$i],       
              'eval_remark'   =>$this->input->post('eval_remark')[$i]       
         );
-      $this->its_model->insert_evaluation($data13);         
+      $this->hris_model->insert_evaluation($data13);         
    }
     foreach ($this->input->post('movement_from') as $i => $value)
         {
@@ -247,7 +341,17 @@ class Its extends CI_Controller {
              'approval_date'   =>$this->input->post('approval_date')[$i],       
              'movement_remarks'   =>$this->input->post('movement_remarks')[$i]       
         );
-      $this->its_model->insert_movement($data14);         
+      $this->hris_model->insert_movement($data14);         
+   }
+
+    foreach ($this->input->post('language') as $i => $value)
+        {
+    $data15 = array(
+             'employee_id'    =>$employeeID,
+             'language'   =>$this->input->post('language')[$i]
+                  
+        );
+      $this->hris_model->insert_language($data15);         
    }
    }
     }

@@ -17,7 +17,14 @@ class Employee_model extends CI_Model {
         $query = $this->db->get();
         return $query->result();
     }
-
+   function get_employee_info($person_id)
+    {
+     $this->db->select('*');
+     $this->db->from('person');
+     $this->db->where('person_id = ',$person_id);
+     $query = $this->db->get();
+     return $query->row();
+     }
 
     /**
      * used in users controller
