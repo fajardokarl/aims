@@ -422,8 +422,20 @@
                         <td><?php echo $family['family_description'] ;?></td>
                         <td><?php echo $family['fam_name'] ;?></td>
                         <td><?php echo $family['fam_age'] ;?></td>
-                        <td><?php echo $family['fam_address'];?></td>       
-                        <td><?php echo $family['fam_contact']; ?></td>
+                        <td><?php echo $family['fam_address'];?></td>
+                        <td>
+                    <?php 
+                        if ($family['fam_contact'] == 0) {
+                            echo "<span class='font-red-intense bold'>None</span>";
+                        }else{
+                            echo $family['fam_contact'];
+                            }
+                    ?>
+                        </td>
+
+
+
+                        <!-- <td><?php echo $family['fam_contact']; ?></td> -->
                 </tr>
                 <?php } ?>
                         </tbody>

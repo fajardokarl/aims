@@ -515,7 +515,10 @@ if (jQuery().datepicker) {
          "<input type='hidden' name='language[]' value='" + $("#language").val() + "'>" + $("#language").val(),         
          '<a href="#" class="btn btn-danger cust_delete_contact">remove</a>'
         ] ).draw( false );         
-            // $("#canvass_total").html(total);     
+            // $("#canvass_total").html(total);
+        $('#language').val('');
+           
+                 
         }else{
             toastr.options.timeOut = 500;
             toastr.error('Please Fill everything in this form.', 'Replacement Notice!');
@@ -533,13 +536,16 @@ if (jQuery().datepicker) {
         var rowCount_contact = $('#emp_contacts_table tbody tr').length;
         
        
-  if ($("item_description").val() != "") {
+  if ($("contact_type_id").val() != "") {
   emp_contacts_table.row.add( [ 
          "<input type='hidden' name='contact_type_id[]' value='" + $("#contact_type_id option:selected").val() + "'>" + $("#contact_type_id option:selected").text(),    
          "<input type='hidden' name='contact_value[]' value='" + $("#contact_value").val() + "'>" + $("#contact_value").val(),         
          '<a href="#" class="btn btn-danger cust_delete_contact">remove</a>'
         ] ).draw( false );         
-            // $("#canvass_total").html(total);     
+            // $("#canvass_total").html(total);  
+            $('#contact_type_id').val('');
+            $('#contact_value').val('');
+            
         }else{
             toastr.options.timeOut = 500;
             toastr.error('Please Fill everything in this form.', 'Replacement Notice!');
@@ -566,6 +572,11 @@ if (jQuery().datepicker) {
          '<a href="#" class="btn btn-danger cust_delete_contact">remove</a>'
         ] ).draw( false );         
             // $("#canvass_total").html(total);     
+            $('#level').val('');
+            $('#schoolName').val('');
+            $('#fromdate').val(''); 
+            $('#todate').val('');
+            $('#yearGraduate').val('');
         }else{
             toastr.options.timeOut = 500;
             toastr.error('Please Fill everything in this form.', 'Replacement Notice!');
@@ -591,7 +602,14 @@ $("#add_work").click(function(){
         
          '<a href="#" class="btn btn-danger cust_delete_contact">remove</a>'
         ] ).draw( false );         
-            // $("#canvass_total").html(total);     
+            // $("#canvass_total").html(total); 
+            $('#previous_position').val('');
+            $('#employer').val('');
+            $('#exclusive_from').val(''); 
+            $('#exclusive_to').val('');
+            $('#compensation').val('');
+          
+
         }else{
             toastr.options.timeOut = 500;
             toastr.error('Please Fill everything in this form.', 'Replacement Notice!');
@@ -616,7 +634,13 @@ $("#add_work").click(function(){
 
          '<a href="#" class="btn btn-danger cust_delete_contact">remove</a>'
         ] ).draw( false );         
-            // $("#canvass_total").html(total);     
+            // $("#canvass_total").html(total);
+
+            $('#examtype').val('');
+            $('#examName').val('');
+            $('#examRating').val(''); 
+            $('#examTaken').val('');
+            $('#dateExpiration').val('');     
         }else{
             toastr.options.timeOut = 500;
             toastr.error('Please Fill everything in this form.', 'Replacement Notice!');
@@ -643,7 +667,13 @@ $("#add_work").click(function(){
 
          '<a href="#" class="btn btn-danger cust_delete_contact">remove</a>'
         ] ).draw( false );         
-            // $("#canvass_total").html(total);     
+            // $("#canvass_total").html(total); 
+
+            $('#fam_desc').val('');
+            $('#fam_name').val('');
+            $('#fam_age').val(''); 
+            $('#fam_address').val('');
+            $('#fam_contact').val('');     
         }else{
             toastr.options.timeOut = 500;
             toastr.error('Please Fill everything in this form.', 'Replacement Notice!');
@@ -672,7 +702,13 @@ $("#add_evaluation").click(function(){
 
          '<a href="#" class="btn btn-danger cust_delete_contact">remove</a>'
         ] ).draw( false );         
-            // $("#canvass_total").html(total);     
+            // $("#canvass_total").html(total);
+            $('#current_position').val('');
+            $('#evaluated_by').val('');
+            $('#eval_from').val(''); 
+            $('#eval_to').val('');
+            $('#eval_result').val('');     
+            $('#eval_remark').val('');     
         }else{
             toastr.options.timeOut = 500;
             toastr.error('Please Fill everything in this form.', 'Replacement Notice!');
