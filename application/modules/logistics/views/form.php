@@ -80,16 +80,9 @@
                                 <div class="col-md-12">
                                                                     
                                       <div class="actions"> 
-<<<<<<< HEAD
                                             
                                              
 <form method="post" name = "prf" id="prf">  
-=======
-                                            </div> 
-                                              </select> 
-
-<form method="post" name="prf" id="prf">  
->>>>>>> 90d04401af680771cfbe33047da30f1942436631
 
   
     <div class="portlet-body">
@@ -106,7 +99,6 @@
     <div class="form-group">
     <label name="department_name" id="department_name"><font color="teal"><b> Department: <?php echo $this->session->userdata('department_name'); ?> </b></font></label>
     </div>
-    <input type="hidden" name="document_id" id="document_id" value="1">
     <input type="hidden" name="department_id" id="department_id" value="<?php echo $this->session->userdata('department_id'); ?>">
     <input type="hidden" name="requested_by_id" id="requested_by_id" value="<?php echo $this->session->userdata('user_id'); ?>">
 
@@ -290,7 +282,7 @@
     <table id="capex_table" style="width:100%" class="table table-hover">                    
        <thead>
             <tr>
-                <!-- <th  >Item description</th>              -->
+               
                 <th  >Project/Item Classification</th>
                 <th  >CAPEX Type</th> 
                 <th  >Item Purpose</th>
@@ -311,13 +303,7 @@
     <tbody>
     <tr> 
 
-<!--     <td>
-    <div class="col-md-50">
-    <div class="form-group">               
-    <input type="text" class="form-control form-filter input-sm" id="capex_description" name="repair_description" placeholder="Description" /> </div>   
-    </div>
-    </div> 
-    </td>  -->
+
 
     <td>
     <select class="col-md-8 form-control select2 select2-hidden-accessible" id="classification_name" name ="classification_name" >
@@ -647,6 +633,7 @@
 <a href="" class="fullscreen"> </a>
 </div>
 </div>
+
 
 <div class="portlet-body">
 <div class="col-md-18">

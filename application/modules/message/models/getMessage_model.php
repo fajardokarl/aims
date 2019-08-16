@@ -26,23 +26,14 @@ class getMessage_model extends CI_Model
         return $query->result_array();
     }
 
-<<<<<<< HEAD
     function my_prf_model($dept_id)
-=======
-    // function get_verifies($dept_id)
-    function get_verifies()
->>>>>>> 90d04401af680771cfbe33047da30f1942436631
     {
         $this->db->select('*');
         $this->db->from('prf a');
         $this->db->join('department b', 'b.department_id = a.department_id', 'inner');
         $this->db->join('document c', 'a.document_id = c.document_id', 'inner');
         $this->db->join('person d', 'a.requested_by_id = d.person_id', 'inner');
-<<<<<<< HEAD
         $this->db->where('b.department_id =', $dept_id);       
-=======
-        // $this->db->where('b.department_id =', $dept_id);
->>>>>>> 90d04401af680771cfbe33047da30f1942436631
         $query = $this->db->get();
         return $query->result_array();
     }
@@ -101,11 +92,7 @@ class getMessage_model extends CI_Model
      // $this->db->join('person g', 'a.requested_by_id = g.person_id', 'inner');
      // $this->db->join('department f', 'f.department_id = a.department_id', 'inner');
      // $this->db->join('project h', 'a.project_id = h.project_id', 'inner'); 
-<<<<<<< HEAD
      $this->db->where('a.prf_id', $prf_id);
-=======
-     $this->db->where('a.prf_id =', $prf_id);
->>>>>>> 90d04401af680771cfbe33047da30f1942436631
      $query = $this->db->get();
      return $query->row();
     }
@@ -134,23 +121,6 @@ class getMessage_model extends CI_Model
        $this->db->where('a.prf_id = ',$prfid);
      $query = $this->db->get();
      return $query->result_array();
-     }
-
-    /*function update_seen_receipt() // sets all seen_receipt to 1
-    {
-        $query = $this->db->query("UPDATE prf SET seen_receipt = 1");
-    }*/
-
-     function get_inbox_num()
-     {
-        $this->load->database();
-        $this->db->trans_start();
-        $this->db->select('COUNT(prf_id) as updated_prf_count');
-        $this->db->from('prf');
-        // $this->db->where('seen_receipt =', 1);
-        $query = $this->db->get();
-        $this->db->trans_complete();
-        return $query->row();
      }
 
 
@@ -268,32 +238,12 @@ class getMessage_model extends CI_Model
         $this->db->where('prf_id', $id);
         $this->db->update('prf', $info);
     }
-<<<<<<< HEAD
 
     function change_status_model($id, $data){
         $this->db->trans_start();
         $this->db->where('prf_detail_id', $id);
         $this->db->update('prf_detail', $data);
         $this->db->trans_complete();
-=======
-
-    function updateRemark($info, $prf_id) {
-        $this->db->where('prf_id', $prf_id);
-        $this->db->update('prf', $info);
-    }
-
-    function updateSeenReceipt($info, $prf_id) {
-        $this->db->where('prf_id', $prf_id);
-        $this->db->update('prf', $info);
-    }
-
-    function getPrfDocRemark($prf_id) {
-        $this->db->select('document_remark');
-        $this->db->from('prf');
-        $this->db->where('prf_id', $prf_id);
-        $query = $this->db->get();
-        return $query->row();
->>>>>>> 90d04401af680771cfbe33047da30f1942436631
     }
 
     function get_prf_detail($detail_id)

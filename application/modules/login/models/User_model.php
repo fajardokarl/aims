@@ -12,38 +12,6 @@ class User_model extends CI_Model
         return $query->result_array();
     }
 
-    /*function inbox_seen()
-    {
-        $this->db->select('COUNT(seen_receipt) as seen_receipt');
-        $this->db->from('prf');
-        $this->db->where('seen_receipt =', 0);
-        $query = $this->db->get();
-        return $query->row();
-    }*/
-
-    function inbox_total()
-    {
-        $this->load->database();
-        $this->db->trans_start();
-        $this->db->select('COUNT(prf_id) as prf_count');
-        $this->db->from('prf');
-        $query = $this->db->get();
-        $this->db->trans_complete();
-        return $query->row();
-    }
-
-    function getUnseen()
-    {
-        $this->load->database();
-        $this->db->trans_start();
-        $this->db->select('COUNT(seen_receipt) as unseen_receipt_count');
-        $this->db->from('prf');
-        $this->db->where('seen_receipt =', 0);
-        $query = $this->db->get();
-        $this->db->trans_complete();
-        return $query->row();
-    }
-
 
     // function insert_user($data)
     // {
@@ -112,9 +80,6 @@ class User_model extends CI_Model
         return $lasturp;
     }
 
-
-
-
     //inserting employee data to database
     // function insert_user($data)
     // {
@@ -137,9 +102,9 @@ class User_model extends CI_Model
         $this->db->join('department_employee', 'department_employee.employee_id = employee.employee_id', 'left');
         $this->db->join('department', 'department_employee.department_id = department.department_id', 'left');
 
-         $this->db->join('budget', 'department_employee.department_id = budget.department_id', 'left');
+        //  $this->db->join('budget', 'department_employee.department_id = budget.department_id', 'left');
 
-        $this->db->join('budget_detail', 'budget_detail.budget_id = budget.budget_id', 'left');
+        // $this->db->join('budget_detail', 'budget_detail.budget_id = budget.budget_id', 'left');
           
         $this->db->join('route', 'department.route_id = route.route_id', 'left');
         $this->db->limit(1);
@@ -153,7 +118,7 @@ class User_model extends CI_Model
     }
     
     //create here!
-
+    
 
     
     function retrieve_all_employee()
@@ -217,5 +182,4 @@ class User_model extends CI_Model
             return false;
         }
     }
-
 }

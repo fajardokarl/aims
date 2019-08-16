@@ -25,7 +25,7 @@ class prf_list_controller extends CI_Controller{
     }
 
 
-	public function index() {	
+        public function index() {	
         $this->data['content'] = 'prf_list';
         $this->data['page_title'] = 'List of all Regular PRF';        
         $this->load->helper('url');
@@ -50,8 +50,7 @@ public function rush_prf(){
 
     public function retrieve_all_prf(){
       $this->data['content'] = 'canvasslist';
-      $this->data['page_title'] = 'PR Details';
-  
+      $this->data['page_title'] = 'PR Details';  
       $this->data['prf'] = $this->prf_list->getOnePrf($this->input->get('prf_id'));
       $this->data['details'] = $this->prf_list->get_details_messages($this->input->get('prf_id'));
       $this->load->view('default/index', $this->data); 

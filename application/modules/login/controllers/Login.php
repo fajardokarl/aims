@@ -39,11 +39,7 @@ class Login extends CI_Controller {
 		        'password' => $this->input->post('password')
             );
             $user = $this->user->check_valid_user($data);
-            $unseen = $this->user->getUnseen();
-            $inbox = $this->user->inbox_total();
-            /*var_dump($user);
-            var_dump($seen->seen_receipt);
-            die;*/
+            //var_dump($user); die;
             if ($user == TRUE) {
                 $session_data = array(
                     'username' => $user[0]->username,
@@ -56,10 +52,7 @@ class Login extends CI_Controller {
                     'employee_id'=>$user[0]->employee_id,
                     'department_id'=>$user[0]->department_id,
                     'department_name'=>$user[0]->department_name,                    
-                    'route'=>$user[0]->route_name,
-                    'inbox_num'=>$inbox->prf_count,
-                    'unseen_num'=>0,
-                    'unseen_num2'=>$inbox->prf_count
+                    'route'=>$user[0]->route_name
                 );
                 $this->session->set_userdata($session_data);
                 //get department
@@ -119,38 +112,5 @@ class Login extends CI_Controller {
 
 		redirect('login', 'refresh');
 	}
-
-    public function get_unseen() {
-        echo json_encode($this->user->getUnseen());
-
-    }
-
-    /*public function get_inbox_num(){
-        echo json_encode($this->message->get_inbox_num($_POST['input_num']));
-    }*/
-
-    public function get_inbox_total() {
-        echo json_encode($this->message->get_inbox_total());
-    }
-
-    public function update_inbox_notif_message_page() {
-        $inbox = $this->user->inbox_total();
-        $this->session->set_userdata(
-            array(
-                'inbox_num' => $inbox->prf_count,
-                'unseen_num' => 0,
-                'unseen_num2' => $inbox->prf_count
-            )
-        );
-        echo json_encode($notif_num);
-    }
-
-    public function update_inbox_notif() {
-        $inbox = $this->user->inbox_total();
-        $this->session->set_userdata(array('unseen_num2' => $inbox->prf_count));
-        $notif_num = $this->session->userdata('unseen_num2') - $this->session->userdata('inbox_num');
-        $this->session->set_userdata(array('unseen_num' => $notif_num));
-        echo json_encode($notif_num);
-    }
 
 }

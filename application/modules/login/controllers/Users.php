@@ -115,9 +115,6 @@ class Users extends CI_Controller {
         );
         $this->User_model->insert_urp($data4);
 
-
-
-
         redirect(base_url() . "login/users/inserted"); 
         }
         $this->load->view('default/index', $this->data);

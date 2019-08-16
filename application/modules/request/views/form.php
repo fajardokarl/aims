@@ -183,7 +183,7 @@
 <label name = "total_amount" id="total_amount" class="control-label"> <font color="green"><h4><b>Total:</b></h4> </font></label>
 </div>
 
-<button type="button" id="saveItems" name="saveItems" value="1" class="btn btn-primary ">Request</button>
+<button type="button" id="saveItems" name="saveItems" value="1" class="btn btn-primary ">Register</button>
 <button type="submit" onclick="clearFields()" value="Clear" class="btn btn-danger ">Cancel</button>
 
 

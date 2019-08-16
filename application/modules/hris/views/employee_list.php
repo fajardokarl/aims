@@ -1,62 +1,54 @@
-<div class="page-content-inner">
-	<div class="row">
+<div class="row">
+<div class="portlet grey-cascade box">
+<div class="portlet-title">
+<div class="caption">
+<i class="fa fa-users"></i>
+<!-- <span class="bold uppercase">Select PRF no. to create P.O. </span>
+ --></div>
+<div class="actions"> 
+</div>
+</div>
+<div class="portlet-body">
+<form class="form-horizontal">
+<div class="row">
+<div class="col-md-12">
+<!-- <div class="form-group"> -->
     
-    <div class="col-md-12">
-
-        <!-- BEGIN SAMPLE TABLE PORTLET-->
-        <div class="portlet light" id="customermasterlist">
-            <div class="portlet-title">
-                <div class="caption">
-                    <i class="fa fa-users"></i>Employee Listing 
-                </div>
-                <div class="actions">
-                    <button style="align:right;" type="button" class="btn btn-circle green" id="addnewcust" onclick="location.href='<?=base_url()?>hris/employee/new/'"><i class="fa fa-plus"> </i>New Employee</button>
-                </div>
-            </div>
-            <div class="portlet-body">
-                <!-- <div class="table-scrollable"> -->
-                    <table class="table table-striped table-bordered table-condensed table-hover" id="tblemployeelists">
-                        <thead>
-                            <tr>
-                                <th> Index </th>
-                                <th> ID </th>
-                                <th> Name </th>
-                                <th> Department </th>
-                                <th> Status </th>
-                                <th> Actions </th>
-                            </tr>
-                        </thead>
-                        <?php
-                        $status_list = array(
-                            null => array("default","unassigned"),
-                            0 => array("default","unassigned"),
-                            1 => array("success","active"),
-                            2 => array("warning","suspended"),
-                            3 => array("danger","deactivated"),
-                        ); 
-                        ?>
-                        <tbody>
-                            <?php foreach($employees as $employee){ ?>
-                            <tr>
-                                <td class="employeeid"> <?php echo $employee['employee_id']?></td>
-                                <td><?=($employee['id_card_number'])?:"Unassigned"?></td>
-                                <td><?php echo $employee['lastname'].', '.$employee['firstname'];?></td>
-                                <td><?=($employee['department_name'])?:"Unassigned"?> </td>
-                                <?php $temp=$employee['status_id'];?>
-                                <td> <span class="badge badge-<?php echo $status_list[$temp][0];?>"><?php echo $status_list[$temp][1];?></span> </td>
-                                <td> 
-                                    <button class="btn default btn-xs" onclick="location.href='<?=base_url()?>hris/employee/edit/<?=$employee['employee_id']?>'">edit</button> 
-                                </td>
-                            </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                <!-- </div> -->
-            </div>
-        </div>
-        <!-- END SAMPLE TABLE PORTLET-->
 
 
-	</div>
+<div class="portlet-body">
+<div class="col-md-12">
+<div style="max-width:3000px; white-space: nowrap; ">
+<table  id="employee_table" class="table table-hover">
+<thead>
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Department</th>
+    <th>Position</th>
+ 
+</tr>
+</thead>
+<tbody>
+<?php foreach($emp_list as $emp_list){ ?>
+    <tr>
+      <td><?php echo $emp_list['person_id']; ?></td>           
+      <td><?php echo $emp_list['lastname'] . ', ' . $emp_list['firstname'] . ' ' . $emp_list['middlename'] . ' ' . $emp_list['suffix'];?></td>
+      <td><?php echo $emp_list['department_name']; ?></td>           
+      <td><?php echo $emp_list['job_position'] ;?></td>  
+    </tr>
+<?php } ?>
+</tbody>
+</table>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</form>
+
+</div>
+</div>
+</div>
+

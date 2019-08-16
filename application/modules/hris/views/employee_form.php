@@ -22,7 +22,7 @@
                                       <div class="actions"> 
                                             </div> 
                                               </select> 
-<form method="post">    
+<form method="post" id="employee_form" name="employee_form">    
 
     <form class = "form-group" action="<?php echo base_url() ?>login/users" method="post">
 
@@ -129,6 +129,20 @@
           <input tabindex="2" type="text" id="nationality" name="nationality"  placeholder="" maxlength="30" class="form-control" > 
         </div>
     </div>
+        <div class="col-md-1">
+
+        <div class="form-group">
+            <label class="control-label">Height<font color="red"> * </font></label>            
+           <input tabindex="2" type="text" id="height" name="height"  placeholder="" maxlength="30" class="form-control" > 
+        </div>
+    </div>
+        <div class="col-md-1">
+
+        <div class="form-group">
+            <label class="control-label">Weight<font color="red"> * </font></label>            
+           <input tabindex="2" type="text" id="weight" name="weight"  placeholder="" maxlength="30" class="form-control" > 
+        </div>
+    </div>
 
     <div class="col-md-3">
     <div class="form-group">
@@ -177,7 +191,7 @@
 
 <div class="row">
 
-<label class="control-label">Language spoken<font color="red"> * </font></label>               
+<!-- <label class="control-label">Language spoken<font color="red"> * </font></label>               
 <div class="clearfix">
     <div class="btn-group" data-toggle="buttons">
       
@@ -192,29 +206,42 @@
             <input type="checkbox" class="toggle"> Local dialect </label>
        
     </div>
-</div>
+</div> -->
 
-</div>
 
-<!-- <div class="row">
-<label class="control-label">Language spoken<font color="red"> * </font></label>               
-<div class="clearfix">
-    <div class="btn-group" data-toggle="buttons">
-        <div class="col-md-4">
-        <label class="btn default active">
-            <input type="checkbox" class="toggle"> English </label>
-        </div>
-        <div class="col-md-4">    
-        <label class="btn default active">
-            <input type="checkbox" class="toggle"> Tagalog </label>
-        </div>
-        <div class="col-md-5">
-        <label class="btn default active">
-            <input type="checkbox" class="toggle"> Local dialect </label>
-        </div>
+
+ <div class="form-group">
+    <label><font color="green"><h2>Employee language spoken</h2></font></label>
     </div>
 </div>
-</div> -->
+
+<div class="row">
+    <div class="col-md-3">
+<table id="language_table" class="table table-hover">                    
+                       <thead>
+                            <tr>    
+                                <th>Language</th>               
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+<tbody>
+<tr>
+ <td> 
+    <input tabindex="2" type="text" id="language" name="language"  placeholder="" maxlength="30" class="form-control" > 
+</td>
+<td>
+    <a type="button" id="add_language" class ="btn btn-info">Add</a>
+</td>   
+
+</tr>
+</tbody>
+ </table>  
+ </div>
+
+
+</div>
+
 <div class="row">
  <div class="form-group">
     <label><font color="green"><h2>Address Information</h2></font></label>
@@ -290,7 +317,7 @@
 
 
 <td>
-    <a href="#" id="add_address" class ="btn btn-info">Add</a>
+    <a type="button" id="add_address" class ="btn btn-info">Add</a>
 </td>   
 
 </tr>
@@ -331,7 +358,7 @@
         </div>
     </td>
     <td>   
-        <a href="#" id="add_contact" class ="btn btn-info">Add</a>
+        <a type="button" id="add_contact" class ="btn btn-info">Add</a>
     </td>    
         </tr>
   
@@ -416,7 +443,7 @@
 </td>
   
 <td>
-    <a href="#" id="add_school" class ="btn btn-info">Add</a>
+    <a type="button" id="add_school" class ="btn btn-info">Add</a>
 </td>   
 
 </tr>
@@ -465,7 +492,7 @@
     <input  type="text" name="dateExpiration" placeholder="yyyy-mm-dd" class="form-control" id="dateExpiration" maxlength="10" required onkeypress="return isNumber()"/>     
 </td>
 <td>
-    <a href="#" id="add_exam" class ="btn btn-info">Add</a>
+    <a type="button"  id="add_exam" class ="btn btn-info">Add</a>
 </td>   
 
 </tr>
@@ -517,7 +544,7 @@
 </td>
 
 <td>
-    <a href="#" id="add_work" class ="btn btn-info">Add</a>
+    <a type="button" id="add_work" class ="btn btn-info">Add</a>
 </td>   
 
 </tr>
@@ -574,7 +601,7 @@
 </td>
 
 <td>
-    <a href="#" id="add_family" class ="btn btn-info">Add</a>
+    <a type="button" id="add_family" class ="btn btn-info">Add</a>
 </td>   
 
 </tr>
@@ -583,6 +610,7 @@
 </div>
 </div>
 
+<formm method="post">
 <div class="row">
 <div class="form-group">
     <label><font color="green"><h2>Evaluation</h2></font></label>
@@ -610,14 +638,14 @@
     <input tabindex="2" type="text" id="current_position" name="current_position"  placeholder="" maxlength="30" class="form-control" > 
 </td>
 <td> 
-   <select class="form-control select2 select2-hidden-accessible" id="evaluated_by" name ="evaluated_by">
+
+<select class="form-control select2 select2-hidden-accessible" id="evaluated_by" name ="evaluated_by">
 <option class ="disabled selected">Select</option>
-
-
 <?php foreach($all_employees as $all_employees){ ?>
 <option value="<?php echo $all_employees['person_id'];?>"><?php echo 
 $all_employees['firstname']. ' ' . $all_employees['lastname'];?></option><?php } ?>
 </select>
+
 </td>
 
 <td>
@@ -635,7 +663,7 @@ $all_employees['firstname']. ' ' . $all_employees['lastname'];?></option><?php }
 </td>
 
 <td>
-    <a href="#" id="add_evaluation" class ="btn btn-info">Add</a>
+    <a type="button" id="add_evaluation" class ="btn btn-info">Add</a>
 </td>   
 
 </tr>
@@ -643,7 +671,7 @@ $all_employees['firstname']. ' ' . $all_employees['lastname'];?></option><?php }
 </table>  
 </div>
 </div>
-
+</form>
 <div class="row">
 <div class="form-group">
     <label><font color="green"><h2>Movement</h2></font></label>
@@ -687,7 +715,7 @@ $all_employees['firstname']. ' ' . $all_employees['lastname'];?></option><?php }
 </td>
 
 <td>
-    <a href="#" id="add_movement" class ="btn btn-info">Add</a>
+    <a id="add_movement" type="button" class ="btn btn-info">Add</a>
 </td>   
 
 </tr>
@@ -746,8 +774,8 @@ $all_employees['firstname']. ' ' . $all_employees['lastname'];?></option><?php }
 <div class="form-group">
 </div>
 </div>
-<button type="button" id="saveEmployee" name="saveEmployee" value="1" class="btn btn-primary ">Create</button>
-<button type="submit" onclick="clearFields()" value="Clear" class="btn btn-danger ">Cancel</button>
+<button type="button" onclick="clearFields()" id="saveEmployee" name="saveEmployee" value="1" class="btn btn-primary ">Create</button>
+<button type="button" id="cancel" name="cancel" class="btn btn-danger ">Cancel</button>
 </div>
 
 </form>

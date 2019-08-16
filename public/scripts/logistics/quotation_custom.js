@@ -13,7 +13,8 @@ var TableDatatablesEditable = function() {
               "orderable": false
                     }
                 ],searching: false, paging: false});
-   
+
+ 
   var capex_repair = $("#capex_repair").DataTable();
   var capex_acquisition = $("#capex_acquisition").DataTable();
   var capex_details_list = $("#capex_details_list").DataTable({searching: false, paging: false});
@@ -31,11 +32,17 @@ var TableDatatablesEditable = function() {
             window.open(baseurl+"Logistics/prf_quotation_controller/retrieve_all_prf_details?prfid="+prf_id);
          });
 
+
+
+
          $('#prf_list_table').on('dblclick', 'tr', function () {
             var row = $(this).closest('tr')[0];
             var prf_id = prf_list_table.cell( row, 0 ).data();
             window.open(baseurl+"Logistics/prf_list_controller/retrieve_all_prf?prf_id="+prf_id);
          });
+
+
+
 
         $('#pdf_canvass_form').click(function(){
           var prf_id = $('#prf_id').val();

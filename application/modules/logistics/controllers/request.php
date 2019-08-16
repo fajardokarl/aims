@@ -59,8 +59,7 @@ class request extends CI_Controller {
                 // 'prf_status_id' =>$this->input->post('prf_status_id'),
                 'purpose' =>$this->input->post('purpose_prf'),
                 'total_amount' =>$this->input->post('total_amount'),
-                'justification' =>$this->input->post('justification'),
-                'document_id' =>$this->input->post('document_id')
+                'justification' =>$this->input->post('justification')
             );
         $id = $this->Request_model->insert_request($data);
 
