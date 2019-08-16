@@ -22,7 +22,7 @@
         <div class="page-wrapper">
 
             <!-- admin only -->
-            <nav class="quick-nav">
+           <!--  <nav class="quick-nav">
                 <a class="quick-nav-trigger" href="#0">
                     <span aria-hidden="true"></span>
                 </a>
@@ -77,7 +77,7 @@
                     </li>
                 </ul>
                 <span aria-hidden="true" class="quick-nav-bg"></span>
-            </nav>
+            </nav> -->
             <div class="quick-nav-overlay"></div>
 
             <div class="page-wrapper-row">
