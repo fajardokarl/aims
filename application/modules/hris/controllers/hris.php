@@ -44,7 +44,8 @@ class Hris extends CI_Controller {
     public function employee_info(){
       $this->data['content'] = 'testing';
       $this->data['page_title'] = 'Employee information';
-       $this->data['navigation'] = 'hris_navigation';    
+      $this->data['navigation'] = 'hris_navigation';    
+      $this->data['add_family_type'] = $this->hris->retrieve_add_family();
       $this->data['all_employees'] = $this->hris->evaluated_by();
       $this->data['emp'] = $this->hris->get_employee_info($this->input->get('personid'));
       $this->data['address'] = $this->hris->get_employee_address($this->input->get('personid'));
@@ -95,6 +96,7 @@ class Hris extends CI_Controller {
         $this->data['content'] = 'employee_form';
         $this->data['navigation'] = 'hris_navigation';       
 
+   
         $this->data['all_department'] = $this->hris->retrieve_department();
         $this->data['all_status'] = $this->hris->retrieve_status();
         $this->data['family_type'] = $this->hris->retrieve_family();
@@ -150,7 +152,22 @@ public function update_movement(){
             $this->hris_model->insert_add_movement($data);
     }
 
+public function update_family(){
+        $this->load->helper('date'); 
+        $this->load->model('hris_model');
 
+        // Employee information
+    $data = array(        
+             'employee_id'    =>$this->input->post('family_employee_id'),
+             'fam_desc'   =>$this->input->post('add_fam'),
+             'fam_name'    =>$this->input->post('add_fam_name'),            
+             'fam_age'    =>$this->input->post('add_fam_age'),     
+             'fam_contact'   =>$this->input->post('add_fam_contact'),
+             'fam_address'   =>$this->input->post('add_fam_add')      
+       
+        );
+            $this->hris_model->insert_add_family($data);
+    }
 
     public function save_employee(){
         $this->load->helper('date'); 
@@ -273,10 +290,10 @@ public function update_movement(){
     $data8 = array(
              'employee_id'    =>$employeeID,
              'level'   =>$this->input->post('level')[$i],
-             'schoolName'    =>$this->input->post('schoolName')[$i],            
+             'school_name'    =>$this->input->post('schoolName')[$i],            
              'fromdate'    =>$this->input->post('fromdate')[$i],     
              'todate'   =>$this->input->post('todate')[$i],
-             'yearGraduate'   =>$this->input->post('yearGraduate')[$i]
+             'year_graduate'   =>$this->input->post('yearGraduate')[$i]
         );
       $this->hris_model->insert_school($data8);         
    }
@@ -286,10 +303,10 @@ public function update_movement(){
     $dat9 = array(
              'employee_id'    =>$employeeID,
              'examtype'   =>$this->input->post('examtype')[$i],
-             'examName'    =>$this->input->post('examName')[$i],            
-             'examRating'    =>$this->input->post('examRating')[$i],            
-             'examTaken'    =>$this->input->post('examTaken')[$i],     
-             'dateExpiration'   =>$this->input->post('dateExpiration')[$i]
+             'exam_name'    =>$this->input->post('examName')[$i],            
+             'exam_rating'    =>$this->input->post('examRating')[$i],            
+             'exam_taken'    =>$this->input->post('examTaken')[$i],     
+             'date_expiration'   =>$this->input->post('dateExpiration')[$i]
        
         );
       $this->hris_model->insert_exam($dat9);         

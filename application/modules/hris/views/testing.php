@@ -278,10 +278,10 @@
                 <tr>
                         <td><?php echo $school['school_attended_id']; ?></td>
                         <td><?php echo $school['school_description'] ;?></td>
-                        <td><?php echo $school['schoolName'] ;?></td>
+                        <td><?php echo $school['school_name'] ;?></td>
                         <td><?php echo $school['fromdate'];?></td>       
                         <td><?php echo $school['todate']; ?></td>
-                        <td><?php echo $school['yearGraduate']; ?></td>
+                        <td><?php echo $school['year_graduate']; ?></td>
                 
                 </tr>
                 <?php } ?> 
@@ -325,11 +325,11 @@
                 <?php foreach($exam as $exam){ ?>
                 <tr>
                         <td><?php echo $exam['exam_taken_id']; ?></td>
-                        <td><?php echo $exam['examType'] ;?></td>
-                        <td><?php echo $exam['examName'] ;?></td>
-                        <td><?php echo $exam['examRating'] ;?></td>
-                        <td><?php echo $exam['examTaken'];?></td>       
-                        <td><?php echo $exam['dateExpiration']; ?></td>
+                        <td><?php echo $exam['exam_type'] ;?></td>
+                        <td><?php echo $exam['exam_name'] ;?></td>
+                        <td><?php echo $exam['exam_rating'] ;?></td>
+                        <td><?php echo $exam['exam_taken'];?></td>       
+                        <td><?php echo $exam['date_expiration']; ?></td>
                 </tr>
                 <?php } ?> 
                         </tbody>
@@ -395,6 +395,7 @@
             <div class="caption">
                 <i class="fa fa-gift"></i>Family background</div>
             <div class="tools">
+                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="update_member"><i class="fa fa-plus"> </i>Family member</button>
                 <a href="javascript:;" class="collapse"> </a>
                 <a href="#portlet-config" data-toggle="modal" class="config"> </a>
                 <a href="javascript:;" class="reload"> </a>
@@ -421,8 +422,14 @@
                         <td><?php echo $family['family_info_id']; ?></td>
                         <td><?php echo $family['family_description'] ;?></td>
                         <td><?php echo $family['fam_name'] ;?></td>
-                        <td><?php echo $family['fam_age'] ;?></td>
-                        <td><?php echo $family['fam_address'];?></td>
+                        <?php 
+                        if ($family['fam_age'] == "") {
+                            echo "<span class='font-red-intense bold'>Deceased</span>";
+                        }else{
+                            echo $family['fam_contact'];
+                            }
+                    ?>
+                        <td><?php echo $family['fam_age'];?></td>
                         <td>
                     <?php 
                         if ($family['fam_contact'] == 0) {
@@ -452,7 +459,7 @@
             <div class="caption">
                 <i class="fa fa-gift"></i>Evaluation</div>
             <div class="tools">
-                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="update_evaluation"><i class="fa fa-plus"> </i>Add evaluation</button>
+                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="update_evaluation"><i class="fa fa-plus"> </i> Evaluation</button>
                 <a href="javascript:;" class="collapse"> </a>
                 <a href="#portlet-config" data-toggle="modal" class="config"> </a>
                 <a href="javascript:;" class="reload"> </a>
@@ -499,7 +506,7 @@
             <div class="caption">
                 <i class="fa fa-gift"></i>Movement</div>
             <div class="tools">
-                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="update_movement"><i class="fa fa-plus"> </i>Add movement</button>
+                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="update_movement"><i class="fa fa-plus"> </i>Movement</button>
                 <a href="javascript:;" class="collapse"> </a>
                 <a href="#portlet-config" data-toggle="modal" class="config"> </a>
                 <a href="javascript:;" class="reload"> </a>
@@ -721,6 +728,95 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn green" id="submit_add_movement" ></span>Add Evaluation</button>
+                    <button type="button" data-dismiss="modal" class="btn dark btn-outline" id="btncloseClear"><i class="fa fa-times" aria-hidden="true"></i>Close</button>                 
+                </div>
+            </form> 
+        </div>
+    </div>
+</div>
+
+<div id="view-family" class="modal fade" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-xs">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" id="closeLot" data-dismiss="modal" ></button> 
+                <h4 class="modal-title"><span class="caption-subject bold uppercase"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Add family member<span id="lidss"></span>  <span id="lotdescN"> </span> <span id="slid" style="display:none;"></span><span id="slids" style="display:none;"></span></h4> 
+            </div>
+            <form id="updateLot">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">  
+                            <div class="form-body">
+                                <div class="form-group">                               
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="portlet grey-cascade box">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                            <span class="caption-subject"><i class="fa fa-list-alt" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" id="person_id" value="<?php echo $emp->person_id; ?>">
+                                    <input type="hidden" id="family_employee_id" value="<?php echo $emp->employee_id; ?>">
+
+                                <div class="portlet-body"> 
+
+                                    <div class="row">
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >Relation</label> 
+                                        <select class="form-control select2 select2-hidden-accessible" id="add_fam" name ="add_fam" >
+                                        <option class ="disabled selected">Select</option>
+                                        <?php foreach($add_family_type as $add_family_type){ ?>
+                                        <option value="<?php echo $add_family_type['family_id'];?>"><?php echo 
+                                        $add_family_type['family_description'];?></option><?php } ?>
+                                        </select>                               
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >Name</label>
+                                        <input tabindex="2" type="text" id="add_fam_name" name="add_fam_name"  placeholder="" maxlength="160" class="form-control" > 
+                                       
+                                    </div>
+                                    </div>
+                                    </div>
+
+
+
+                                    <div class="row">
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >Age</label>
+                                    <input tabindex="2" type="text" id="add_fam_age" name="add_fam_age"  placeholder="" maxlength="160" class="form-control" > 
+                                        
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >Contact no</label>
+                                        <input tabindex="2" type="text" id="add_fam_contact" name="add_fam_contact"  placeholder="" maxlength="160" class="form-control" >                                          
+                                    </div>
+                                    </div>
+                                    </div>
+                             
+                                    <div class="form-group">
+                                        <label class="control-label" >Address</label>
+                                        <input tabindex="2" type="text" id="add_fam_add" name="add_fam_add"  placeholder="" maxlength="160" class="form-control" > 
+                                      
+                                    </div>
+
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn green" id="submit_add_member" ></span>Add member</button>
                     <button type="button" data-dismiss="modal" class="btn dark btn-outline" id="btncloseClear"><i class="fa fa-times" aria-hidden="true"></i>Close</button>                 
                 </div>
             </form> 

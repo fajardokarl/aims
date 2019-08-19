@@ -230,6 +230,7 @@ function get_app_answer($id)
     $query = $this->db->get();   
     return $query->result_array();
     }
+
    function retrieve_family()
     {
     $this->db->select('*');
@@ -237,6 +238,15 @@ function get_app_answer($id)
     $query = $this->db->get();   
     return $query->result_array();
     }
+
+   function retrieve_add_family()
+    {
+    $this->db->select('*');
+    $this->db->from('family'); 
+    $query = $this->db->get();   
+    return $query->result_array();
+    }
+
     function retrieve_school()
     {
     $this->db->select('*');
@@ -381,6 +391,14 @@ function get_app_answer($id)
         $addmoveid = $this->db->insert_id();
         $this->db->trans_complete();
         return $addmoveid;
+    }
+        function insert_add_family($data)
+    {
+        $this->db->trans_start();
+        $this->db->insert('family_information', $data);
+        $addfamid = $this->db->insert_id();
+        $this->db->trans_complete();
+        return $addfamid;
     }
         function insert_movement($data)
     {

@@ -52,6 +52,9 @@ $("#add_address").click(function(){
     $('#update_movement').click(function(){
       $('#view-movement').modal('toggle');
   });
+   $('#update_member').click(function(){
+      $('#view-family').modal('toggle');
+  });
 
 
   function clearFields()
@@ -793,6 +796,34 @@ $("#add_movement").click(function(){
       $.ajax({
           type: "POST",
           url:  baseurl + "hris/update_movement",
+          dataType: "text",
+          data: data,
+          success: function(data){
+              clearFields(); 
+              toastr.success('Successfully Saved!', 'Operation Done');
+              location.reload();
+          },
+          error: function (errorThrown){
+              toastr.error('Error!.', 'Error. Please try again');
+          }
+      });
+  });
+
+
+ $('#submit_add_member').click(function(){
+   var data = {
+  'family_employee_id':$('#family_employee_id').val(),    
+  'add_fam':$('#add_fam').val(),   
+  'add_fam_name':$('#add_fam_name').val(),   
+  'add_fam_age':$('#add_fam_age').val(),   
+  'add_fam_contact':$('#add_fam_contact').val(),   
+  'add_fam_add':$('#add_fam_add').val()    
+      };
+
+      console.log(data);
+      $.ajax({
+          type: "POST",
+          url:  baseurl + "hris/update_family",
           dataType: "text",
           data: data,
           success: function(data){

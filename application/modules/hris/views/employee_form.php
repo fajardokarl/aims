@@ -132,14 +132,14 @@
         <div class="col-md-1">
 
         <div class="form-group">
-            <label class="control-label">Height<font color="red"> * </font></label>            
+            <label class="control-label">Height<i> feet</i><font color="red"> * </font></label>            
            <input tabindex="2" type="text" id="height" name="height"  placeholder="" maxlength="200" class="form-control" > 
         </div>
     </div>
         <div class="col-md-1">
 
         <div class="form-group">
-            <label class="control-label">Weight<font color="red"> * </font></label>            
+            <label class="control-label">Weight<i> kg</i><font color="red"> * </font></label>            
            <input tabindex="2" type="text" id="weight" name="weight"  placeholder="" maxlength="200" class="form-control" > 
         </div>
     </div>
@@ -590,14 +590,14 @@
 </td>
 
 <td>          
-    <input tabindex="2" type="text" id="fam_age" name="fam_age"  placeholder="" maxlength="200" class="form-control" > 
+    <input tabindex="2" type="text" id="fam_age" name="fam_age"  placeholder="leave empty if deceased " maxlength="200" class="form-control" > 
 </td>
 
 <td>          
-    <input tabindex="2" type="text" id="fam_address" name="fam_address"  placeholder="" maxlength="200" class="form-control" > 
+    <input tabindex="2" type="text" id="fam_address" name="fam_address"  placeholder="leave empty if deceased"  maxlength="200" class="form-control" > 
 </td>
 <td>          
-    <input tabindex="2" type="text" id="fam_contact" name="fam_contact"  placeholder="" maxlength="200" class="form-control" > 
+    <input tabindex="2" type="text" id="fam_contact" name="fam_contact" placeholder="" maxlength="200" class="form-control" > 
 </td>
 
 <td>
@@ -610,7 +610,7 @@
 </div>
 </div>
 
-<formm method="post">
+<!-- <formm method="post">
 <div class="row">
 <div class="form-group">
     <label><font color="green"><h2>Evaluation</h2></font></label>
@@ -722,7 +722,7 @@ $all_employees['firstname']. ' ' . $all_employees['lastname'];?></option><?php }
 </tbody>
 </table>  
 </div>
-</div>
+</div> -->
 
 <div class="row">
  <div class="form-group">
@@ -743,7 +743,7 @@ $all_employees['firstname']. ' ' . $all_employees['lastname'];?></option><?php }
 
         <div class="form-group">
             <label class="control-label">Password<font color="red"> * </font></label>            
-           <input tabindex="2" type="text" id="password" name="password"  placeholder="" maxlength="200" class="form-control" > 
+           <input tabindex="2" type="password" id="password" name="password"  placeholder="" maxlength="200" class="form-control" > 
         </div>
     </div>
 
