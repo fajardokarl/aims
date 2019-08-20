@@ -12,7 +12,7 @@ $( document ).ajaxSend(function( event, jqxhr, settings ) {
 		});
 	}
 });
-
+   // Karl
 if(window.location.href != "http://localhost/abci/message") {
 	$(document).ajaxStart(function(){
 	    $('#loadings').show();
