@@ -184,6 +184,17 @@ function get_app_answer($id)
      $query = $this->db->get();
      return $query->result_array();
      }
+    function get_employee_language($id)
+    {
+     $this->db->select('*');
+     $this->db->from('person a');
+     $this->db->join('employee b', 'a.person_id = b.person_id', 'left');          
+     $this->db->join('language c', 'b.employee_id =c.employee_id', 'inner');
+     
+     $this->db->where('a.person_id= ',$id);
+     $query = $this->db->get();
+     return $query->result_array();
+     }
      function get_app_work($id)
     {
      $this->db->select('*');

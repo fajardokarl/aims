@@ -8,7 +8,7 @@ jQuery(document).ready( function($) {
   var evaluation_table = $('#evaluation_table').DataTable({searching: false, paging: false});
   var movement_table = $('#movement_table').DataTable({searching: false, paging: false});
 	var address_contacts_table = $('#address_contacts_table').DataTable({searching: false, paging: false});
-	var emp_contacts_table = $('#emp_contacts_table').DataTable({searching: false, paging: false});
+  var emp_contacts_table = $('#emp_contacts_table').DataTable({searching: false, paging: false});	
   var employee_table = $('#employee_table').DataTable({"order": [[ 0, "desc" ]],"lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]] }); 
 
 $("#add_address").click(function(){

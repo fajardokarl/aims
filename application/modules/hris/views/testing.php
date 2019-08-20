@@ -155,9 +155,46 @@
                         </div>
             </div>
 
+ <div class="col-md-6">
+    <!-- BEGIN Portlet PORTLET-->
+     <div class="portlet grey-cascade box">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-gift"></i>Applicant language spoken </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a>
+                <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                <a href="javascript:;" class="reload"> </a>
+                <a href="" class="fullscreen"> </a>
+                <a href="javascript:;" class="remove"> </a>
+            </div>
+        </div>
+        <div class="portlet-body">
+          
+          <table class="table table-hover" id="language_table">
+            <thead>
+            <tr>  
+            <th>ID</th>
+            <th>Language spoken</th>
+            </tr>
+            </thead>
+            <tbody>
+                <?php foreach($language as $language){ ?>
+                <tr>
+                    <td><?php echo $language['language_id']; ?></td>
+                    <td><?php echo $language['language'] ;?></td>
+                </tr>
+                <?php } ?> 
+            </tbody>
+        </table>             
+        </div>
+    </div>
+</div>   
 
 
-<div class="col-md-12">
+
+
+<div class="col-md-6">
     <!-- BEGIN Portlet PORTLET-->
      <div class="portlet grey-cascade box">
         <div class="portlet-title">

@@ -56,6 +56,7 @@ class Hris extends CI_Controller {
       $this->data['family'] = $this->hris->get_employee_family($this->input->get('personid'));
       $this->data['evaluation'] = $this->hris->get_employee_evaluation($this->input->get('personid'));
       $this->data['movement'] = $this->hris->get_employee_movement($this->input->get('personid'));
+      $this->data['language'] = $this->hris->get_employee_language($this->input->get('personid'));
       $this->load->view('default/index', $this->data); 
 }
 
