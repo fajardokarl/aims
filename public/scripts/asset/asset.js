@@ -172,7 +172,7 @@ var asset = function(){
 			            		data[index].asset_number,
 			            		data[index].asset_description,
 			            		data[index].serial_number,
-			            		 ata[index].lastname + ', ' + data[index].firstname, // + ' ' + data[index].middlename
+			            		data[index].lastname + ', ' + data[index].firstname, // + ' ' + data[index].middlename
 			            		data[index].location_abbr,
 			            		data[index].date_counted,
 			            		data[index].department_code,
