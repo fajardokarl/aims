@@ -14,18 +14,25 @@ jQuery(document).ready( function($) {
 $("#add_address").click(function(){
         var rowCount_contact = $('#address_contacts_table tbody tr').length;      
        
-  if ($("item_description").val() != "") {
+  if ($("addtype").val() != "") {
   address_contacts_table.row.add( [ 
          "<input type='hidden' name='addtype[]' value='" + $("#addtype option:selected").val() + "'>" + $("#addtype option:selected").text(),    
          "<input type='hidden' name='line_1[]' value='" + $("#line_1").val() + "'>" + $("#line_1").val(),
          "<input type='hidden' name='line_2[]' value='" + $("#line_2").val() + "'>" + $("#line_2").val(),
          "<input type='hidden' name='allcity[]' value='" + $("#allcity option:selected").val() + "'>" + $("#allcity option:selected").text(),    
-         "<input type='hidden' name='allprovince[]' value='" + $("#allprovince option:selected").val() + "'>" + $("#allprovince option:selected").text(),    
+         "<input type='hidden' name='allprovince[]' value='" + $("#allcityallcity option:selected").val() + "'>" + $("#allprovince option:selected").text(),    
          "<input type='hidden' name='postal[]' value='" + $("#postal").val() + "'>" + $("#postal").val(),
          "<input type='hidden' name='addcountry[]' value='" + $("#addcountry option:selected").val() + "'>" + $("#addcountry option:selected").text(), 
          '<a href="#" class="btn btn-danger cust_delete_contact">remove</a>'
         ] ).draw( false );         
-            // $("#canvass_total").html(total);     
+            // $("#canvass_total").html(total); 
+            $('#addtype').val('');
+            $('#line_1').val('');
+            $('#line_2').val(''); 
+            $('#allcity').val('');
+            $('#allprovince').val('');
+            $('#postal').val('');
+            $('#addcountry').val('');     
         }else{
             toastr.options.timeOut = 500;
             toastr.error('Please Fill everything in this form.', 'Replacement Notice!');

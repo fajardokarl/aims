@@ -149,7 +149,7 @@
                             <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> PHIC no. :</span></label>
                             <div class="col-md-9">
                                 <p class="form-control-static">
-                                    <?php echo $emp->phic; ?>
+                                 <?php echo $emp->phic; ?>
                                 </p>
                             </div>
                         </div>
@@ -180,7 +180,7 @@
                             <th>ID</th>
                             <th>Contact type</th>
                             <th>Contact</th>
-                            <th>action</th>
+                          
                         </tr>
                         </thead>
                         <tbody>
@@ -190,7 +190,7 @@
                     <td><?php echo $contact['contact_id']; ?></td>
                     <td><?php echo $contact['contact_type_name'] ;?></td>           
                     <td><?php echo $contact['contact_value']; ?></td>
-                    <td><?php echo $contact['contact_value']; ?></td>
+                 
                 
                 </tr>
                 <?php } ?> 
@@ -421,28 +421,28 @@
                 <tr>
                         <td><?php echo $family['family_info_id']; ?></td>
                         <td><?php echo $family['family_description'] ;?></td>
-                        <td><?php echo $family['fam_name'] ;?></td>
+                        <td><?php echo $family['fam_name'] ;?></td>                        
+                        <td>
                         <?php 
-                        if ($family['fam_age'] == "") {
+                        if ($family['fam_age'] == 0) {
                             echo "<span class='font-red-intense bold'>Deceased</span>";
                         }else{
-                            echo $family['fam_contact'];
-                            }
-                    ?>
-                        <td><?php echo $family['fam_age'];?></td>
+                            echo $family['fam_age'];
+                        }?>
+                        </td>
+                        <td><?php echo $family['fam_address'] ;?></td> 
                         <td>
-                    <?php 
+                        <?php 
                         if ($family['fam_contact'] == 0) {
                             echo "<span class='font-red-intense bold'>None</span>";
                         }else{
                             echo $family['fam_contact'];
                             }
-                    ?>
+                        ?>
                         </td>
+                        
 
-
-
-                        <!-- <td><?php echo $family['fam_contact']; ?></td> -->
+                        
                 </tr>
                 <?php } ?>
                         </tbody>
