@@ -101,7 +101,7 @@ class Applicant extends CI_Controller {
     public function applicant_info(){
       $this->data['content'] = 'applicant_information';
       $this->data['page_title'] = 'Applicant information';
-      
+      $this->data['navigation'] = 'hris_navigation';
       $this->data['app'] = $this->hris->get_applicant_info($this->input->get('personid'));
       $this->data['address'] = $this->hris->get_employee_address($this->input->get('personid'));
       $this->data['contact'] = $this->hris->get_employee_contact($this->input->get('personid'));

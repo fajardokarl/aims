@@ -166,18 +166,13 @@
        <input tabindex="2" type="text" id="weight" name="weight"  placeholder="" maxlength="160" class="form-control" > 
     </div>
 </div>
-
-<div class="col-md-3">
-    <div class="form-group">
-        <label class="control-label">Source<font color="red"> * </font></label>            
-      <select class="form-control select2 select2-hidden-accessible" id="source_id" name ="source_id" >
-    <option class ="disabled selected">Select</option>    
-    <option value="1">Walk in</option>
-    <option value="2">Social Media</option>
-    <option value="3">Referral</option>
-    </select>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label class="control-label">ACR No<font color="red"> * </font></label>            
+           <input tabindex="2" type="text" id="acr" name="acr"  placeholder="" maxlength="160" class="form-control" > 
+        </div>
     </div>
-</div>
+
 </div>
 
 <div class="row">
@@ -207,6 +202,20 @@
     <div class="form-group">
         <label class="control-label">HDMF No<font color="red"> * </font></label>            
        <input tabindex="2" type="text" id="hdmf" name="hdmf"  placeholder="" maxlength="160" class="form-control" > 
+    </div>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+    <div class="form-group">
+        <label class="control-label">Where did you know about our company?<font color="red"> * </font></label>            
+      <select class="form-control select2 select2-hidden-accessible" id="source_id" name ="source_id" >
+    <option class ="disabled selected">Select</option>    
+    <option value="1">Walk in</option>
+    <option value="2">Social Media</option>
+    <option value="3">Referral</option>
+    </select>
     </div>
 </div>
 </div>

@@ -61,7 +61,7 @@
     <div class="col-md-3">
         <div class="form-group">
             <label class="control-label">Last name<font color="red"> * </font></label>
-           <input tabindex="2" type="text" id="lastname" name="lastname"  placeholder="" maxlength="30" class="form-control" > 
+           <input tabindex="2" type="text" id="lastname" name="lastname"  placeholder="" maxlength="200" class="form-control" > 
         </div>
     </div>
 
@@ -70,7 +70,7 @@
 
         <div class="form-group">
             <label class="control-label">First name<font color="red"> * </font></label>            
-           <input tabindex="2" type="text" id="firstname" name="firstname"  placeholder="" maxlength="30" class="form-control" > 
+           <input tabindex="2" type="text" id="firstname" name="firstname"  placeholder="" maxlength="200" class="form-control" > 
         </div>
     </div>
 
@@ -78,7 +78,7 @@
 
         <div class="form-group">
             <label class="control-label">Middle name<font color="red"> * </font></label>            
-          <input tabindex="2" type="text" id="middlename" name="middlename"  placeholder="" maxlength="30" class="form-control" > 
+          <input tabindex="2" type="text" id="middlename" name="middlename"  placeholder="" maxlength="200" class="form-control" > 
         </div>
     </div>
 
@@ -86,14 +86,14 @@
 
         <div class="form-group">
             <label class="control-label">Prefix<font color="red"> * </font></label>            
-           <input tabindex="2" type="text" id="prefix" name="prefix"  placeholder="" maxlength="30" class="form-control" > 
+           <input tabindex="2" type="text" id="prefix" name="prefix"  placeholder="" maxlength="200" class="form-control" > 
         </div>
     </div>
         <div class="col-md-1">
 
         <div class="form-group">
             <label class="control-label">Suffix<font color="red"> * </font></label>            
-           <input tabindex="2" type="text" id="suffix" name="suffix"  placeholder="" maxlength="30" class="form-control" > 
+           <input tabindex="2" type="text" id="suffix" name="suffix"  placeholder="" maxlength="200" class="form-control" > 
         </div>
     </div>
 </div>
@@ -102,7 +102,7 @@
     <div class="col-md-1">
         <div class="form-group">
             <label class="control-label">Sex<font color="red"> * </font></label>
-           <input tabindex="2" type="text" id="sex" name="sex"  placeholder="" maxlength="30" class="form-control" > 
+           <input tabindex="2" type="text" id="sex" name="sex"  placeholder="" maxlength="200" class="form-control" > 
         </div>
     </div>
 
@@ -118,7 +118,7 @@
 
         <div class="form-group">
             <label class="control-label">Place of birth<font color="red"> * </font></label>            
-          <input tabindex="2" type="text" id="birthplace" name="birthplace"  placeholder="" maxlength="30" class="form-control" > 
+          <input tabindex="2" type="text" id="birthplace" name="birthplace"  placeholder="" maxlength="200" class="form-control" > 
         </div>
     </div>
 
@@ -126,21 +126,21 @@
 
         <div class="form-group">
             <label class="control-label">Nationality<font color="red"> * </font></label>            
-          <input tabindex="2" type="text" id="nationality" name="nationality"  placeholder="" maxlength="30" class="form-control" > 
+          <input tabindex="2" type="text" id="nationality" name="nationality"  placeholder="" maxlength="200" class="form-control" > 
         </div>
     </div>
         <div class="col-md-1">
 
         <div class="form-group">
             <label class="control-label">Height<font color="red"> * </font></label>            
-           <input tabindex="2" type="text" id="height" name="height"  placeholder="" maxlength="30" class="form-control" > 
+           <input tabindex="2" type="text" id="height" name="height"  placeholder="" maxlength="200" class="form-control" > 
         </div>
     </div>
         <div class="col-md-1">
 
         <div class="form-group">
             <label class="control-label">Weight<font color="red"> * </font></label>            
-           <input tabindex="2" type="text" id="weight" name="weight"  placeholder="" maxlength="30" class="form-control" > 
+           <input tabindex="2" type="text" id="weight" name="weight"  placeholder="" maxlength="200" class="form-control" > 
         </div>
     </div>
 
@@ -163,28 +163,28 @@
 
         <div class="form-group">
             <label class="control-label">TIN<font color="red"> * </font></label>            
-           <input tabindex="2" type="text" id="tin" name="tin"  placeholder="" maxlength="30" class="form-control" > 
+           <input tabindex="2" type="text" id="tin" name="tin"  placeholder="" maxlength="200" class="form-control" > 
         </div>
     </div>
 
 <div class="col-md-3">
     <div class="form-group">
         <label class="control-label">PHIC No<font color="red"> * </font></label>            
-       <input tabindex="2" type="text" id="philhealth" name="philhealth"  placeholder="" maxlength="30" class="form-control" > 
+       <input tabindex="2" type="text" id="philhealth" name="philhealth"  placeholder="" maxlength="200" class="form-control" > 
     </div>
 </div>
 
 <div class="col-md-3">
     <div class="form-group">
         <label class="control-label">SSS No<font color="red"> * </font></label>            
-       <input tabindex="2" type="text" id="sss" name="sss"  placeholder="" maxlength="30" class="form-control" > 
+       <input tabindex="2" type="text" id="sss" name="sss"  placeholder="" maxlength="200" class="form-control" > 
     </div>
 </div>
 
 <div class="col-md-3">
     <div class="form-group">
         <label class="control-label">HDMF No<font color="red"> * </font></label>            
-       <input tabindex="2" type="text" id="hdmf" name="hdmf"  placeholder="" maxlength="30" class="form-control" > 
+       <input tabindex="2" type="text" id="hdmf" name="hdmf"  placeholder="" maxlength="200" class="form-control" > 
     </div>
 </div>
 </div>
@@ -228,7 +228,7 @@
 <tbody>
 <tr>
  <td> 
-    <input tabindex="2" type="text" id="language" name="language"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="language" name="language"  placeholder="" maxlength="200" class="form-control" > 
 </td>
 <td>
     <a type="button" id="add_language" class ="btn btn-info">Add</a>
@@ -276,11 +276,11 @@
     </select>
 </td>  
 <td> 
-    <input tabindex="2" type="text" id="line_1" name="line_1"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="line_1" name="line_1"  placeholder="" maxlength="200" class="form-control" > 
 </td>
 
 <td>          
-    <input tabindex="2" type="text" id="line_2" name="line_2"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="line_2" name="line_2"  placeholder="" maxlength="200" class="form-control" > 
 </td>
 
 <td>        
@@ -312,7 +312,7 @@
     </select>
 </td>
 <td>
-    <input tabindex="2" type="text" id="postal" name="postal"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="postal" name="postal"  placeholder="" maxlength="200" class="form-control" > 
 </td>
 
 
@@ -386,7 +386,7 @@
 <div class="col-md-3">
     <div class="form-group">
         <label class="control-label">Position<font color="red"> * </font></label>            
-       <input tabindex="2" type="text" id="job_position" name="job_position"  placeholder="" maxlength="30" class="form-control" > 
+       <input tabindex="2" type="text" id="job_position" name="job_position"  placeholder="" maxlength="200" class="form-control" > 
     </div>
 </div>
             </div><!-- end row -->
@@ -426,7 +426,7 @@
     </select>
 </td>  
 <td> 
-    <input tabindex="2" type="text" id="schoolName" name="schoolName"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="schoolName" name="schoolName"  placeholder="" maxlength="200" class="form-control" > 
 </td>
 
 <td>          
@@ -439,7 +439,7 @@
 
 
 <td>          
-    <input tabindex="2" type="text" id="yearGraduate" name="yearGraduate"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="yearGraduate" name="yearGraduate"  placeholder="" maxlength="200" class="form-control" > 
 </td>
   
 <td>
@@ -475,14 +475,14 @@
 <tbody>
 <tr>
 <td> 
-    <input tabindex="2" type="text" id="examtype" name="examtype"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="examtype" name="examtype"  placeholder="" maxlength="200" class="form-control" > 
 </td> 
 <td> 
-    <input tabindex="2" type="text" id="examName" name="examName"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="examName" name="examName"  placeholder="" maxlength="200" class="form-control" > 
 </td>
 
 <td>          
-    <input tabindex="2" type="text" id="examRating" name="examRating"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="examRating" name="examRating"  placeholder="" maxlength="200" class="form-control" > 
 </td>
 
 <td>          
@@ -526,10 +526,10 @@
 <tbody>
 <tr>
 <td> 
-    <input tabindex="2" type="text" id="previous_position" name="previous_position"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="previous_position" name="previous_position"  placeholder="" maxlength="200" class="form-control" > 
 </td>
 <td> 
-    <input tabindex="2" type="text" id="employer" name="employer"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="employer" name="employer"  placeholder="" maxlength="200" class="form-control" > 
 </td>
 <td>          
     <input  type="text" name="exclusive_from" placeholder="yyyy-mm-dd" class="form-control" id="exclusive_from" maxlength="10" required onkeypress="return isNumber()"/>     
@@ -540,7 +540,7 @@
 
 </td>
 <td>          
-    <input tabindex="2" type="text" id="compensation" name="compensation"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="compensation" name="compensation"  placeholder="" maxlength="200" class="form-control" > 
 </td>
 
 <td>
@@ -586,18 +586,18 @@
     </select>
 </td>  
 <td> 
-    <input tabindex="2" type="text" id="fam_name" name="fam_name"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="fam_name" name="fam_name"  placeholder="" maxlength="200" class="form-control" > 
 </td>
 
 <td>          
-    <input tabindex="2" type="text" id="fam_age" name="fam_age"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="fam_age" name="fam_age"  placeholder="" maxlength="200" class="form-control" > 
 </td>
 
 <td>          
-    <input tabindex="2" type="text" id="fam_address" name="fam_address"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="fam_address" name="fam_address"  placeholder="" maxlength="200" class="form-control" > 
 </td>
 <td>          
-    <input tabindex="2" type="text" id="fam_contact" name="fam_contact"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="fam_contact" name="fam_contact"  placeholder="" maxlength="200" class="form-control" > 
 </td>
 
 <td>
@@ -635,7 +635,7 @@
 <tbody>
 <tr>
 <td> 
-    <input tabindex="2" type="text" id="current_position" name="current_position"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="current_position" name="current_position"  placeholder="" maxlength="200" class="form-control" > 
 </td>
 <td> 
 
@@ -656,10 +656,10 @@ $all_employees['firstname']. ' ' . $all_employees['lastname'];?></option><?php }
 </td>
 
 <td>          
-    <input tabindex="2" type="text" id="eval_result" name="eval_result"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="eval_result" name="eval_result"  placeholder="" maxlength="200" class="form-control" > 
 </td>
 <td>          
-    <input tabindex="2" type="text" id="eval_remark" name="eval_remark"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="eval_remark" name="eval_remark"  placeholder="" maxlength="200" class="form-control" > 
 </td>
 
 <td>
@@ -711,7 +711,7 @@ $all_employees['firstname']. ' ' . $all_employees['lastname'];?></option><?php }
 </td>
 
 <td>          
-    <input tabindex="2" type="text" id="movement_remarks" name="movement_remarks"  placeholder="" maxlength="30" class="form-control" > 
+    <input tabindex="2" type="text" id="movement_remarks" name="movement_remarks"  placeholder="" maxlength="200" class="form-control" > 
 </td>
 
 <td>
@@ -734,7 +734,7 @@ $all_employees['firstname']. ' ' . $all_employees['lastname'];?></option><?php }
     <div class="col-md-3">
         <div class="form-group">
             <label class="control-label">Username<font color="red"> * </font></label>
-           <input tabindex="2" type="text" id="username" name="username"  placeholder="" maxlength="30" class="form-control" > 
+           <input tabindex="2" type="text" id="username" name="username"  placeholder="" maxlength="200" class="form-control" > 
         </div>
     </div>
 
@@ -743,7 +743,7 @@ $all_employees['firstname']. ' ' . $all_employees['lastname'];?></option><?php }
 
         <div class="form-group">
             <label class="control-label">Password<font color="red"> * </font></label>            
-           <input tabindex="2" type="text" id="password" name="password"  placeholder="" maxlength="30" class="form-control" > 
+           <input tabindex="2" type="text" id="password" name="password"  placeholder="" maxlength="200" class="form-control" > 
         </div>
     </div>
 
@@ -751,7 +751,7 @@ $all_employees['firstname']. ' ' . $all_employees['lastname'];?></option><?php }
 
         <div class="form-group">
             <label class="control-label">Email address<font color="red"> * </font></label>            
-          <input tabindex="2" type="text" id="email" name="email"  placeholder="" maxlength="30" class="form-control" > 
+          <input tabindex="2" type="text" id="email" name="email"  placeholder="" maxlength="200" class="form-control" > 
         </div>
     </div>
 
