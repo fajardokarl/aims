@@ -58,6 +58,38 @@
 </div>
 
 <div class="row">
+
+<div class="col-md-3">
+<div class="form-group ">
+    <div class="fileinput fileinput-new" data-provides="fileinput">
+       <!--  <div id="imageselect">
+            <div class="profile-userpic">
+                <div class="thumbnail" style="width: 200px; height: 150px;">
+                    <img src="<?=base_url()?>public/pages/images/profiles/3934.jpg" id="profilepicture" class="img-responsive" alt="">
+                </div>
+                <button type="button" class="btn green" id="">New Picture</button>
+            </div>
+        </div> -->
+        <div id="profilechange">
+            <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+            </div>
+            <div>
+                <span class="btn green btn-outline btn-file">
+                    <span class="fileinput-new"> Select image </span>
+                    <span class="fileinput-exists"> Change </span>
+                    <input type="file" id="userfile" name="userfile" />
+                </span>
+                <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+</div>
+
+<div class="row">
     <div class="col-md-3">
         <div class="form-group">
             <label class="control-label">Last name<font color="red"> * </font></label>

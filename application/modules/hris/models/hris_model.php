@@ -16,6 +16,15 @@ public function __construct()
      return $query->result_array();
      }
 
+    function get_person_detail($person_id)
+    {
+     $this->db->select('*');
+     $this->db->from('person');    
+     $this->db->where('person_id',$person_id);
+     $query = $this->db->get();
+     return $query->result_array();
+     }
+
   function retrieve_all_employee()
   {
    $this->db->select('*');
@@ -140,7 +149,7 @@ public function __construct()
      $query = $this->db->get();
      return $query->result_array();
      }
-function get_app_answer($id)
+    function get_app_answer($id)
     {
      $this->db->select('*');
      $this->db->from('person a');    
@@ -149,7 +158,6 @@ function get_app_answer($id)
      $query = $this->db->get();
      return $query->row();
      }
-
 
     function get_employee_exam($id)
     {
@@ -403,6 +411,14 @@ function get_app_answer($id)
         $this->db->trans_complete();
         return $addmoveid;
     }
+        function insert_add_exam($data)
+    {
+        $this->db->trans_start();
+        $this->db->insert('exam_taken', $data);
+        $addexamid = $this->db->insert_id();
+        $this->db->trans_complete();
+        return $addexamid;
+    }
         function insert_add_family($data)
     {
         $this->db->trans_start();
@@ -467,6 +483,15 @@ function get_app_answer($id)
         return $lastDept;
     }
 
+
+
+    function update_person($info_person_id, $data)
+    {
+    $this->db->trans_start();
+    $this->db->where('person_id', $info_person_id);
+    $this->db->update('person', $data);   
+    $this->db->trans_complete();
+    }
 
 
       function insert_user($data)

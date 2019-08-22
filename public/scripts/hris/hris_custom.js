@@ -63,7 +63,14 @@ $("#add_address").click(function(){
       $('#view-family').modal('toggle');
   });
 
+   $('#edit_info').click(function(){
+      $('#view-peson_info').modal('toggle');
 
+       });
+ $('#update_exam').click(function(){
+      $('#view-exam_info').modal('toggle');
+      
+       });
   function clearFields()
   {
     $('#lastname').val('');
@@ -293,6 +300,42 @@ if (jQuery().datepicker) {
           }
       });     
 
+    if (jQuery().datepicker) {
+          $('#add_date_taken').datepicker({
+              rtl: App.isRTL(),
+              format: 'yyyy-mm-dd',
+              orientation: "left",
+              autoclose: true
+          });
+      }   
+
+
+       $('#add_date_taken').keyup(function(){
+           var v = this.value;
+          if (v.match(/^\d{4}$/) !== null) {
+              this.value = v + '-';
+          } else if (v.match(/^\d{4}\-\d{2}$/) !== null) {
+              this.value = v + '-';
+          }
+      });  
+    if (jQuery().datepicker) {
+          $('#add_date_exp').datepicker({
+              rtl: App.isRTL(),
+              format: 'yyyy-mm-dd',
+              orientation: "left",
+              autoclose: true
+          });
+      }   
+
+
+       $('#add_date_exp').keyup(function(){
+           var v = this.value;
+          if (v.match(/^\d{4}$/) !== null) {
+              this.value = v + '-';
+          } else if (v.match(/^\d{4}\-\d{2}$/) !== null) {
+              this.value = v + '-';
+          }
+      }); 
     if (jQuery().datepicker) {
           $('#movement_to').datepicker({
               rtl: App.isRTL(),
@@ -816,6 +859,33 @@ $("#add_movement").click(function(){
       });
   });
 
+ $('#submit_add_exam').click(function(){
+   var data = {
+  'exam_employee_id':$('#exam_employee_id').val(),    
+  'add_exam_type':$('#add_exam_type').val(),    
+  'add_exam_name':$('#add_exam_name').val(),   
+  'add_exam_rating':$('#add_exam_rating').val(),   
+  'add_date_taken':$('#add_date_taken').val(),   
+  'add_date_exp':$('#add_date_exp').val()
+      };
+
+      console.log(data);
+      $.ajax({
+          type: "POST",
+          url:  baseurl + "hris/update_exam",
+          dataType: "text",
+          data: data,
+          success: function(data){
+              clearFields(); 
+              toastr.success('Successfully Saved!', 'Operation Done');
+              location.reload();
+          },
+          error: function (errorThrown){
+              toastr.error('Error!.', 'Error. Please try again');
+          }
+      });
+  });
+
 
  $('#submit_add_member').click(function(){
    var data = {
@@ -831,6 +901,49 @@ $("#add_movement").click(function(){
       $.ajax({
           type: "POST",
           url:  baseurl + "hris/update_family",
+          dataType: "text",
+          data: data,
+          success: function(data){
+              clearFields(); 
+              toastr.success('Successfully Saved!', 'Operation Done');
+              location.reload();
+          },
+          error: function (errorThrown){
+              toastr.error('Error!.', 'Error. Please try again');
+          }
+      });
+  });
+
+
+ $('#update_person_info').click(function(){
+
+  
+   var data = {  
+  'edit_civil_status':$('#edit_civil_status').val(),  
+  'info_person_id':$('#info_person_id').val(),  
+  'edit_firstname':$('#edit_firstname').val(),
+  'edit_middlename':$('#edit_middlename').val(),
+  'edit_lastname':$('#edit_lastname').val(), 
+  'edit_prefix':$('#edit_prefix').val(),
+  'edit_suffix':$('#edit_suffix').val(),
+  'edit_sex':$('#edit_sex').val(),
+  'edit_birthplace':$('#edit_birthplace').val(),
+  'edit_birthdate':$('#edit_birthdate').val(),
+  'edit_nationality':$('#edit_nationality').val(), 
+  'edit_height':$('#edit_height').val(),
+  'edit_weight':$('#edit_weight').val(),
+  'edit_hdmf':$('#edit_hdmf').val(),
+  'edit_sss':$('#edit_sss').val(),
+  'edit_tin':$('#edit_tin').val(),
+  'edit_phic':$('#edit_phic').val(), 
+  'edit_department':$('#edit_department').val(),
+  'edit_position':$('#edit_position').val()
+      };
+
+      console.log(data);
+      $.ajax({
+          type: "POST",
+          url:  baseurl + "hris/update_person",
           dataType: "text",
           data: data,
           success: function(data){
