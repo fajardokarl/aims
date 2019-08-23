@@ -387,7 +387,7 @@
                 <?php foreach($exam as $exam){ ?>
                 <tr>
                         <td><?php echo $exam['exam_taken_id']; ?></td>
-                        <td><?php echo $exam['examtype'] ;?></td>
+                        <td><?php echo $exam['exam_type'] ;?></td>
                         <td><?php echo $exam['exam_name'] ;?></td>
                         <td><?php echo $exam['exam_rating'] ;?></td>
                         <td><?php echo $exam['exam_taken'];?></td>       
