@@ -20,18 +20,25 @@
                             <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Name:</span></label>
                             <div class="col-md-9">
                                 <p class="form-control-static">
-                                    <?php echo $emp->prefix; echo " "; echo $emp->firstname; echo " "; echo $emp->middlename; echo " "; echo $emp->lastname; echo " "; echo $emp->suffix; ?>
+                                    <?php echo $emp->prefix; echo " "; echo $emp->firstname; echo " "; echo $emp->middlename; echo " "; echo $emp->lastname; echo " "; echo $emp->suffix;?>
                                     <input type="hidden" id="person_id" value="<?php echo $emp->person_id; ?>">
                                     <input type="hidden" id="employee_id" value="<?php echo $emp->employee_id; ?>">
                                 </p>
                             </div>
                         </div>
-
+                    <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Sex:</span></label>
+                            <div class="col-md-9">
+                                <p class="form-control-static">
+                                    <?php echo $emp->sex; ?>
+                                </p>
+                            </div>
+                    </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Department:</span></label>
                             <div class="col-md-9">
                                 <p class="form-control-static">
-                                    <?php echo $emp->department_name; ?>
+                                    <?php echo $emp->department_name;?>
                                 </p>
                             </div>
                         </div>
@@ -53,17 +60,7 @@
                                     <?php echo $emp->hire_date; ?>
                                 </p>
                             </div> 
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Sex:</span></label>
-                            <div class="col-md-9">
-                                <p class="form-control-static">
-                                    <?php echo $emp->sex; ?>
-                                </p>
-                            </div>
-                        </div>
+                        </div> 
 
                          <div class="form-group">
                             <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Birthdate:</span></label>
@@ -73,14 +70,14 @@
                                 </p>
                             </div>
                         </div>
-                         <div class="form-group">
+         <!--                 <div class="form-group">
                             <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Initial:</span></label>
                             <div class="col-md-9">
                                 <p class="form-control-static">
                                     <?php echo $emp->initial; ?>
                                 </p>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Birthplace:</span></label>
                             <div class="col-md-9">
@@ -95,10 +92,10 @@
                     <div class="col-md-6">
                         <!-- <div class="form-group"> -->
                         <div class="form-group">
-                            <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Nationality:</span></label>
+                            <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Initial:</span></label>
                             <div class="col-md-9">
                                 <p class="form-control-static">
-                                    <?php echo $emp->nationality; ?>
+                                    <?php echo $emp->initial; ?>
                                    
                                 </p>
                             </div>
@@ -124,7 +121,16 @@
                         </div>
                  
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6">  
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Nationality:</span></label>
+                            <div class="col-md-9">
+                                <p class="form-control-static">
+                                    <?php echo $emp->nationality; ?>
+                                </p>
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Height:</span></label>
                             <div class="col-md-9">
