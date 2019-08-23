@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         
-
+          
                         <div class="form-group">
                             <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Position:</span></label>
                             <div class="col-md-9">
@@ -45,6 +45,14 @@
                             </div> 
                         </div>
                  
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Date hired:</span></label>
+                            <div class="col-md-9">
+                                <p class="form-control-static">
+                                    <?php echo $emp->hire_date; ?>
+                                </p>
+                            </div> 
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -61,6 +69,14 @@
                             <div class="col-md-9">
                                 <p class="form-control-static">
                                     <?php echo $emp->birthdate; ?>
+                                </p>
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Initial:</span></label>
+                            <div class="col-md-9">
+                                <p class="form-control-static">
+                                    <?php echo $emp->initial; ?>
                                 </p>
                             </div>
                         </div>
@@ -325,7 +341,7 @@
                 <?php foreach($exam as $exam){ ?>
                 <tr>
                         <td><?php echo $exam['exam_taken_id']; ?></td>
-                        <td><?php echo $exam['exam_type'] ;?></td>
+                        <td><?php echo $exam['examtype'] ;?></td>
                         <td><?php echo $exam['exam_name'] ;?></td>
                         <td><?php echo $exam['exam_rating'] ;?></td>
                         <td><?php echo $exam['exam_taken'];?></td>       
@@ -612,10 +628,6 @@
                                     </div>
                                     </div>
                                     </div>
-
-
-
-
                                     <div class="row">
                                     <div class="col-md-6">
                                     <div class="form-group">

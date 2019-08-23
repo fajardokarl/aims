@@ -196,7 +196,9 @@ public function update_family(){
 
 
     $dataemp = array(
-                'person_id' => $personid                     
+                'person_id' => $personid,
+                'date_hired' =>$this->input->post('hire_date'),
+                'initial' =>$this->input->post('initial')
                  );
     $employeeID = $this->hris_model->insert_employee($dataemp);
 

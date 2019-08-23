@@ -134,6 +134,24 @@ $("#add_address").click(function(){
       location.reload();
     });
 
+if (jQuery().datepicker) {
+          $('#date_hired').datepicker({
+              rtl: App.isRTL(),
+              format: 'yyyy-mm-dd',
+              orientation: "left",
+              autoclose: true
+          });
+      }   
+
+
+       $('#date_hired').keyup(function(){
+           var v = this.value;
+          if (v.match(/^\d{4}$/) !== null) {
+              this.value = v + '-';
+          } else if (v.match(/^\d{4}\-\d{2}$/) !== null) {
+              this.value = v + '-';
+          }
+      });
 
 if (jQuery().datepicker) {
           $('#add_approval_date').datepicker({
@@ -1041,6 +1059,8 @@ $("#add_movement").click(function(){
         'hdmf':$('#hdmf').val(),
         'height':$('#height').val(),
         'weight':$('#weight').val(),
+        'date_hired':$('#date_hired').val(),
+        'initial':$('#initial').val(),
 
     //School attended
         'language':language,

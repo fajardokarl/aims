@@ -156,6 +156,20 @@
         </div>
     
     </div>  
+      <div class="col-md-2">
+            <div data-date-format="mm/yyyy" >
+              <label class="control-label">Date hired <font color="red"> * </font></label>
+                <input  type="text" name="date_hired" placeholder="yyyy-mm-dd" class="form-control" id="date_hired" maxlength="10" required onkeypress="return isNumber()"/>                
+            </div>
+  </div> 
+      <div class="col-md-1">
+
+        <div class="form-group">
+            <label class="control-label">Initial<font color="red"> * </font></label>            
+           <input tabindex="2" type="text" id="initial" name="initial"  placeholder="" maxlength="200" class="form-control" > 
+        </div>
+    </div>
+
 </div>
 
 <div class="row">
