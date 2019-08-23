@@ -251,7 +251,7 @@ public function update_person(){
 
     $dataemp = array(
                 'person_id' => $personid,
-                'hire_date' =>$this->input->post('date_hired'),
+                'date_hired' =>$this->input->post('date_hired'),
                 'initial' =>$this->input->post('initial')
                  );
     $employeeID = $this->hris_model->insert_employee($dataemp);

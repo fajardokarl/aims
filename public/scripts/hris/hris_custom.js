@@ -20,9 +20,9 @@ $("#add_address").click(function(){
          "<input type='hidden' name='line_1[]' value='" + $("#line_1").val() + "'>" + $("#line_1").val(),
          "<input type='hidden' name='line_2[]' value='" + $("#line_2").val() + "'>" + $("#line_2").val(),
          "<input type='hidden' name='allcity[]' value='" + $("#allcity option:selected").val() + "'>" + $("#allcity option:selected").text(),    
-         "<input type='hidden' name='allprovince[]' value='" + $("#allcityallcity option:selected").val() + "'>" + $("#allprovince option:selected").text(),    
-         "<input type='hidden' name='postal[]' value='" + $("#postal").val() + "'>" + $("#postal").val(),
+         "<input type='hidden' name='allprovince[]' value='" + $("#allcityallcity option:selected").val() + "'>" + $("#allprovince option:selected").text(),
          "<input type='hidden' name='addcountry[]' value='" + $("#addcountry option:selected").val() + "'>" + $("#addcountry option:selected").text(), 
+         "<input type='hidden' name='postal[]' value='" + $("#postal").val() + "'>" + $("#postal").val(),
          '<a href="#" class="btn btn-danger cust_delete_contact">remove</a>'
         ] ).draw( false );         
             // $("#canvass_total").html(total); 

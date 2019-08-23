@@ -57,7 +57,7 @@
                             <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Date hired:</span></label>
                             <div class="col-md-9">
                                 <p class="form-control-static">
-                                    <?php echo $emp->hire_date; ?>
+                                    <?php echo $emp->date_hired; ?>
                                 </p>
                             </div> 
                         </div> 
