@@ -415,8 +415,16 @@
                         <td><?php echo $work['previous_position'] ;?></td>
                         <td><?php echo $work['employer'] ;?></td>
                         <td><?php echo $work['exclusive_from'] ;?></td>
-                        <td><?php echo $work['exclusive_to'];?></td>       
-                        <td><?php echo $work['compensation']; ?></td>
+                        <td><?php echo $work['exclusive_to'];?></td>
+                        <td>
+                        <?php 
+                        if ($work['compensation'] == 0) {
+                            echo "<span class='font-red-intense bold'>Not declared</span>";
+                        }else{
+                            echo $work['compensation'];
+                        }?>
+                        </td>       
+                       <!--  <td><?php echo $work['compensation']; ?></td> -->
                 </tr>
                 <?php } ?> 
                         </tbody>
