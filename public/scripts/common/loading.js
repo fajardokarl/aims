@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $( document ).ajaxSend(function( event, jqxhr, settings ) {
 	if(settings.url == "http://localhost/abci/Login/login/get_unseen") {
 		console.log(settings.url);
@@ -12,7 +11,7 @@ $( document ).ajaxSend(function( event, jqxhr, settings ) {
 		});
 	}
 });
-=======
+
 if(window.location.href != "http://localhost/abci/message") {
 	$(document).ajaxStart(function(){
 	    $('#loadings').show();
@@ -20,4 +19,3 @@ if(window.location.href != "http://localhost/abci/message") {
 	    $('#loadings').hide();
 	 });
  }
->>>>>>> 90d04401af680771cfbe33047da30f1942436631

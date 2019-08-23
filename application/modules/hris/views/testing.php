@@ -7,6 +7,7 @@
             </div>
                         <div class="actions"> 
                 <!-- <a href="javascript:;"><i class="fa fa-file-pdf-o btn red"> PDF</i> </a> -->
+                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="edit_info"><i class="fa fa-pencil-square-o"> </i>Edit info</button>
                 <button style="align:right;" type="button" class="btn btn-default btn-sm" id="pdf_amort_sched"><i class="fa fa-plus"> </i>Get PDF</button>
             </div>
         </div>
@@ -171,9 +172,46 @@
                         </div>
             </div>
 
+ <div class="col-md-6">
+    <!-- BEGIN Portlet PORTLET-->
+     <div class="portlet grey-cascade box">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-gift"></i>Applicant language spoken </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a>
+                <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                <a href="javascript:;" class="reload"> </a>
+                <a href="" class="fullscreen"> </a>
+                <a href="javascript:;" class="remove"> </a>
+            </div>
+        </div>
+        <div class="portlet-body">
+          
+          <table class="table table-hover" id="language_table">
+            <thead>
+            <tr>  
+            <th>ID</th>
+            <th>Language spoken</th>
+            </tr>
+            </thead>
+            <tbody>
+                <?php foreach($language as $language){ ?>
+                <tr>
+                    <td><?php echo $language['language_id']; ?></td>
+                    <td><?php echo $language['language'] ;?></td>
+                </tr>
+                <?php } ?> 
+            </tbody>
+        </table>             
+        </div>
+    </div>
+</div>   
 
 
-<div class="col-md-12">
+
+
+<div class="col-md-6">
     <!-- BEGIN Portlet PORTLET-->
      <div class="portlet grey-cascade box">
         <div class="portlet-title">
@@ -317,6 +355,8 @@
             <div class="caption">
                 <i class="fa fa-gift"></i>Examination taken</div>
             <div class="tools">
+                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="update_exam"><i class="fa fa-plus"> </i>Exam taken</button>
+                
                 <a href="javascript:;" class="collapse"> </a>
                 <a href="#portlet-config" data-toggle="modal" class="config"> </a>
                 <a href="javascript:;" class="reload"> </a>
@@ -391,8 +431,16 @@
                         <td><?php echo $work['previous_position'] ;?></td>
                         <td><?php echo $work['employer'] ;?></td>
                         <td><?php echo $work['exclusive_from'] ;?></td>
-                        <td><?php echo $work['exclusive_to'];?></td>       
-                        <td><?php echo $work['compensation']; ?></td>
+                        <td><?php echo $work['exclusive_to'];?></td>
+                        <td>
+                        <?php 
+                        if ($work['compensation'] == 0) {
+                            echo "<span class='font-red-intense bold'>Not declared</span>";
+                        }else{
+                            echo $work['compensation'];
+                        }?>
+                        </td>       
+                       <!--  <td><?php echo $work['compensation']; ?></td> -->
                 </tr>
                 <?php } ?> 
                         </tbody>
@@ -829,6 +877,261 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn green" id="submit_add_member" ></span>Add member</button>
+                    <button type="button" data-dismiss="modal" class="btn dark btn-outline" id="btncloseClear"><i class="fa fa-times" aria-hidden="true"></i>Close</button>                 
+                </div>
+            </form> 
+        </div>
+    </div>
+</div>
+
+<div id="view-exam_info" class="modal fade" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-xs">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" id="closeLot" data-dismiss="modal" ></button> 
+                <h4 class="modal-title"><span class="caption-subject bold uppercase"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Add Exam taken<span id="lidss"></span>  <span id="lotdescN"> </span> <span id="slid" style="display:none;"></span><span id="slids" style="display:none;"></span></h4> 
+            </div>
+            <form id="updateLot">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">  
+                            <div class="form-body">
+                                <div class="form-group">                               
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="portlet grey-cascade box">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                            <span class="caption-subject"><i class="fa fa-list-alt" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" id="person_id" value="<?php echo $emp->person_id; ?>">
+                                    <input type="hidden" id="exam_employee_id" value="<?php echo $emp->employee_id; ?>">
+
+                                <div class="portlet-body"> 
+
+                                    <div class="row">
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >Exam type</label> 
+                                        <input tabindex="2" type="text" id="add_exam_type" name="add_fam_name"  placeholder="" maxlength="160" class="form-control" >                  
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >Exam name</label>
+                                        <input tabindex="2" type="text" id="add_exam_name" name="add_fam_name"  placeholder="" maxlength="160" class="form-control" > 
+                                       
+                                    </div>
+                                    </div>
+                                    </div>
+
+
+
+                                    <div class="row">
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >Rating</label>
+                                    <input tabindex="2" type="text" id="add_exam_rating" name="add_exam_rating"  placeholder="" maxlength="160" class="form-control" > 
+                                        
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >Date taken</label>
+                                         <input  type="text" name="add_date_taken" placeholder="yyyy-mm-dd" class="form-control" id="add_date_taken" maxlength="10" required onkeypress="return isNumber()"/>                                             
+                                    </div>
+                                    </div>
+                                    </div>
+                               
+                                    <div class="form-group">
+                                        <label class="control-label" >Date expiration</label>
+                                          <input  type="text" name="add_date_exp" placeholder="yyyy-mm-dd" class="form-control" id="add_date_exp" maxlength="10" required onkeypress="return isNumber()"/>   
+                                      
+                                   
+                                    </div>
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn green" id="submit_add_exam" ></span>Add member</button>
+                    <button type="button" data-dismiss="modal" class="btn dark btn-outline" id="btncloseClear"><i class="fa fa-times" aria-hidden="true"></i>Close</button>                 
+                </div>
+            </form> 
+        </div>
+    </div>
+</div>
+
+
+
+<div id="view-peson_info" class="modal fade" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" id="closeLot" data-dismiss="modal" ></button> 
+                <h4 class="modal-title"><span class="caption-subject bold uppercase"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit Travel Order<span id="lidss"></span>  <span id="lotdescN"> </span> <span id="slid" style="display:none;"></span><span id="slids" style="display:none;"></span></h4> 
+            </div>
+            <form id="updateLot">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">  
+                            <div class="form-body">
+                                <div class="form-group">                               
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="portlet grey-cascade box">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                            <span class="caption-subject"><i class="fa fa-list-alt" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+
+                                 <input type="hidden" id="info_person_id" value="<?php echo $emp->person_id; ?>">
+                                    <input type="hidden" id="employee_id" value="<?php echo $emp->employee_id; ?>">
+                                <div class="portlet-body">
+                                    <div class="row">                                        
+                                    <div class="col-md-12"> 
+                                    <div class="col-md-3">
+                                        <label class="control-label"><b>First name</b></label>
+                                        <input tabindex="2" type="text" id="edit_firstname" name="edit_firstname"  placeholder="" maxlength="30" value="<?php echo $emp->firstname
+                                        ; ?>" class="form-control" >
+                                    </div>  
+                                         <div class="col-md-3">
+                                        <label class="control-label"><b>Middle name</b></label>
+                                        <input tabindex="2" type="text" id="edit_middlename" name="edit_middlename"  placeholder="" maxlength="30"  value="<?php echo $emp->middlename
+                                        ; ?>"class="form-control" >
+                                    </div> 
+                                         <div class="col-md-3">
+                                        <label class="control-label"><b>Last name</b></label>
+                                        <input tabindex="2" type="text" id="edit_lastname" name="edit_lastname"  placeholder="" value="<?php echo $emp->lastname
+                                        ; ?>" maxlength="30" class="form-control" >
+                                    </div> 
+                                        <div class="col-md-2">
+                                        <label class="control-label"><b>Prefix</b></label>
+                                        <input tabindex="2" type="text" id="edit_prefix" name="edit_prefix"  placeholder="" maxlength="30" value="<?php echo $emp->prefix
+                                        ; ?>" class="form-control" >
+                                        </div> 
+                                       <div class="col-md-1">
+                                        <label class="control-label"><b>Suffix</b></label>
+                                        <input tabindex="2" type="text" id="edit_suffix" name="edit_suffix"  placeholder="" maxlength="30" value="<?php echo $emp->suffix
+                                        ; ?>" class="form-control" >
+                                        </div> 
+                                    </div>                                
+                                    </div>
+
+                                    <div class="row">                                        
+                                    <div class="col-md-12">                                      
+                                    <div class="col-md-3">
+                                        <label class="control-label"><b>Sex</b></label>
+                                        <input tabindex="2" type="text" id="edit_sex" name="edit_sex"  placeholder="" maxlength="30" value="<?php echo $emp->sex
+                                        ; ?>" class="form-control" >
+                                    </div>  
+                                    <div class="col-md-3">
+                                        <label class="control-label"><b>Birthdate</b></label>
+                                        <input tabindex="2" type="text" id="edit_birthdate" name="edit_birthdate" value="<?php echo $emp->birthdate
+                                        ; ?>" placeholder="" maxlength="30" class="form-control" >
+                                    </div>  
+                                    <div class="col-md-3">
+                                        <label class="control-label"><b>Birthplace</b></label>
+                                        <input tabindex="2" type="text" id="edit_birthplace" name="edit_birthplace"  placeholder="" maxlength="30"  value="<?php echo $emp->birthplace
+                                        ; ?>"class="form-control" >
+                                    </div> 
+                                    <div class="col-md-3">
+                                        <label class="control-label"><b>Civil status</b></label>
+                                        <select  value="<?php echo $emp->civil_status_id
+                                        ; ?>" class="form-control select2 select2-hidden-accessible" id="edit_civil_status" name ="edit_civil_status" >
+                                            <option class ="disabled selected">Select</option>
+
+                                            <?php foreach($civil_status as $civil_status){ ?>
+                                            <?php if($civil_status['civil_status_id'] == $emp->civil_status_id){ ?>
+                                            <option selected value="<?php echo $civil_status['civil_status_id'];?>"><?php echo $civil_status['civil_status_name'];?></option>
+                                            <?php 
+                                            continue;
+                                            } ?>
+                                            <option value="<?php echo $civil_status['civil_status_id'];?>"><?php echo $civil_status['civil_status_name'];?></option>
+
+                                            <?php } ?>
+
+                                                <!-- <?php foreach($civil_status as $civil_status){ ?>
+                                            <option value="<?php echo $civil_status['civil_status_id'];?>"> <?php echo $civil_status['civil_status_name'];?></option><?php } ?> -->
+                                        </select>
+                                    </div> 
+                                    </div>                                
+                                    </div>
+
+                                    <div class="row">                                        
+                                    <div class="col-md-12">                                      
+                                    <div class="col-md-3">
+                                        <label class="control-label"><b>Nationality</b></label>
+                                        <input tabindex="2" type="text" id="edit_nationality" name="edit_nationality"  placeholder="" maxlength="30" value="<?php echo $emp->nationality
+                                        ; ?>" class="form-control" >
+                                    </div>  
+                                    <div class="col-md-3">
+                                        <label class="control-label"><b>Height</b></label>
+                                        <input tabindex="2" type="text" id="edit_height" name="edit_height"  placeholder="" maxlength="30" value="<?php echo $emp->height
+                                        ; ?>" class="form-control" >
+                                    </div>  
+                                    <div class="col-md-3">
+                                        <label class="control-label"><b>Weight</b></label>
+                                        <input tabindex="2" type="text" id="edit_weight" name="edit_weight"  placeholder="" maxlength="30"  value="<?php echo $emp->weight
+                                        ; ?>"class="form-control" >
+                                    </div> 
+                                    <div class="col-md-3">
+                                        <label class="control-label"><b>HDMF</b></label>
+                                        <input tabindex="2" type="text" id="edit_hdmf" name="edit_hdmf"  placeholder="" maxlength="30"  value="<?php echo $emp->hdmf
+                                        ; ?>"class="form-control" >
+                                    </div>
+                                    </div>                                
+                                    </div>
+                                                <div class="row">                                        
+                                    <div class="col-md-12">                                      
+                                    <div class="col-md-3">
+                                        <label class="control-label"><b>SSS</b></label>
+                                        <input tabindex="2" type="text" id="edit_sss" name="edit_sss"  placeholder="" maxlength="30" value="<?php echo $emp->sss
+                                        ; ?>" class="form-control" >
+                                    </div>  
+                                    <div class="col-md-3">
+                                        <label class="control-label"><b>TIN</b></label>
+                                        <input tabindex="2" type="text" id="edit_tin" name="edit_tin"  placeholder="" maxlength="30" value="<?php echo $emp->tin
+                                        ; ?>" class="form-control" >
+                                    </div>  
+                                    <div class="col-md-3">
+                                        <label class="control-label"><b>PHIC</b></label>
+                                        <input tabindex="2" type="text" id="edit_phic" name="edit_phic"  placeholder="" maxlength="30"  value="<?php echo $emp->phic
+                                        ; ?>"class="form-control" >
+                                    </div> 
+                                    </div>                                
+                                    </div>
+                                    <div class="row">                                        
+                                    <div class="col-md-12">                                      
+                                    <div class="col-md-3">
+                                        <label class="control-label"><b>Department</b></label>
+                                        <input tabindex="2" type="text" id="edit_department" name="edit_department"  placeholder="" maxlength="30" value="<?php echo $emp->department_name
+                                        ; ?>" class="form-control" >
+                                    </div>  
+                                    <div class="col-md-3">
+                                        <label class="control-label"><b>Position</b></label>
+                                        <input tabindex="2" type="text" id="edit_position" name="edit_position"  placeholder="" maxlength="30" value="<?php echo $emp->job_position
+                                        ; ?>" class="form-control" >
+                                    </div>  
+                                    </div>                                
+                                    </div>
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn green" id="update_person_info" ></span>Save Changes</button>
                     <button type="button" data-dismiss="modal" class="btn dark btn-outline" id="btncloseClear"><i class="fa fa-times" aria-hidden="true"></i>Close</button>                 
                 </div>
             </form> 

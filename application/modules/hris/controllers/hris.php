@@ -56,6 +56,8 @@ class Hris extends CI_Controller {
       $this->data['family'] = $this->hris->get_employee_family($this->input->get('personid'));
       $this->data['evaluation'] = $this->hris->get_employee_evaluation($this->input->get('personid'));
       $this->data['movement'] = $this->hris->get_employee_movement($this->input->get('personid'));
+      $this->data['language'] = $this->hris->get_employee_language($this->input->get('personid'));
+      $this->data['civil_status'] = $this->hris->retrieve_status($this->input->get('personid'));
       $this->load->view('default/index', $this->data); 
 }
 
@@ -112,6 +114,13 @@ class Hris extends CI_Controller {
         $this->load->view('default/index', $this->data);
     }
     
+
+public function get_one_person(){
+        $info_person_id = $this->input->post('person_id');
+        $info_person_id = $this->file->get_person_detail($info_person_id);
+        echo json_encode($info_person_id);
+    }
+
     public function get_one_to(){
         $person_id = $this->input->post('person_id');
         $person_id = $this->hris->get_to_detail($person_id);
@@ -152,6 +161,23 @@ public function update_movement(){
             $this->hris_model->insert_add_movement($data);
     }
 
+public function update_exam(){
+        $this->load->helper('date'); 
+        $this->load->model('hris_model');
+
+        // Employee information
+    $data = array(        
+             'employee_id'    =>$this->input->post('exam_employee_id'),            
+             'exam_type'   =>$this->input->post('add_exam_type'),
+             'exam_name'    =>$this->input->post('add_exam_name'),            
+             'exam_rating'    =>$this->input->post('add_exam_rating'),            
+             'exam_taken'    =>$this->input->post('add_date_taken'),     
+             'date_expiration'   =>$this->input->post('add_date_exp')  
+       
+        );
+            $this->hris_model->insert_add_exam($data);
+    }
+
 public function update_family(){
         $this->load->helper('date'); 
         $this->load->model('hris_model');
@@ -167,6 +193,34 @@ public function update_family(){
        
         );
             $this->hris_model->insert_add_family($data);
+    }
+
+public function update_person(){
+        $this->load->helper('date'); 
+        $this->load->model('hris_model');
+    $info_person_id = $this->input->post('info_person_id');        
+    $data = array(        
+                 
+                'lastname' =>$this->input->post('edit_lastname'),
+                'firstname' =>$this->input->post('edit_firstname'),
+                'middlename' =>$this->input->post('edit_middlename'),
+                'prefix' =>$this->input->post('edit_prefix'),               
+                'suffix' =>$this->input->post('edit_suffix'),                
+                'sex' =>$this->input->post('edit_sex'),                
+                'birthdate' =>$this->input->post('edit_birthdate'),                
+                'birthplace' =>$this->input->post('edit_birthplace'),
+                'nationality' =>$this->input->post('edit_nationality'),
+                'civil_status_id' =>$this->input->post('edit_civil_status'),
+                'height' =>$this->input->post('edit_height'),
+                'weight' =>$this->input->post('edit_weight'),
+                'phic' =>$this->input->post('edit_philhealth'),
+                'sss' =>$this->input->post('edit_sss'),
+                'hdmf' =>$this->input->post('edit_hdmf'),
+                'tin' =>$this->input->post('edit_tin')
+                 );      
+       
+   
+            $this->hris_model->update_person($info_person_id,$data);
     }
 
     public function save_employee(){
@@ -304,7 +358,7 @@ public function update_family(){
         {
     $dat9 = array(
              'employee_id'    =>$employeeID,
-             'examtype'   =>$this->input->post('examtype')[$i],
+             'exam_type'   =>$this->input->post('examtype')[$i],
              'exam_name'    =>$this->input->post('examName')[$i],            
              'exam_rating'    =>$this->input->post('examRating')[$i],            
              'exam_taken'    =>$this->input->post('examTaken')[$i],     
