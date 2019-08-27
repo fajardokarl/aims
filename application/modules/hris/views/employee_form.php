@@ -77,7 +77,7 @@
                 <span class="btn green btn-outline btn-file">
                     <span class="fileinput-new"> Select image </span>
                     <span class="fileinput-exists"> Change </span>
-                    <input type="file" id="userfile" name="userfile" />
+                    <input type="file" id="picture_url" name="picture_url" />
                 </span>
                 <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
             </div>
@@ -257,7 +257,7 @@
 
 
  <div class="form-group">
-    <label><font color="green"><h2>Employee language spoken</h2></font></label>
+    <label><font color="green"><h2>Employee language spoken ></h2></font><font color="red"><i>Please click <font color="black"><b>ADD</b></font> after you input data*</i></font></label>
     </div>
 </div>
 
@@ -290,7 +290,7 @@
 
 <div class="row">
  <div class="form-group">
-    <label><font color="green"><h2>Address Information</h2></font></label>
+    <label><font color="green"><h2>Address Information</h2></font><font color="red"><i>Please click <font color="black"><b>ADD</b></font> after you input data*</i></font></label>
     </div>
 </div>
 
@@ -375,7 +375,7 @@
 <div class="row">
     <div class="portlet-body">
  <div class="form-group">
-    <label name="department_name" id="department_name"><font color="green"><h2>Contact Information</h2></font></label>
+    <label name="department_name" id="department_name"><font color="green"><h2>Contact Information</h2></font><font color="red"><i>Please click <font color="black"><b>ADD</b></font> after you input data*</i></font></label>
     </div>
 
 
@@ -442,7 +442,7 @@
 
 <div class="row">
  <div class="form-group">
-    <label><font color="green"><h2>School last attended</h2></font></label>
+    <label><font color="green"><h2>School attended</h2></font><font color="red"><i>Please click <font color="black"><b>ADD</b></font> after you input data*</i></font></label>
     </div>
 </div>
 
@@ -500,7 +500,7 @@
 
 <div class="row">
  <div class="form-group">
-    <label><font color="green"><h2>Examinations taken</h2></font></label>
+    <label><font color="green"><h2>Examinations taken</h2></font><font color="red"><i>Please click <font color="black"><b>ADD</b></font> after you input data*</i></font></label>
     </div>
 </div>
 
@@ -550,7 +550,7 @@
 
 <div class="row">
 <div class="form-group">
-    <label><font color="green"><h2>Work Experience</h2></font></label>
+    <label><font color="green"><h2>Work Experience</h2></font><font color="red"><i>Please click <font color="black"><b>ADD</b></font> after you input data*</i></font></label>
     </div>
 </div>
 
@@ -602,7 +602,7 @@
 
 <div class="row">
 <div class="form-group">
-    <label><font color="green"><h2>Family Background</h2></font></label>
+    <label><font color="green"><h2>Family Background</h2></font><font color="red"><i>Please click <font color="black"><b>ADD</b></font> after you input data*</i></font></label>
     </div>
 </div>
 

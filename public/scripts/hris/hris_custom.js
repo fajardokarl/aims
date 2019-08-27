@@ -50,9 +50,23 @@ $("#add_address").click(function(){
             var person_id = employee_table.cell( row, 0 ).data();
             window.open(baseurl+"hris/employee_info?personid="+person_id);
          });
+  $('#update_work').click(function(){
+       $('#view-work').modal('toggle');
+  });
 
+  $('#update_school').click(function(){
+       $('#view-school').modal('toggle');
+  });
 
-    $('#update_evaluation').click(function(){
+  $('#update_contact').click(function(){
+       $('#view-contact').modal('toggle');
+  });
+
+  $('#update_address').click(function(){
+       $('#view-address').modal('toggle');
+  });
+
+  $('#update_evaluation').click(function(){
        $('#view-evaluation').modal('toggle');
   });
 
@@ -179,6 +193,44 @@ if (jQuery().datepicker) {
           }
       });
 
+if (jQuery().datepicker) {
+          $('#add_todate').datepicker({
+              rtl: App.isRTL(),
+              format: 'yyyy-mm-dd',
+              orientation: "left",
+              autoclose: true
+          });
+      }   
+
+
+       $('#add_todate').keyup(function(){
+           var v = this.value;
+          if (v.match(/^\d{4}$/) !== null) {
+              this.value = v + '-';
+          } else if (v.match(/^\d{4}\-\d{2}$/) !== null) {
+              this.value = v + '-';
+          }
+      });
+
+
+if (jQuery().datepicker) {
+          $('#add_fromdate').datepicker({
+              rtl: App.isRTL(),
+              format: 'yyyy-mm-dd',
+              orientation: "left",
+              autoclose: true
+          });
+      }   
+
+
+       $('#add_fromdate').keyup(function(){
+           var v = this.value;
+          if (v.match(/^\d{4}$/) !== null) {
+              this.value = v + '-';
+          } else if (v.match(/^\d{4}\-\d{2}$/) !== null) {
+              this.value = v + '-';
+          }
+      });
 
 if (jQuery().datepicker) {
           $('#add_effective_date').datepicker({
@@ -577,6 +629,44 @@ if (jQuery().datepicker) {
               this.value = v + '-';
           }
       });
+
+        if (jQuery().datepicker) {
+          $('#add_exclusive_from').datepicker({
+              rtl: App.isRTL(),
+              format: 'yyyy-mm-dd',
+              orientation: "left",
+              autoclose: true
+          });
+      }   
+
+
+       $('#add_exclusive_from').keyup(function(){
+           var v = this.value;
+          if (v.match(/^\d{4}$/) !== null) {
+              this.value = v + '-';
+          } else if (v.match(/^\d{4}\-\d{2}$/) !== null) {
+              this.value = v + '-';
+          }
+      });
+               if (jQuery().datepicker) {
+          $('#add_exclusive_to').datepicker({
+              rtl: App.isRTL(),
+              format: 'yyyy-mm-dd',
+              orientation: "left",
+              autoclose: true
+          });
+      }   
+
+
+       $('#add_exclusive_to').keyup(function(){
+           var v = this.value;
+          if (v.match(/^\d{4}$/) !== null) {
+              this.value = v + '-';
+          } else if (v.match(/^\d{4}\-\d{2}$/) !== null) {
+              this.value = v + '-';
+          }
+      });
+
  $("#add_language").click(function(){
         var rowCount_contact = $('#language_table tbody tr').length;
         
@@ -643,7 +733,7 @@ if (jQuery().datepicker) {
          '<a href="#" class="btn btn-danger cust_delete_contact">remove</a>'
         ] ).draw( false );         
             // $("#canvass_total").html(total);     
-            $('#level').val('');
+           
             $('#schoolName').val('');
             $('#fromdate').val(''); 
             $('#todate').val('');
@@ -740,7 +830,7 @@ $("#add_work").click(function(){
         ] ).draw( false );         
             // $("#canvass_total").html(total); 
 
-            $('#fam_desc').val('');
+           
             $('#fam_name').val('');
             $('#fam_age').val(''); 
             $('#fam_address').val('');
@@ -818,8 +908,113 @@ $("#add_movement").click(function(){
         movement_table.row($(this).closest('tr')).remove().draw();
       });
 
+ $('#submit_add_school').click(function(){
+   var data = {
+  'school_employee_id':$('#school_employee_id').val(),   
+  'add_level':$('#add_level').val(),   
+  'add_schoolName':$('#add_schoolName').val(),   
+  'add_fromdate':$('#add_fromdate').val(),   
+  'add_todate':$('#add_todate').val(),   
+  'add_yearGraduate':$('#add_yearGraduate').val() 
+      };
+
+      console.log(data);
+      $.ajax({
+          type: "POST",
+          url:  baseurl + "hris/update_school",
+          dataType: "text",
+          data: data,
+          success: function(data){
+              clearFields(); 
+              toastr.success('Successfully Saved!', 'Operation Done');
+              location.reload();
+          },
+          error: function (errorThrown){
+              toastr.error('Error!.', 'Error. Please try again');
+          }
+      });
+  });
+
+ $('#submit_add_work').click(function(){
+   var data = {
+  'work_employee_id':$('#work_employee_id').val(),   
+  'add_previous_position':$('#add_previous_position').val(),   
+  'add_employer':$('#add_employer').val(),   
+  'add_exclusive_from':$('#add_exclusive_from').val(),   
+  'add_exclusive_to':$('#add_exclusive_to').val(),   
+  'add_compensation':$('#add_compensation').val()
+      };
+
+      console.log(data);
+      $.ajax({
+          type: "POST",
+          url:  baseurl + "hris/update_work",
+          dataType: "text",
+          data: data,
+          success: function(data){
+              clearFields(); 
+              toastr.success('Successfully Saved!', 'Operation Done');
+              location.reload();
+          },
+          error: function (errorThrown){
+              toastr.error('Error!.', 'Error. Please try again');
+          }
+      });
+  });  
 
 
+ $('#submit_add_address').click(function(){
+   var data = {
+  'add_person_id':$('#add_person_id').val(),   
+  'edit_addtype':$('#edit_addtype').val(),   
+  'edit_line1':$('#edit_line1').val(),   
+  'edit_line2':$('#edit_line2').val(),   
+  'edit_allcity':$('#edit_allcity').val(),   
+  'edit_allprovince':$('#edit_allprovince').val(),   
+  'edit_addcountry':$('#edit_addcountry').val(),    
+  'edit_postal':$('#edit_postal').val()    
+      };
+
+      console.log(data);
+      $.ajax({
+          type: "POST",
+          url:  baseurl + "hris/update_address",
+          dataType: "text",
+          data: data,
+          success: function(data){
+              clearFields(); 
+              toastr.success('Successfully Saved!', 'Operation Done');
+              location.reload();
+          },
+          error: function (errorThrown){
+              toastr.error('Error!.', 'Error. Please try again');
+          }
+      });
+  });  
+
+ $('#submit_add_contact').click(function(){
+   var data = {
+  'contact_person_id':$('#contact_person_id').val(),   
+  'add_contact':$('#add_contact').val(),   
+  'add_contact_value':$('#add_contact_value').val()
+      };
+
+      console.log(data);
+      $.ajax({
+          type: "POST",
+          url:  baseurl + "hris/update_contact",
+          dataType: "text",
+          data: data,
+          success: function(data){
+              clearFields(); 
+              toastr.success('Successfully Saved!', 'Operation Done');
+              location.reload();
+          },
+          error: function (errorThrown){
+              toastr.error('Error!.', 'Error. Please try again');
+          }
+      });
+  }); 
 
  $('#submit_add_evaluation').click(function(){
    var data = {
@@ -1174,6 +1369,7 @@ $("#add_movement").click(function(){
         'weight':$('#weight').val(),
         'date_hired':$('#date_hired').val(),
         'initial':$('#initial').val(),
+        'picture_url':$('#picture_url').val(),
 
     //School attended
         'language':language,
@@ -1249,21 +1445,73 @@ $("#add_movement").click(function(){
       };
 
       console.log(data);
-      $.ajax({
-          type: "POST",
-          url:  baseurl + "hris/hris/save_employee",
-          dataType: "text",
-          data: data,
-          success: function(data){
-              clearFields();
-              location.reload();
+      is_ok = 1;
+      // ADDRESS
+      if(addtype.length > 1 && line_1.length > 1 && line_2.length > 1 && allcity.length > 1 && allprovince.length > 1 && addcountry.length > 1 && postal.length > 1){
+         is_ok += 1;
+      }
+      else{
+         is_ok = 0;
+      }
 
-              toastr.success('Successfully Saved!', 'Operation Done');
-          },
-          error: function (errorThrown){
-              toastr.error('Error!.', 'Employee or username already existed');
-          }
-      });
+      // SCHOOL
+      if(level.length > 1 && schoolName.length > 1 && fromdate.length > 1 && todate.length > 1 && yearGraduate.length > 1){
+         is_ok += 1;
+      }
+      else{
+         is_ok = 0;
+      }
+
+      // EXAM
+      if(examtype.length > 1 && examName.length > 1 && examRating.length > 1 && examTaken.length > 1 && dateExpiration.length > 1 ){
+         is_ok += 1;
+      }
+      else{
+         is_ok = 0;
+      }
+
+      //WORK
+      if(previous_position.length > 1 && employer.length > 1 && exclusive_from.length > 1 && exclusive_to.length > 1 && compensation.length > 1 ){
+         is_ok += 1;
+      }
+      else{
+         is_ok = 0;
+      }
+      // FAMILY
+      if(fam_desc.length > 1 && fam_name.length > 1 && fam_age.length > 1 && fam_address.length > 1 && fam_contact.length > 1 ){
+         is_ok += 1;
+      }
+      else{
+         is_ok = 0;
+      }
+      if(language.length > 1){
+         is_ok += 1;
+      }
+      else{
+         is_ok = 0;
+      }
+
+      if (is_ok == 6) {
+        $.ajax({
+            type: "POST",
+            url:  baseurl + "hris/hris/save_employee",
+            dataType: "json",
+            data: data,
+            success: function(data){
+                clearFields();
+                location.reload();
+
+                toastr.success('Successfully Saved!', 'Operation Done');
+            },
+            error: function (errorThrown){
+                toastr.error('Error!.', 'Operation failed');
+            }
+        });
+
+      }else{
+        toastr.error('Error!.', 'Click ADD button to save information');
+
+      }
   });     
 });
 

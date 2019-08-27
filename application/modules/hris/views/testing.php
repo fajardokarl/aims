@@ -16,6 +16,29 @@
                 <div class="row">
                     <div class="col-md-6">
                         <!-- <div class="form-group"> -->
+<!-- <div class="col-md-3">
+<div class="form-group ">
+    <div class="fileinput fileinput-new" data-provides="fileinput"> -->
+       <!--  <div id="imageselect">
+            <div class="profile-userpic">
+                <div class="thumbnail" style="width: 200px; height: 150px;">
+                    <img src="<?=base_url()?>public/pages/images/profiles/3934.jpg" id="profilepicture" class="img-responsive" alt="">
+                </div>
+                <button type="button" class="btn green" id="">New Picture</button>
+            </div>
+        </div> -->
+      <!--   <div id="profilechange">  
+               
+                   <div class="thumbnail" style="width: 100%; height: 150px;">
+                               <img src="<?=base_url()?>public/images/profiles/harold.jpg"> -->
+                               <!--  <img  id="profilepicture" class="img-responsive" src="C:\Pictures\harold.jpg"> -->
+                             <!--  </div>         -->                       
+<!--   
+        </div>
+    </div>
+</div>
+</div> -->
+
                         <div class="form-group">
                             <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Name:</span></label>
                             <div class="col-md-9">
@@ -224,6 +247,7 @@
             <div class="caption">
                 <i class="fa fa-gift"></i>Contact Information </div>
             <div class="tools">
+                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="update_contact"><i class="fa fa-plus"> </i></button>
                 <a href="javascript:;" class="collapse"> </a>
                 <a href="#portlet-config" data-toggle="modal" class="config"> </a>
                 <a href="javascript:;" class="reload"> </a>
@@ -269,6 +293,7 @@
             <div class="caption">
                 <i class="fa fa-gift"></i>Address Information </div>
             <div class="tools">
+                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="update_address"><i class="fa fa-plus"> </i></button>
                 <a href="javascript:;" class="collapse"> </a>
                 <a href="#portlet-config" data-toggle="modal" class="config"> </a>
                 <a href="javascript:;" class="reload"> </a>
@@ -312,6 +337,7 @@
             <div class="caption">
                 <i class="fa fa-gift"></i>School last attended</div>
             <div class="tools">
+                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="update_school"><i class="fa fa-plus"> </i></button>
                 <a href="javascript:;" class="collapse"> </a>
                 <a href="#portlet-config" data-toggle="modal" class="config"> </a>
                 <a href="javascript:;" class="reload"> </a>
@@ -361,7 +387,7 @@
             <div class="caption">
                 <i class="fa fa-gift"></i>Examination taken</div>
             <div class="tools">
-                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="update_exam"><i class="fa fa-plus"> </i>Exam taken</button>
+                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="update_exam"><i class="fa fa-plus"> </i></button>
                 
                 <a href="javascript:;" class="collapse"> </a>
                 <a href="#portlet-config" data-toggle="modal" class="config"> </a>
@@ -410,6 +436,7 @@
             <div class="caption">
                 <i class="fa fa-gift"></i>Work experience</div>
             <div class="tools">
+                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="update_work"><i class="fa fa-plus"> </i></button>
                 <a href="javascript:;" class="collapse"> </a>
                 <a href="#portlet-config" data-toggle="modal" class="config"> </a>
                 <a href="javascript:;" class="reload"> </a>
@@ -465,7 +492,7 @@
             <div class="caption">
                 <i class="fa fa-gift"></i>Family background</div>
             <div class="tools">
-                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="update_member"><i class="fa fa-plus"> </i>Family member</button>
+                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="update_member"><i class="fa fa-plus"> </i></button>
                 <a href="javascript:;" class="collapse"> </a>
                 <a href="#portlet-config" data-toggle="modal" class="config"> </a>
                 <a href="javascript:;" class="reload"> </a>
@@ -529,7 +556,7 @@
             <div class="caption">
                 <i class="fa fa-gift"></i>Evaluation</div>
             <div class="tools">
-                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="update_evaluation"><i class="fa fa-plus"> </i> Evaluation</button>
+                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="update_evaluation"><i class="fa fa-plus"></i></button>
                 <a href="javascript:;" class="collapse"> </a>
                 <a href="#portlet-config" data-toggle="modal" class="config"> </a>
                 <a href="javascript:;" class="reload"> </a>
@@ -576,7 +603,7 @@
             <div class="caption">
                 <i class="fa fa-gift"></i>Movement</div>
             <div class="tools">
-                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="update_movement"><i class="fa fa-plus"> </i>Movement</button>
+                <button style="align:right;" type="button" class="btn btn-default btn-sm" id="update_movement"><i class="fa fa-plus"> </i></button>
                 <a href="javascript:;" class="collapse"> </a>
                 <a href="#portlet-config" data-toggle="modal" class="config"> </a>
                 <a href="javascript:;" class="reload"> </a>
@@ -627,9 +654,6 @@
         </div>
     </div>
 </div>
-
-
-
 
 
 <div id="view-evaluation" class="modal fade" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
@@ -775,7 +799,7 @@
                                     </div>
                                     <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="control-label" >Approvaldate</label>
+                                        <label class="control-label" >Approval date</label>
                                         <input  type="text" name="add_approval_date" placeholder="yyyy-mm-dd" class="form-control" id="add_approval_date" maxlength="10" required onkeypress="return isNumber()"/>   
                                     </div>
                                     </div>
@@ -793,13 +817,187 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn green" id="submit_add_movement" ></span>Add Evaluation</button>
+                    <button type="button" class="btn green" id="submit_add_movement" ></span>Add movement</button>
                     <button type="button" data-dismiss="modal" class="btn dark btn-outline" id="btncloseClear"><i class="fa fa-times" aria-hidden="true"></i>Close</button>                 
                 </div>
             </form> 
         </div>
     </div>
 </div>
+
+
+<div id="view-school" class="modal fade" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-xs">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" id="closeLot" data-dismiss="modal" ></button> 
+                <h4 class="modal-title"><span class="caption-subject bold uppercase"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Add school attended<span id="lidss"></span>  <span id="lotdescN"> </span> <span id="slid" style="display:none;"></span><span id="slids" style="display:none;"></span></h4> 
+            </div>
+            <form id="updateLot">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">  
+                            <div class="form-body">
+                                <div class="form-group">                               
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="portlet grey-cascade box">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                            <span class="caption-subject"><i class="fa fa-list-alt" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" id="person_id" value="<?php echo $emp->person_id; ?>">
+                                    <input type="hidden" id="school_employee_id" value="<?php echo $emp->employee_id; ?>">
+
+                                <div class="portlet-body"> 
+
+                                    <div class="row">
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >School level</label> 
+                                         <select class="form-control select2 select2-hidden-accessible" id="add_level" name ="add_level" >
+                                        <option class ="disabled selected">Select</option>
+
+                                        <?php foreach($add_school as $add_school){ ?>
+                                        <option value="<?php echo $add_school['school_id'];?>"><?php echo 
+                                        $add_school['school_description'];?></option><?php } ?>
+                                        </select>                          
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >School name</label>
+                                        <input tabindex="2" type="text" id="add_schoolName" name="add_schoolName"  placeholder="" maxlength="200" class="form-control" > 
+                                       
+                                    </div>
+                                    </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                    <label class="control-label" >From</label>
+                                    <input  type="text" name="add_fromdate" placeholder="yyyy-mm-dd" class="form-control" id="add_fromdate" maxlength="10" required onkeypress="return isNumber()"/>  
+                                        
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                    <label class="control-label" >To</label>
+                                    <input  type="text" name="add_todate" placeholder="yyyy-mm-dd" class="form-control" id="add_todate" maxlength="10" required onkeypress="return isNumber()"/>                                             
+                                    </div>
+                                    </div>
+                                    </div>
+                             
+                                    <div class="form-group">
+                                        <label class="control-label" >Year graduated</label>
+                                         <input tabindex="2" type="text" id="add_yearGraduate" name="add_yearGraduate"  placeholder="" maxlength="200" class="form-control" >
+                                    </div>
+
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn green" id="submit_add_school" ></span>Add school</button>
+                    <button type="button" data-dismiss="modal" class="btn dark btn-outline" id="btncloseClear"><i class="fa fa-times" aria-hidden="true"></i>Close</button>                 
+                </div>
+            </form> 
+        </div>
+    </div>
+</div>
+
+
+
+<div id="view-work" class="modal fade" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-xs">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" id="closeLot" data-dismiss="modal" ></button> 
+                <h4 class="modal-title"><span class="caption-subject bold uppercase"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Add work<span id="lidss"></span>  <span id="lotdescN"> </span> <span id="slid" style="display:none;"></span><span id="slids" style="display:none;"></span></h4> 
+            </div>
+            <form id="updateLot">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">  
+                            <div class="form-body">
+                                <div class="form-group">                               
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="portlet grey-cascade box">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                            <span class="caption-subject"><i class="fa fa-list-alt" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" id="person_id" value="<?php echo $emp->person_id; ?>">
+                                    <input type="hidden" id="work_employee_id" value="<?php echo $emp->employee_id; ?>">
+
+                                <div class="portlet-body"> 
+
+                                    <div class="row">
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >Position</label> 
+                                         <input tabindex="2" type="text" id="add_previous_position" name="add_previous_position"  placeholder="" maxlength="200" class="form-control" >        
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >Employer</label>
+                                        <input tabindex="2" type="text" id="add_employer" name="add_employer"  placeholder="" maxlength="200" class="form-control" > 
+                                       
+                                    </div>
+                                    </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                    <label class="control-label" >From</label>
+                                    <input  type="text" name="add_exclusive_from" placeholder="yyyy-mm-dd" class="form-control" id="add_exclusive_from" maxlength="10" required onkeypress="return isNumber()"/>  
+                                        
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                    <label class="control-label" >To</label>
+                                    <input  type="text" name="add_exclusive_to" placeholder="yyyy-mm-dd" class="form-control" id="add_exclusive_to" maxlength="10" required onkeypress="return isNumber()"/>                                             
+                                    </div>
+                                    </div>
+                                    </div>
+                             
+                                    <div class="form-group">
+                                        <label class="control-label" >Compensation</label>
+                                         <input tabindex="2" type="text" id="add_compensation" name="add_compensation"  placeholder="" maxlength="200" class="form-control" > 
+                                    </div>
+
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn green" id="submit_add_work" ></span>Add work</button>
+                    <button type="button" data-dismiss="modal" class="btn dark btn-outline" id="btncloseClear"><i class="fa fa-times" aria-hidden="true"></i>Close</button>                 
+                </div>
+            </form> 
+        </div>
+    </div>
+</div>
+
 
 <div id="view-family" class="modal fade" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-xs">
@@ -890,6 +1088,74 @@
     </div>
 </div>
 
+<div id="view-contact" class="modal fade" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-xs">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" id="closeLot" data-dismiss="modal" ></button> 
+                <h4 class="modal-title"><span class="caption-subject bold uppercase"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Add Contact<span id="lidss"></span>  <span id="lotdescN"> </span> <span id="slid" style="display:none;"></span><span id="slids" style="display:none;"></span></h4> 
+            </div>
+            <form id="updateLot">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">  
+                            <div class="form-body">
+                                <div class="form-group">                               
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="portlet grey-cascade box">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                            <span class="caption-subject"><i class="fa fa-list-alt" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" id="contact_person_id" value="<?php echo $emp->person_id; ?>">
+                                    <input type="hidden" id="exam_employee_id" value="<?php echo $emp->employee_id; ?>">
+
+                                <div class="portlet-body"> 
+
+                                    <div class="row">
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >Contact type</label> 
+                                            <select class="form-control select2 select2-hidden-accessible col-md-6" id="add_contact" name ="add_contact" >
+                                            <option class ="disabled selected">Select</option>
+                                            <?php foreach($add_contact as $add_contact){ ?>
+                                            <option value="<?php echo $add_contact['contact_type_id'];?>"><?php echo 
+                                            $add_contact['contact_type_name'];?></option><?php } ?>
+                                            </select>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >Contact</label>
+                                        <input tabindex="2" type="text" id="add_contact_value" name="add_contact_value"  placeholder="" maxlength="160" class="form-control" > 
+                                       
+                                    </div>
+                                    </div>
+                                    </div>
+
+
+
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn green" id="submit_add_contact" ></span>Add contact</button>
+                    <button type="button" data-dismiss="modal" class="btn dark btn-outline" id="btncloseClear"><i class="fa fa-times" aria-hidden="true"></i>Close</button>                 
+                </div>
+            </form> 
+        </div>
+    </div>
+</div>
+
+
 <div id="view-exam_info" class="modal fade" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-xs">
         <div class="modal-content">
@@ -974,6 +1240,133 @@
     </div>
 </div>
 
+
+
+<div id="view-address" class="modal fade" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-xs">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" id="closeLot" data-dismiss="modal" ></button> 
+                <h4 class="modal-title"><span class="caption-subject bold uppercase"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Add address<span id="lidss"></span>  <span id="lotdescN"> </span> <span id="slid" style="display:none;"></span><span id="slids" style="display:none;"></span></h4> 
+            </div>
+            <form id="updateLot">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">  
+                            <div class="form-body">
+                                <div class="form-group">                               
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="portlet grey-cascade box">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                            <span class="caption-subject"><i class="fa fa-list-alt" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" id="add_person_id" value="<?php echo $emp->person_id; ?>">
+                                    <input type="hidden" id="add_employee_id" value="<?php echo $emp->employee_id; ?>">
+
+                                <div class="portlet-body"> 
+
+                                    <div class="row">
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >Address type</label> 
+                                         <select class="form-control select2 select2-hidden-accessible" id="edit_addtype" name ="edit_addtype" >
+                                            <option class ="disabled selected">Select</option>
+
+                                            <?php foreach($edit_addtype as $edit_addtype){ ?>
+                                            <option value="<?php echo $edit_addtype['address_type_id'];?>"><?php echo 
+                                            $edit_addtype['address_type_name'];?></option><?php } ?>
+                                            </select>                  
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >Street</label>
+                                        <input tabindex="2" type="text" id="edit_line1" name="edit_line1"  placeholder="" maxlength="160" class="form-control" > 
+                                       
+                                    </div>
+                                    </div>
+                                    </div>
+
+
+
+                                    <div class="row">
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >Barangay</label>
+                                    <input tabindex="2" type="text" id="edit_line2" name="edit_line2"  placeholder="" maxlength="160" class="form-control" > 
+                                        
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >City</label>
+                                         <select class="form-control select2 select2-hidden-accessible" id="edit_allcity" name ="edit_allcity" >
+                                        <option class ="disabled selected">Select</option>
+
+                                        <?php foreach($edit_allcity as $edit_allcity){ ?>
+                                        <option value="<?php echo $edit_allcity['address_city_id'];?>"><?php echo 
+                                        $edit_allcity['city_name'];?></option><?php } ?>
+                                        </select>                                             
+                                    </div>
+                                    </div>
+                                    </div>
+
+                                    <div class="row">
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                    <label class="control-label" >Province</label>
+                                    <select class="form-control select2 select2-hidden-accessible" id="edit_allprovince" name ="edit_allprovince" >
+                                    <option class ="disabled selected">Select</option>
+
+                                    <?php foreach($edit_allprovince as $edit_allprovince){ ?>
+                                    <option value="<?php echo $edit_allprovince['address_province_id'];?>"><?php echo 
+                                    $edit_allprovince['province_name'];?></option><?php } ?>
+                                    </select>
+                                    </div>
+                                    </div>
+                                 
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                    <label class="control-label" >Country</label>
+                                    <select class="form-control select2 select2-hidden-accessible" id="edit_addcountry" name ="edit_addcountry" >
+                                    <option class ="disabled selected">Select</option>
+
+                                    <?php foreach($edit_addcountry as $edit_addcountry){ ?>
+                                    <option value="<?php echo $edit_addcountry['id'];?>"><?php echo 
+                                    $edit_addcountry['country_name'];?></option><?php } ?>
+                                    </select>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" >Postal code</label>
+                                    <input tabindex="2" type="text" id="edit_postal" name="edit_postal"  placeholder="" maxlength="160" class="form-control" > 
+                                    </div>    
+                                    </div>
+                                    </div>
+
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn green" id="submit_add_address" ></span>Add address</button>
+                    <button type="button" data-dismiss="modal" class="btn dark btn-outline" id="btncloseClear"><i class="fa fa-times" aria-hidden="true"></i>Close</button>                 
+                </div>
+            </form> 
+        </div>
+    </div>
+</div>
 
 
 <div id="view-peson_info" class="modal fade" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
@@ -1119,15 +1512,15 @@
                                     <div class="row">                                        
                                     <div class="col-md-12">                                      
                                     <div class="col-md-3">
-                                        <label class="control-label"><b>Department</b></label>
-                                        <input tabindex="2" type="text" id="edit_department" name="edit_department"  placeholder="" maxlength="30" value="<?php echo $emp->department_name
-                                        ; ?>" class="form-control" >
+                                        <label class="control-label"><b>Date hired</b></label>
+                                          <input value="<?php echo $emp->date_hired
+                                        ; ?>" type="text" name="fromdate" placeholder="yyyy-mm-dd" class="form-control" id="fromdate" maxlength="10" required onkeypress="return isNumber()"/>     
                                     </div>  
-                                    <div class="col-md-3">
+                         <!--            <div class="col-md-3">
                                         <label class="control-label"><b>Position</b></label>
                                         <input tabindex="2" type="text" id="edit_position" name="edit_position"  placeholder="" maxlength="30" value="<?php echo $emp->job_position
                                         ; ?>" class="form-control" >
-                                    </div>  
+                                    </div>   -->
                                     </div>                                
                                     </div>
                                     <hr />

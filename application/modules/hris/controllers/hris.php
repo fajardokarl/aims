@@ -58,6 +58,15 @@ class Hris extends CI_Controller {
       $this->data['movement'] = $this->hris->get_employee_movement($this->input->get('personid'));
       $this->data['language'] = $this->hris->get_employee_language($this->input->get('personid'));
       $this->data['civil_status'] = $this->hris->retrieve_status($this->input->get('personid'));
+      $this->data['edit_allcity'] = $this->hris->getAllCity();
+      $this->data['edit_addtype'] = $this->hris->getAddressType();
+      $this->data['edit_addcountry'] = $this->hris->getAllCountry();
+      $this->data['edit_allprovince'] = $this->hris->getAllProvince();
+      $this->data['edit_contact_type'] = $this->hris->get_contact_type();
+      $this->data['add_contact'] = $this->hris->get_contact_type();
+      $this->data['add_school'] = $this->hris->retrieve_school();
+
+
       $this->load->view('default/index', $this->data); 
 }
 
@@ -144,6 +153,22 @@ public function update_evaluation(){
             $this->hris_model->insert_add_evaluation($data);
     }
 
+
+public function update_contact(){
+        $this->load->helper('date'); 
+        $this->load->model('hris_model');
+
+        // Employee information
+    $data = array(        
+             'person_id'    =>$this->input->post('contact_person_id'),
+             'contact_type_id' => $this->input->post('add_contact'),             
+             'contact_value' => $this->input->post('add_contact_value') 
+        );
+            $this->hris_model->insert_contact($data);
+    }
+
+
+
 public function update_movement(){
         $this->load->helper('date'); 
         $this->load->model('hris_model');
@@ -178,6 +203,23 @@ public function update_exam(){
             $this->hris_model->insert_add_exam($data);
     }
 
+public function update_work(){
+        $this->load->helper('date'); 
+        $this->load->model('hris_model');
+
+        // Employee information
+    $data = array(        
+             'employee_id'    =>$this->input->post('work_employee_id'),            
+             'previous_position'   =>$this->input->post('add_previous_position'),
+             'employer'    =>$this->input->post('add_employer'),            
+             'exclusive_from'    =>$this->input->post('add_exclusive_from'),     
+             'exclusive_to'   =>$this->input->post('add_exclusive_to'),
+             'compensation'   =>$this->input->post('add_compensation')     
+       
+        );
+            $this->hris_model->insert_work_experience($data);
+    }
+
 public function update_family(){
         $this->load->helper('date'); 
         $this->load->model('hris_model');
@@ -193,6 +235,23 @@ public function update_family(){
        
         );
             $this->hris_model->insert_add_family($data);
+    }
+
+
+public function update_school(){
+        $this->load->helper('date'); 
+        $this->load->model('hris_model');
+
+        // Employee information
+    $data = array(        
+             'employee_id'   =>$this->input->post('school_employee_id'),             
+             'level'   =>$this->input->post('add_level'),
+             'school_name'    =>$this->input->post('add_schoolName'),            
+             'fromdate'    =>$this->input->post('add_fromdate'),     
+             'todate'   =>$this->input->post('add_todate'),
+             'year_graduate'   =>$this->input->post('add_yearGraduate')
+        );
+      $this->hris_model->insert_school($data);  
     }
 
 public function update_person(){
@@ -222,6 +281,31 @@ public function update_person(){
    
             $this->hris_model->update_person($info_person_id,$data);
     }
+public function update_address(){
+        $this->load->helper('date'); 
+        $this->load->model('hris_model');
+
+        $data = array(
+              
+                'address_type_id' => $this->input->post('edit_addtype'),
+                'line_1' => $this->input->post('edit_line1'),
+                'line_2' => $this->input->post('edit_line2'),              
+                'city_id' => $this->input->post('edit_allcity'),
+                'province_id' => $this->input->post('edit_allprovince'),
+                'postal_code' => $this->input->post('edit_postal'),             
+                'country_id' => $this->input->post('edit_addcountry') 
+        );
+        $address_id = $this->hris_model->insert_address($data);         
+
+    $data2 = array(
+          
+            'address_id'   =>$address_id,
+            'person_id' => $this->input->post('add_person_id')
+
+        );    
+        $this->hris_model->insert_person_address($data2);
+}
+
 
     public function save_employee(){
         $this->load->helper('date'); 
@@ -244,6 +328,7 @@ public function update_person(){
                 'phic' =>$this->input->post('philhealth'),
                 'sss' =>$this->input->post('sss'),
                 'hdmf' =>$this->input->post('hdmf'),
+                'picture_url' =>$this->input->post('picture_url'),
                 'tin' =>$this->input->post('tin')
                  );
         $personid = $this->hris_model->insert_person($data);
@@ -424,7 +509,9 @@ public function update_person(){
              'language'   =>$this->input->post('language')[$i]
                   
         );
-      $this->hris_model->insert_language($data15);         
+      $this->hris_model->insert_language($data15); 
+
    }
+      echo json_encode($person_id);        
    }
     }
