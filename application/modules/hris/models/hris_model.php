@@ -7,6 +7,14 @@ public function __construct()
     }
 
 
+    function ppr_count(){    
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->where('username !=', null); 
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
     function get_to_detail($person_id)
     {
      $this->db->select('*');
@@ -24,6 +32,8 @@ public function __construct()
      $query = $this->db->get();
      return $query->result_array();
      }
+
+
 
   function retrieve_all_employee()
   {

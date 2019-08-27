@@ -23,7 +23,7 @@ class Hris extends CI_Controller {
         $this->data['page_title'] = 'Human Resource Information System';
         $this->data['content'] = 'hris_dashboard';
         $this->data['navigation'] = 'hris_navigation';
-    
+        $this->data['ppr_count'] = $this->hris->ppr_count();
 
 
         $this->load->view('default/index', $this->data);
