@@ -175,6 +175,24 @@ if (jQuery().datepicker) {
       });
 
 if (jQuery().datepicker) {
+          $('#edit_birthdate').datepicker({
+              rtl: App.isRTL(),
+              format: 'yyyy-mm-dd',
+              orientation: "left",
+              autoclose: true
+          });
+      }   
+
+
+       $('#edit_birthdate').keyup(function(){
+           var v = this.value;
+          if (v.match(/^\d{4}$/) !== null) {
+              this.value = v + '-';
+          } else if (v.match(/^\d{4}\-\d{2}$/) !== null) {
+              this.value = v + '-';
+          }
+      });
+if (jQuery().datepicker) {
           $('#add_approval_date').datepicker({
               rtl: App.isRTL(),
               format: 'yyyy-mm-dd',

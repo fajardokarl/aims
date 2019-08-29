@@ -138,7 +138,13 @@
                             <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Weight:</span></label>
                             <div class="col-md-9">
                                 <p class="form-control-static">
-                                    <?php echo $emp->weight; ?>
+                            <?php 
+                                if ($emp->weight == 0) {
+                                    echo "<span class='font-red-intense bold'>No data</span>";
+                                }else{
+                                    echo $emp->weight;
+                                }?>
+                                    <!-- <?php echo $emp->weight; ?> -->
                                 </p>
                             </div> 
                         </div>
@@ -148,7 +154,7 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Nationality:</span></label>
                             <div class="col-md-9">
-                                <p class="form-control-static">
+                                <p class="form-control-static">                                    
                                     <?php echo $emp->nationality; ?>
                                 </p>
                             </div>
@@ -158,7 +164,13 @@
                             <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> Height:</span></label>
                             <div class="col-md-9">
                                 <p class="form-control-static">
-                                    <?php echo $emp->height; ?>
+                                 <?php 
+                                if ($emp->height == 0) {
+                                    echo "<span class='font-red-intense bold'>No data</span>";
+                                }else{
+                                    echo $emp->height;
+                                }?>    
+                                   <!--  <?php echo $emp->height; ?> -->
                                 </p>
                             </div>
                         </div>
@@ -167,7 +179,15 @@
                             <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> TIN:</span></label>
                             <div class="col-md-9">
                                 <p class="form-control-static">
-                                    <?php echo $emp->tin; ?>
+                                    <?php 
+                                if ($emp->tin == 0) {
+                                    echo "<span class='font-red-intense bold'>No data</span>";
+                                }else{
+                                    echo $emp->tin;
+                                }?>
+                                      <!-- <?php echo $emp->sss; ?> -->
+ 
+                                   <!--  <?php echo $emp->tin; ?> -->
                                 </p>
                             </div>
                         </div>
@@ -175,7 +195,14 @@
                             <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> SSS no. :</span></label>
                             <div class="col-md-9">
                                 <p class="form-control-static" id='total_amount'>
-                                      <?php echo $emp->sss; ?>
+                                <?php 
+                                if ($emp->sss == 0) {
+                                    echo "<span class='font-red-intense bold'>No data</span>";
+                                }else{
+                                    echo $emp->sss;
+                                }?>
+                                      <!-- <?php echo $emp->sss; ?> -->
+
                                 </p>
                             </div> 
                         </div> 
@@ -184,8 +211,16 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> HDMF no. :</span></label>
                             <div class="col-md-9">
-                                <p class="form-control-static">
-                                    <?php echo $emp->hdmf; ?>
+                                <p class="form-control-static"> 
+                            <?php 
+                                if ($emp->hdmf == 0) {
+                                    echo "<span class='font-red-intense bold'>No data</span>";
+                                }else{
+                                    echo $emp->hdmf;
+                                }?>
+
+
+                                    <!-- <?php echo $emp->hdmf; ?> -->
                                 </p>
                             </div>
                         </div>
@@ -195,7 +230,16 @@
                             <label class="col-md-3 control-label"><span class="caption-subject font-grey-mint bold uppercase"> PHIC no. :</span></label>
                             <div class="col-md-9">
                                 <p class="form-control-static">
-                                 <?php echo $emp->phic; ?>
+                             <?php 
+                                if ($emp->phic == 0) {
+                                    echo "<span class='font-red-intense bold'>No data</span>";
+                                }else{
+                                    echo $emp->phic;
+                                }?>
+
+
+
+                                <!--  <?php echo $emp->phic; ?> -->
                                 </p>
                             </div>
                         </div>
@@ -1435,8 +1479,8 @@
                                     </div>  
                                     <div class="col-md-3">
                                         <label class="control-label"><b>Birthdate</b></label>
-                                        <input tabindex="2" type="text" id="edit_birthdate" name="edit_birthdate" value="<?php echo $emp->birthdate
-                                        ; ?>" placeholder="" maxlength="30" class="form-control" >
+                                        <input value="<?php echo $emp->birthdate
+                                        ; ?>" type="text" name="edit_birthdate" placeholder="yyyy-mm-dd" class="form-control" id="edit_birthdate" maxlength="10" required onkeypress="return isNumber()"/>     
                                     </div>  
                                     <div class="col-md-3">
                                         <label class="control-label"><b>Birthplace</b></label>
