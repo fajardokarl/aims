@@ -272,7 +272,7 @@ public function update_person(){
                 'civil_status_id' =>$this->input->post('edit_civil_status'),
                 'height' =>$this->input->post('edit_height'),
                 'weight' =>$this->input->post('edit_weight'),
-                'phic' =>$this->input->post('edit_philhealth'),
+                'phic' =>$this->input->post('edit_phic'),
                 'sss' =>$this->input->post('edit_sss'),
                 'hdmf' =>$this->input->post('edit_hdmf'),
                 'tin' =>$this->input->post('edit_tin')
